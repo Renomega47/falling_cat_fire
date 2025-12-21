@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=3 uid="uid://copk2lpcjvpqg"]
+
+[ext_resource type="Texture2D" uid="uid://buormympehkhe" path="res://Enemys/cat/cat.png" id="1_2q0q3"]
+[ext_resource type="Texture2D" uid="uid://b5wug2eqdljj7" path="res://Gameplay/UI/Interface/left.png" id="2_2gfeh"]
+[ext_resource type="Texture2D" uid="uid://byyltup8j5843" path="res://Gameplay/UI/Interface/right.png" id="3_vsg0d"]
+
+[node name="Creditos" type="Popup"]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(714, 763)
+visible = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 9.0
+offset_top = -460.0
+offset_right = 49.0
+offset_bottom = -420.0
+
+[node name="Label2" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 468.0
+offset_right = 725.0
+offset_bottom = 1092.0
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "Tutorial: 
+	Controls:
+		DESLIZA/SWIPE
+                       
+            Move left
+            
+            Move right
+
+            Laser Dodge /
+           esquivar laser
+
+            Activate Objects
+
+Objetive: Survive"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control"]
+modulate = Color(0.098728366, 0.09872835, 0.09872835, 1)
+position = Vector2(656.99994, 477.99997)
+rotation = -1.0821041
+scale = Vector2(8, 8)
+texture = ExtResource("1_2q0q3")
+offset = Vector2(0, -4)
+hframes = 6
+vframes = 6
+frame = 30
+
+[node name="Left" type="Sprite2D" parent="Control"]
+texture_filter = 1
+position = Vector2(240, 686)
+scale = Vector2(10, 10)
+texture = ExtResource("2_2gfeh")
+
+[node name="Left4" type="Sprite2D" parent="Control"]
+modulate = Color(1, 0, 1, 1)
+texture_filter = 1
+position = Vector2(240, 1004)
+rotation = 1.5707964
+scale = Vector2(10, 10)
+texture = ExtResource("3_vsg0d")
+
+[node name="Left2" type="Sprite2D" parent="Control"]
+texture_filter = 1
+position = Vector2(240, 785)
+scale = Vector2(10, 10)
+texture = ExtResource("3_vsg0d")
+
+[node name="Left3" type="Sprite2D" parent="Control"]
+modulate = Color(1, 0, 0, 1)
+texture_filter = 1
+position = Vector2(240.00002, 898.00006)
+rotation = -1.5707964
+scale = Vector2(10, 10)
+texture = ExtResource("3_vsg0d")

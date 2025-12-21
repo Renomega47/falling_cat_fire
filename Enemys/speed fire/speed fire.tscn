@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckyswos65gpnu"]
+
+[ext_resource type="Script" uid="uid://dhjdl57fqy65r" path="res://Enemys/speed fire/speed fire.gd" id="1_xfkqd"]
+[ext_resource type="Texture2D" uid="uid://ck0iijkyt6my2" path="res://Enemys/speed fire/blue(fast).png" id="2_m743j"]
+[ext_resource type="PackedScene" uid="uid://bhxrw0sfk8ehy" path="res://Enemys/Commons utilitys/Dead.tscn" id="3_ilegw"]
+
+[sub_resource type="Animation" id="Animation_dwaef"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_0i3lm"]
+resource_name = "new_animation"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m11qq"]
+_data = {
+&"RESET": SubResource("Animation_dwaef"),
+&"new_animation": SubResource("Animation_0i3lm")
+}
+
+[node name="Object" type="Node2D" node_paths=PackedStringArray("texture", "dead_node")]
+script = ExtResource("1_xfkqd")
+texture = NodePath("Texture")
+dead_node = NodePath("Dead")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m11qq")
+}
+autoplay = "new_animation"
+speed_scale = 0.5
+
+[node name="Texture" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+scale = Vector2(8, 8)
+texture = ExtResource("2_m743j")
+hframes = 4
+vframes = 2
+
+[node name="Dead" parent="." instance=ExtResource("3_ilegw")]

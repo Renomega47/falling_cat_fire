@@ -1,0 +1,895 @@
+[gd_scene load_steps=31 format=3 uid="uid://dtcodwfj60k78"]
+
+[ext_resource type="Script" uid="uid://qpyeykycviy8" path="res://Menu/menu.gd" id="1_e56cd"]
+[ext_resource type="FontFile" uid="uid://bl4te3axdalui" path="res://FSEX302.ttf" id="1_jf1j2"]
+[ext_resource type="Texture2D" uid="uid://bllky54ki6psn" path="res://Gameplay/Player/lighta.png" id="2_m87qx"]
+[ext_resource type="AudioStream" uid="uid://dhan0qm7ltllv" path="res://Freesound/790926__kontraamusic__lullaby-hiphop-instrumental.ogg" id="3_u03px"]
+[ext_resource type="Texture2D" uid="uid://buormympehkhe" path="res://Enemys/cat/cat.png" id="4_crea4"]
+[ext_resource type="PackedScene" uid="uid://353jninm0bcd" path="res://Menu/Creditos.tscn" id="5_w32jx"]
+[ext_resource type="PackedScene" uid="uid://om3m7pq81d2l" path="res://Menu/Bestiary.tscn" id="6_0cyjp"]
+[ext_resource type="Texture2D" uid="uid://bsixywjh7pxlo" path="res://Menu/icons/Settings button.png" id="8_3c4i7"]
+[ext_resource type="PackedScene" uid="uid://copk2lpcjvpqg" path="res://Menu/Tutorial.tscn" id="9_e4kd3"]
+[ext_resource type="Texture2D" uid="uid://buqsbt41c5o71" path="res://Menu/icons/Settings button pressed.png" id="9_fipr7"]
+[ext_resource type="Script" uid="uid://diq5o7to02v35" path="res://Menu/options.gd" id="10_62dhm"]
+[ext_resource type="PackedScene" uid="uid://mwh7jno204td" path="res://ScreenPresentation/screen_presentation.tscn" id="11_8iu1u"]
+[ext_resource type="PackedScene" uid="uid://ceifhmh5106yt" path="res://Menu/Codex.tscn" id="11_xc4fn"]
+[ext_resource type="PackedScene" uid="uid://c1q76y11chq1v" path="res://Menu/Ranking.tscn" id="12_b7iep"]
+[ext_resource type="PackedScene" uid="uid://bu4argmyi8bqb" path="res://Menu/achievements.tscn" id="14_5t8sb"]
+
+[sub_resource type="Animation" id="Animation_crea4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_u03px"]
+resource_name = "button pressed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w32jx"]
+_data = {
+&"RESET": SubResource("Animation_crea4"),
+&"button pressed": SubResource("Animation_u03px")
+}
+
+[sub_resource type="Animation" id="Animation_0cyjp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-120, -103)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [30]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D3:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(267, 1468)]
+}
+
+[sub_resource type="Animation" id="Animation_w32jx"]
+resource_name = "start"
+length = 7.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.4638007, 6.004479),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-120, -103), Vector2(1029, 664), Vector2(-303, 1322), Vector2(951, -191)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 3.4638007, 6.004479),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 6.2831855, 12.566371, 18.849556]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2, 3.4638, 6.0045, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"change_expresion_cat"
+}, {
+"args": [],
+"method": &"change_expresion_cat"
+}, {
+"args": [],
+"method": &"change_expresion_cat"
+}, {
+"args": [],
+"method": &"change_expresion_cat"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 18.84955592153876]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D2:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2, 3, 3.5, 4, 5, 5.5, 6, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [30, 30, 29, 30, 30, 29, 30, 30, 29, 30, 30]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D3:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.6666667, 2.9092698, 3.1666667, 3.4333334, 3.7, 3.9666667, 4.4666667, 4.6, 4.8, 5.0666666, 5.366667, 5.666667, 5.9666667, 6.2666664, 6.5666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [2, 4, 5, 6, 7, 8, 9, 10, 26, 27, 26, 27, 28, 10, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.06666667, 1.2, 2.1, 4.5333333, 5.666667, 6.5666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(267, 1468), Vector2(267, 1262), Vector2(267, 1468), Vector2(267, 1468), Vector2(267, 1262), Vector2(267, 1468)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m87qx"]
+_data = {
+&"RESET": SubResource("Animation_0cyjp"),
+&"start": SubResource("Animation_w32jx")
+}
+
+[sub_resource type="Curve" id="Curve_p7c5i"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_v7enl"]
+offsets = PackedFloat32Array(0, 0.2, 0.7, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0.42745098, 0.7372549, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5t8sb"]
+
+[sub_resource type="DPITexture" id="DPITexture_5t8sb"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fff\" fill-opacity=\".37\"/><circle cx=\"8\" cy=\"8\" r=\"4\" fill=\"#1a1a1a\" fill-opacity=\".5\"/></svg>
+"
+
+[sub_resource type="Animation" id="Animation_e8dv2"]
+resource_name = "Loop"
+length = 1.36
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.03, 1.03)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lightDown:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.36),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("lightUp:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.36),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"change_color_lights"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_2nhjh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lightDown:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("lightUp:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bjha6"]
+_data = {
+&"Loop": SubResource("Animation_e8dv2"),
+&"RESET": SubResource("Animation_2nhjh")
+}
+
+[sub_resource type="Gradient" id="Gradient_dlksc"]
+colors = PackedColorArray(1, 1, 1, 0.3529412, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xc4fn"]
+gradient = SubResource("Gradient_dlksc")
+width = 720
+height = 90
+fill_from = Vector2(1, 1)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e56cd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4001.0
+offset_top = -531.0
+offset_right = 6094.0
+offset_bottom = 431.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Lighta" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 0, 0.18039216, 1)
+position = Vector2(367, 732)
+scale = Vector2(4, 4)
+texture = ExtResource("2_m87qx")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.098728366, 0.09872835, 0.09872835, 1)
+position = Vector2(601, 162.99997)
+scale = Vector2(8, 8)
+texture = ExtResource("4_crea4")
+offset = Vector2(0, -4)
+hframes = 6
+vframes = 6
+frame = 30
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+modulate = Color(0.098728366, 0.09872835, 0.09872835, 1)
+position = Vector2(267, 1468)
+scale = Vector2(8, 8)
+texture = ExtResource("4_crea4")
+offset = Vector2(0, -4)
+hframes = 6
+vframes = 6
+frame = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Hard" type="Button" parent="VBoxContainer"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jf1j2")
+theme_override_font_sizes/font_size = 64
+text = "Hard"
+
+[node name="--------2" type="ColorRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 82)
+layout_mode = 2
+color = Color(0.06666667, 0, 0, 1)
+
+[node name="Easy" type="Button" parent="VBoxContainer"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jf1j2")
+theme_override_font_sizes/font_size = 64
+text = "Normal"
+
+[node name="--------4" type="ColorRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 82)
+layout_mode = 2
+color = Color(0, 0.0627451, 0, 1)
+
+[node name="--------3" type="Button" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
+theme_override_fonts/font = ExtResource("1_jf1j2")
+theme_override_font_sizes/font_size = 64
+disabled = true
+text = "-"
+
+[node name="Codex" type="Button" parent="VBoxContainer"]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jf1j2")
+theme_override_font_sizes/font_size = 64
+text = "Codex"
+
+[node name="Ranking" type="Button" parent="VBoxContainer"]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jf1j2")
+theme_override_font_sizes/font_size = 64
+text = "Ranking"
+
+[node name="---------" type="Button" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
+theme_override_fonts/font = ExtResource("1_jf1j2")
+theme_override_font_sizes/font_size = 64
+disabled = true
+text = "-"
+
+[node name="---------2" type="Button" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
+theme_override_fonts/font = ExtResource("1_jf1j2")
+theme_override_font_sizes/font_size = 64
+disabled = true
+text = "-"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_jf1j2")
+theme_override_font_sizes/font_size = 64
+text = "Quit"
+
+[node name="Puntuations" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="hard puntuation" type="Label" parent="Puntuations"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 438.0
+offset_right = 250.0
+offset_bottom = 520.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_jf1j2")
+theme_override_font_sizes/font_size = 32
+text = "Max puntuation:"
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="Puntuations/hard puntuation"]
+layout_mode = 0
+offset_left = 240.0
+offset_right = 713.0
+offset_bottom = 82.0
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[wave][rainbow]0"
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="normal puntuation" type="Label" parent="Puntuations"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 600.0
+offset_right = 250.0
+offset_bottom = 681.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("1_jf1j2")
+theme_override_font_sizes/font_size = 32
+text = "Max puntuation:"
+vertical_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="Puntuations/normal puntuation"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 240.0
+offset_right = 713.0
+offset_bottom = 82.0
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[wave]0"
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_u03px")
+autoplay = true
+parameters/looping = true
+
+[node name="Button pressed" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_w32jx")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m87qx")
+}
+autoplay = "start"
+speed_scale = 0.8
+
+[node name="Credits" type="Button" parent="."]
+modulate = Color(1, 0, 1, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -232.0
+offset_top = -26.0
+offset_right = 35.0
+offset_bottom = 124.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_jf1j2")
+theme_override_font_sizes/font_size = 64
+text = "->   <- 
+Credits
+"
+alignment = 0
+
+[node name="Sprite2D5" type="Sprite2D" parent="Credits"]
+modulate = Color(1.4067125, 0, 1.4067125, 1)
+position = Vector2(119, 41)
+scale = Vector2(4, 4)
+texture = ExtResource("4_crea4")
+hframes = 6
+vframes = 6
+frame = 30
+
+[node name="options button" type="TextureButton" parent="."]
+modulate = Color(0, 0, 0.33158895, 1)
+layout_mode = 0
+offset_right = 111.0
+offset_bottom = 116.0
+texture_normal = ExtResource("8_3c4i7")
+texture_pressed = ExtResource("9_fipr7")
+stretch_mode = 5
+
+[node name="Creditos" parent="." instance=ExtResource("5_w32jx")]
+visible = false
+
+[node name="Tutorial" parent="." instance=ExtResource("9_e4kd3")]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-120, -103)
+scale = Vector2(8, 8)
+texture = ExtResource("4_crea4")
+hframes = 6
+vframes = 6
+frame = 30
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+modulate = Color(0.098728366, 0.09872835, 0.09872835, 1)
+z_index = 1
+position = Vector2(4816.0005, 1171)
+rotation = -0.6632251
+scale = Vector2(8, 8)
+texture = ExtResource("4_crea4")
+offset = Vector2(0, -4)
+hframes = 6
+vframes = 6
+frame = 30
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.78431374)
+position = Vector2(361, 750)
+amount = 20
+lifetime = 4.0
+emission_shape = 3
+emission_rect_extents = Vector2(360, 750)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 14.0
+initial_velocity_max = 28.0
+scale_amount_min = 18.0
+scale_amount_max = 18.0
+scale_amount_curve = SubResource("Curve_p7c5i")
+color_ramp = SubResource("Gradient_v7enl")
+metadata/_edit_lock_ = true
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.78431374)
+position = Vector2(-1800, 750)
+amount = 20
+lifetime = 4.0
+emission_shape = 3
+emission_rect_extents = Vector2(360, 750)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 14.0
+initial_velocity_max = 28.0
+scale_amount_min = 18.0
+scale_amount_max = 18.0
+scale_amount_curve = SubResource("Curve_p7c5i")
+color_ramp = SubResource("Gradient_v7enl")
+metadata/_edit_lock_ = true
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.78431374)
+position = Vector2(2880, 750)
+amount = 20
+lifetime = 4.0
+emission_shape = 3
+emission_rect_extents = Vector2(360, 750)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 14.0
+initial_velocity_max = 28.0
+scale_amount_min = 18.0
+scale_amount_max = 18.0
+scale_amount_curve = SubResource("Curve_p7c5i")
+color_ramp = SubResource("Gradient_v7enl")
+metadata/_edit_lock_ = true
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.78431374)
+z_index = 1
+position = Vector2(4680, 750)
+amount = 20
+lifetime = 4.0
+emission_shape = 3
+emission_rect_extents = Vector2(360, 750)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 14.0
+initial_velocity_max = 28.0
+scale_amount_min = 18.0
+scale_amount_max = 18.0
+scale_amount_curve = SubResource("Curve_p7c5i")
+color_ramp = SubResource("Gradient_v7enl")
+metadata/_edit_lock_ = true
+
+[node name="CPUParticles2D5" type="CPUParticles2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.78431374)
+z_index = 1
+position = Vector2(6120, 750)
+amount = 20
+lifetime = 4.0
+emission_shape = 3
+emission_rect_extents = Vector2(360, 750)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 14.0
+initial_velocity_max = 28.0
+scale_amount_min = 18.0
+scale_amount_max = 18.0
+scale_amount_curve = SubResource("Curve_p7c5i")
+color_ramp = SubResource("Gradient_v7enl")
+metadata/_edit_lock_ = true
+
+[node name="Bestiary" parent="." instance=ExtResource("6_0cyjp")]
+layout_mode = 1
+offset_left = 4320.0
+offset_right = 4320.0
+
+[node name="cat" parent="Bestiary/BoxContainer" index="11"]
+z_index = 1
+
+[node name="Options" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -3600.0
+offset_right = -2880.0
+offset_bottom = 1500.0
+script = ExtResource("10_62dhm")
+
+[node name="Delete save" type="Button" parent="Options"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_top = 940.0
+offset_right = 720.0
+offset_bottom = 1012.0
+theme_override_fonts/font = ExtResource("1_jf1j2")
+theme_override_font_sizes/font_size = 64
+text = "Delete save"
+
+[node name="Watch tutorial" type="Button" parent="Options"]
+modulate = Color(0, 0, 0.8862745, 1)
+layout_mode = 0
+offset_top = 480.0
+offset_right = 720.0
+offset_bottom = 600.0
+theme_override_fonts/font = ExtResource("1_jf1j2")
+theme_override_font_sizes/font_size = 64
+text = "Watch tutorial"
+
+[node name="go to menu" type="Button" parent="Options"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 133.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_jf1j2")
+theme_override_font_sizes/font_size = 64
+text = "Go to menu"
+
+[node name="Popup" type="Popup" parent="Options"]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(720, 400)
+
+[node name="ColorRect" type="ColorRect" parent="Options/Popup"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Yes" type="Button" parent="Options/Popup"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -187.0
+offset_right = 303.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 128
+text = "Yes"
+
+[node name="No" type="Button" parent="Options/Popup"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -303.0
+offset_top = -187.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 128
+text = "NO"
+
+[node name="Label" type="Label" parent="Options/Popup"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 181.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "Are you sure?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="Options"]
+layout_mode = 1
+offset_left = 90.0
+offset_top = 270.0
+offset_right = 226.75
+offset_bottom = 310.0
+scale = Vector2(4, 4)
+theme_override_colors/font_color = Color(0, 0, 0.8745098, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0.9490196, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0.9490196, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5t8sb")
+theme_override_colors/checkbox_checked_color = Color(0, 0, 1, 1)
+theme_override_colors/checkbox_unchecked_color = Color(0, 0, 1, 1)
+theme_override_icons/unchecked = SubResource("DPITexture_5t8sb")
+action_mode = 0
+text = "player size increment"
+alignment = 1
+autowrap_mode = 2
+
+[node name="Codex" parent="." instance=ExtResource("11_xc4fn")]
+layout_mode = 1
+offset_left = 2520.0
+offset_right = 2520.0
+
+[node name="Ranking" parent="." instance=ExtResource("12_b7iep")]
+layout_mode = 1
+offset_left = -2160.0
+offset_right = -2160.0
+
+[node name="achievements" parent="." instance=ExtResource("14_5t8sb")]
+layout_mode = 1
+offset_left = 5760.0
+offset_right = 5760.0
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(360, 750)
+ignore_rotation = false
+
+[node name="AnimCameraRithm" type="AnimationPlayer" parent="Camera2D2"]
+libraries = {
+&"": SubResource("AnimationLibrary_bjha6")
+}
+autoplay = "Loop"
+
+[node name="lightDown" type="Sprite2D" parent="Camera2D2"]
+position = Vector2(-7.1525574e-07, 705)
+texture = SubResource("GradientTexture2D_xc4fn")
+metadata/_edit_lock_ = true
+
+[node name="lightUp" type="Sprite2D" parent="Camera2D2"]
+position = Vector2(0, -705)
+texture = SubResource("GradientTexture2D_xc4fn")
+flip_v = true
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScreenPresentation" parent="CanvasLayer" instance=ExtResource("11_8iu1u")]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="VBoxContainer/Hard" to="." method="_on_hard_pressed"]
+[connection signal="pressed" from="VBoxContainer/Easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="VBoxContainer/Codex" to="." method="_on_codex_pressed"]
+[connection signal="pressed" from="VBoxContainer/Ranking" to="." method="_on_ranking_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="options button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Bestiary/go to menu" to="." method="_on_bestiary_pressed"]
+[connection signal="pressed" from="Options/Delete save" to="Options" method="_on_delete_save_pressed"]
+[connection signal="pressed" from="Options/Watch tutorial" to="Options" method="_on_watch_tutorial_pressed"]
+[connection signal="pressed" from="Options/go to menu" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Options/Popup/Yes" to="Options" method="_on_yes_pressed"]
+[connection signal="pressed" from="Options/Popup/No" to="Options" method="_on_no_pressed"]
+[connection signal="toggled" from="Options/CheckBox" to="Options" method="_on_check_box_toggled"]
+[connection signal="pressed" from="Codex/go to menu" to="." method="_on_codex_pressed"]
+[connection signal="pressed" from="Codex/Bestiary" to="." method="_on_bestiary_pressed"]
+[connection signal="pressed" from="Codex/Achievements" to="." method="_on_achievements_pressed"]
+[connection signal="pressed" from="Ranking/go to menu" to="." method="_on_ranking_button_pressed"]
+[connection signal="pressed" from="achievements/go to menu" to="." method="_on_achievements_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/ScreenPresentation" method="_on_button_pressed"]
+
+[editable path="Bestiary"]
+[editable path="Codex"]
+[editable path="Ranking"]
+[editable path="achievements"]

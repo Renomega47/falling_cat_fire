@@ -1,0 +1,346 @@
+[gd_scene load_steps=13 format=3 uid="uid://ceifhmh5106yt"]
+
+[ext_resource type="Script" uid="uid://cg1msjckxaqdi" path="res://Menu/bestiary.gd" id="1_nhd6m"]
+[ext_resource type="Texture2D" uid="uid://d2tvlmwthi2px" path="res://Menu/Frame.png" id="2_yqwd4"]
+[ext_resource type="Texture2D" uid="uid://fgol05f6kf88" path="res://Power-ups/right/right.png" id="3_tj5bn"]
+[ext_resource type="Texture2D" uid="uid://boi3r0b0xvvyl" path="res://Power-ups/left/left.png" id="4_od10n"]
+[ext_resource type="Texture2D" uid="uid://byu6tqwoeibwo" path="res://Power-ups/heart/itsamymario.png" id="5_moo3v"]
+[ext_resource type="FontFile" uid="uid://bl4te3axdalui" path="res://FSEX302.ttf" id="6_tllkt"]
+
+[sub_resource type="Animation" id="Animation_dwaef"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+
+[sub_resource type="Animation" id="Animation_0i3lm"]
+resource_name = "new_animation"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m11qq"]
+_data = {
+&"RESET": SubResource("Animation_dwaef"),
+&"new_animation": SubResource("Animation_0i3lm")
+}
+
+[sub_resource type="Animation" id="Animation_esfda"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+
+[sub_resource type="Animation" id="Animation_afnne"]
+resource_name = "new_animation"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o1jwh"]
+_data = {
+&"RESET": SubResource("Animation_esfda"),
+&"new_animation": SubResource("Animation_afnne")
+}
+
+[node name="Codex" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nhd6m")
+
+[node name="BoxContainer" type="GridContainer" parent="."]
+layout_mode = 1
+offset_left = 27.5
+offset_top = 158.0
+offset_right = 110.5
+offset_bottom = 334.0
+scale = Vector2(8, 8)
+theme_override_constants/h_separation = 4
+columns = 3
+
+[node name="right arrow" type="TextureRect" parent="BoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_yqwd4")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="BoxContainer/right arrow"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="BoxContainer/right arrow/texture modulate"]
+position = Vector2(12.375, 13)
+texture = ExtResource("3_tj5bn")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/right arrow/texture modulate"]
+libraries = {
+&"": SubResource("AnimationLibrary_m11qq")
+}
+autoplay = "new_animation"
+
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/right arrow"]
+modulate = Color(1, 1, 1, 0.84313726)
+layout_mode = 0
+offset_left = -36.012497
+offset_top = 3.600008
+offset_right = 26.4875
+offset_bottom = 33.600006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_constants/paragraph_separation = -3
+bbcode_enabled = true
+text = "[color=orange]RIGHT
+ARROW"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="BoxContainer/right arrow"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 22.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="BoxContainer/right arrow/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_right = 44.395836
+offset_bottom = 21.000002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="left arrow" type="TextureRect" parent="BoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_yqwd4")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="BoxContainer/left arrow"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="BoxContainer/left arrow/texture modulate"]
+position = Vector2(12.375, 13)
+scale = Vector2(-1, 1)
+texture = ExtResource("4_od10n")
+hframes = 2
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/left arrow/texture modulate"]
+libraries = {
+&"": SubResource("AnimationLibrary_m11qq")
+}
+autoplay = "new_animation"
+
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/left arrow"]
+modulate = Color(1, 1, 1, 0.84313726)
+layout_mode = 0
+offset_left = -36.012497
+offset_top = 3.600006
+offset_right = 26.4875
+offset_bottom = 33.600006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_constants/paragraph_separation = -3
+bbcode_enabled = true
+text = "[color=green]LEFT
+ARROW"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="BoxContainer/left arrow"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 22.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="BoxContainer/left arrow/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_right = 44.395836
+offset_bottom = 21.000002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="heart" type="TextureRect" parent="BoxContainer"]
+self_modulate = Color(1, 1, 0, 1)
+layout_mode = 2
+texture = ExtResource("2_yqwd4")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="BoxContainer/heart"]
+modulate = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="BoxContainer/heart/texture modulate"]
+position = Vector2(12.5, 13.5)
+texture = ExtResource("5_moo3v")
+hframes = 2
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/heart/texture modulate"]
+libraries = {
+&"": SubResource("AnimationLibrary_o1jwh")
+}
+autoplay = "new_animation"
+
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/heart"]
+modulate = Color(1, 1, 1, 0.84313726)
+layout_mode = 0
+offset_left = -36.012497
+offset_top = 3.600006
+offset_right = 26.4875
+offset_bottom = 33.600006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_constants/paragraph_separation = -3
+bbcode_enabled = true
+text = "[rainbow]HEART"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="BoxContainer/heart"]
+self_modulate = Color(1, 1, 0, 1)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 22.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/heart/incognito"]
+modulate = Color(1, 1, 1, 0.84313726)
+layout_mode = 0
+offset_left = -39.137497
+offset_top = -22.275002
+offset_right = 24.195831
+offset_bottom = 7.308342
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_constants/paragraph_separation = -3
+bbcode_enabled = true
+text = "[rainbow]???"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextPerfect2" type="RichTextLabel" parent="BoxContainer/heart"]
+modulate = Color(1, 1, 1, 0.84313726)
+layout_mode = 0
+offset_left = -32.8125
+offset_top = -19.374998
+offset_right = 29.6875
+offset_bottom = 10.625002
+rotation = 0.7853982
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_constants/paragraph_separation = -3
+bbcode_enabled = true
+text = "[rainbow]it's my"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="go to menu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 133.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_tllkt")
+theme_override_font_sizes/font_size = 64
+text = "Go to menu"
+
+[node name="Bestiary" type="Button" parent="."]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 754.0
+offset_right = 717.0
+offset_bottom = 937.0
+theme_override_fonts/font = ExtResource("6_tllkt")
+theme_override_font_sizes/font_size = 128
+text = "Bestiary"
+
+[node name="Achievements" type="Button" parent="."]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1113.0
+offset_right = 717.0
+offset_bottom = 1296.0
+theme_override_fonts/font = ExtResource("6_tllkt")
+theme_override_font_sizes/font_size = 112
+text = "Achievements"

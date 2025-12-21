@@ -1,0 +1,150 @@
+[gd_scene load_steps=2 format=3 uid="uid://353jninm0bcd"]
+
+[ext_resource type="Texture2D" uid="uid://buormympehkhe" path="res://Enemys/cat/cat.png" id="1_lqf88"]
+
+[node name="Creditos" type="Popup"]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(725, 1140)
+visible = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LinkButton2" type="LinkButton" parent="."]
+offset_left = 360.0
+offset_top = 24.0
+offset_right = 584.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0, 0.8745098, 0.8745098, 1)
+theme_override_font_sizes/font_size = 48
+text = "Github profile"
+uri = "https://github.com/renomega47"
+
+[node name="LinkButton3" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 25.0
+offset_right = 340.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0, 0.8745098, 0.8745098, 1)
+theme_override_font_sizes/font_size = 32
+text = "Contact me:
+renomega47@gmail.com
+"
+
+[node name="Label" type="RichTextLabel" parent="."]
+offset_left = 44.0
+offset_top = 105.0
+offset_right = 316.0
+offset_bottom = 169.0
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[color=Purple]Programming: [/color]
+       Renomega47"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Label4" type="RichTextLabel" parent="."]
+offset_left = 37.0
+offset_top = 150.0
+offset_right = 373.0
+offset_bottom = 214.0
+theme_override_colors/default_color = Color(0.36408392, 0.36408395, 0.36408392, 0.41960785)
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "Darien:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Label5" type="RichTextLabel" parent="."]
+offset_left = 37.0
+offset_top = 293.0
+offset_right = 373.0
+offset_bottom = 357.0
+theme_override_colors/default_color = Color(0.36408392, 0.36408395, 0.36408392, 0.41960785)
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "Cesar:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Label6" type="RichTextLabel" parent="."]
+offset_left = 485.0
+offset_top = 179.0
+offset_right = 821.0
+offset_bottom = 243.0
+rotation = 0.40142572
+theme_override_colors/default_color = Color(0.36408392, 0.36408395, 0.36408392, 0.41960785)
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "Cris 10:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Label2" type="RichTextLabel" parent="."]
+offset_left = 5.0
+offset_top = 468.0
+offset_right = 725.0
+offset_bottom = 1092.0
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[color=Purple]  Sound efects: [/color]
+        Renomega47
+        Zetar
+
+[color=orange]Freesound artists[/color]
+kontraamusic:
+
+-> Lullaby|Hiphop Instrumental
+
+-> Punk|Hyperpop Music
+
+
+
+       "
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Label3" type="RichTextLabel" parent="."]
+offset_left = 44.0
+offset_top = 248.0
+offset_right = 428.0
+offset_bottom = 344.0
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[color= Blue]Graphic design: [/color]
+       Zetar"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.098728366, 0.09872835, 0.09872835, 1)
+position = Vector2(716, 301)
+rotation = -1.0821041
+scale = Vector2(8, 8)
+texture = ExtResource("1_lqf88")
+offset = Vector2(0, -4)
+hframes = 6
+vframes = 6
+frame = 30
+
+[node name="LinkButton4" type="LinkButton" parent="."]
+offset_left = 82.0
+offset_top = 933.0
+offset_right = 701.0
+offset_bottom = 1013.0
+theme_override_colors/font_color = Color(0, 0.8745098, 0.8745098, 1)
+theme_override_font_sizes/font_size = 48
+text = "Kontraamusic profile"
+uri = "https://freesound.org/people/kontraamusic/"

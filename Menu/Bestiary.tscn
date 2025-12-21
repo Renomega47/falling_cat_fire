@@ -1,0 +1,931 @@
+[gd_scene load_steps=23 format=3 uid="uid://om3m7pq81d2l"]
+
+[ext_resource type="Script" uid="uid://cg1msjckxaqdi" path="res://Menu/bestiary.gd" id="1_esfda"]
+[ext_resource type="Texture2D" uid="uid://d2tvlmwthi2px" path="res://Menu/Frame.png" id="1_l0f7w"]
+[ext_resource type="Texture2D" uid="uid://bcl28sj3iqxq3" path="res://Enemys/fire variant/fire variant.png" id="2_yxrnu"]
+[ext_resource type="Texture2D" uid="uid://ftiv5806kfnx" path="res://Enemys/fire/fire.png" id="3_vyomt"]
+[ext_resource type="Texture2D" uid="uid://buormympehkhe" path="res://Enemys/cat/cat.png" id="3_yxrnu"]
+[ext_resource type="Texture2D" uid="uid://cwcxjyshia7ms" path="res://Enemys/ghost fire/purple(invisible).png" id="4_o1jwh"]
+[ext_resource type="Texture2D" uid="uid://c57i6ue0wwfm8" path="res://Enemys/pink fire/pink(right).png" id="4_rgukp"]
+[ext_resource type="Texture2D" uid="uid://c53f6e6ys5kit" path="res://Enemys/green fire/green(left).png" id="4_xtk70"]
+[ext_resource type="FontFile" uid="uid://bl4te3axdalui" path="res://FSEX302.ttf" id="5_afnne"]
+[ext_resource type="Texture2D" uid="uid://ck0iijkyt6my2" path="res://Enemys/speed fire/blue(fast).png" id="5_xtk70"]
+[ext_resource type="Texture2D" uid="uid://d4ixshv3jn2i3" path="res://Enemys/explosive fire/orange(esplosive) XD referencia .png" id="9_g0lsb"]
+[ext_resource type="Texture2D" uid="uid://kbx8nriclra0" path="res://Enemys/slow fire/blue(slow).png" id="10_7e5r2"]
+[ext_resource type="Texture2D" uid="uid://di2nul6amxy4k" path="res://Enemys/doppelcat/doppelcat.png" id="11_mqnox"]
+
+[sub_resource type="Animation" id="Animation_dwaef"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_0i3lm"]
+resource_name = "new_animation"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m11qq"]
+_data = {
+&"RESET": SubResource("Animation_dwaef"),
+&"new_animation": SubResource("Animation_0i3lm")
+}
+
+[sub_resource type="Animation" id="Animation_esfda"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+
+[sub_resource type="Animation" id="Animation_afnne"]
+resource_name = "new_animation"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [13, 14]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o1jwh"]
+_data = {
+&"RESET": SubResource("Animation_esfda"),
+&"new_animation": SubResource("Animation_afnne")
+}
+
+[sub_resource type="Animation" id="Animation_mqnox"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+
+[sub_resource type="Animation" id="Animation_naqav"]
+resource_name = "new_animation"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [13, 14]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a1k5k"]
+_data = {
+&"RESET": SubResource("Animation_mqnox"),
+&"new_animation": SubResource("Animation_naqav")
+}
+
+[node name="Bestiary" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_esfda")
+
+[node name="BoxContainer" type="GridContainer" parent="."]
+layout_mode = 1
+offset_left = 27.5
+offset_top = 158.0
+offset_right = 110.5
+offset_bottom = 334.0
+scale = Vector2(8, 8)
+theme_override_constants/h_separation = 4
+columns = 3
+
+[node name="fire" type="TextureRect" parent="BoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_l0f7w")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="BoxContainer/fire"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/fire/texture modulate"]
+libraries = {
+&"": SubResource("AnimationLibrary_m11qq")
+}
+autoplay = "new_animation"
+speed_scale = 0.5
+
+[node name="Texture" type="Sprite2D" parent="BoxContainer/fire/texture modulate"]
+position = Vector2(12, 13)
+texture = ExtResource("3_vyomt")
+hframes = 4
+vframes = 2
+
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/fire"]
+layout_mode = 0
+offset_left = -36.012497
+offset_top = 3.5999985
+offset_right = 26.4875
+offset_bottom = 33.6
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+bbcode_enabled = true
+text = "[color=orange]FIRE"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="BoxContainer/fire"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 22.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="BoxContainer/fire/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_right = 44.395836
+offset_bottom = 21.000002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pink fire" type="TextureRect" parent="BoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_l0f7w")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="BoxContainer/pink fire"]
+modulate = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/pink fire/texture modulate"]
+libraries = {
+&"": SubResource("AnimationLibrary_m11qq")
+}
+autoplay = "new_animation"
+speed_scale = 0.5
+
+[node name="Texture" type="Sprite2D" parent="BoxContainer/pink fire/texture modulate"]
+position = Vector2(12, 13)
+texture = ExtResource("4_rgukp")
+hframes = 4
+vframes = 2
+
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/pink fire"]
+modulate = Color(1, 1, 1, 0.84313726)
+layout_mode = 0
+offset_left = -36.012497
+offset_top = 3.600006
+offset_right = 26.4875
+offset_bottom = 33.600006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_constants/paragraph_separation = -3
+bbcode_enabled = true
+text = "[color=hotpink]PINK
+FIRE"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="BoxContainer/pink fire"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 22.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="BoxContainer/pink fire/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_right = 44.395836
+offset_bottom = 21.000002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="green fire" type="TextureRect" parent="BoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_l0f7w")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="BoxContainer/green fire"]
+modulate = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/green fire/texture modulate"]
+libraries = {
+&"": SubResource("AnimationLibrary_m11qq")
+}
+autoplay = "new_animation"
+speed_scale = 0.5
+
+[node name="Texture" type="Sprite2D" parent="BoxContainer/green fire/texture modulate"]
+position = Vector2(12, 13)
+texture = ExtResource("4_xtk70")
+hframes = 4
+vframes = 2
+
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/green fire"]
+modulate = Color(1, 1, 1, 0.84313726)
+layout_mode = 0
+offset_left = -36.012497
+offset_top = 3.600006
+offset_right = 26.4875
+offset_bottom = 33.600006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_constants/paragraph_separation = -3
+bbcode_enabled = true
+text = "[color=green]GREEN
+FIRE"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="BoxContainer/green fire"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 22.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="BoxContainer/green fire/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_right = 44.395836
+offset_bottom = 21.000002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ghost fire" type="TextureRect" parent="BoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_l0f7w")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="BoxContainer/ghost fire"]
+modulate = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/ghost fire/texture modulate"]
+libraries = {
+&"": SubResource("AnimationLibrary_m11qq")
+}
+autoplay = "new_animation"
+speed_scale = 0.5
+
+[node name="Texture" type="Sprite2D" parent="BoxContainer/ghost fire/texture modulate"]
+position = Vector2(12, 13)
+texture = ExtResource("4_o1jwh")
+hframes = 4
+vframes = 2
+
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/ghost fire"]
+modulate = Color(1, 1, 1, 0.84313726)
+layout_mode = 0
+offset_left = -36.012497
+offset_top = 3.600006
+offset_right = 26.4875
+offset_bottom = 33.600006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_constants/paragraph_separation = -3
+bbcode_enabled = true
+text = "[pulse][wave][color=purple]GHOST
+FIRE"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="BoxContainer/ghost fire"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 22.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="BoxContainer/ghost fire/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_right = 44.395836
+offset_bottom = 21.000002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="speed fire" type="TextureRect" parent="BoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_l0f7w")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="BoxContainer/speed fire"]
+modulate = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/speed fire/texture modulate"]
+libraries = {
+&"": SubResource("AnimationLibrary_m11qq")
+}
+autoplay = "new_animation"
+speed_scale = 0.5
+
+[node name="Texture" type="Sprite2D" parent="BoxContainer/speed fire/texture modulate"]
+position = Vector2(12, 13)
+texture = ExtResource("5_xtk70")
+hframes = 4
+vframes = 2
+
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/speed fire"]
+modulate = Color(1, 1, 1, 0.84313726)
+layout_mode = 0
+offset_left = -36.012497
+offset_top = 3.600006
+offset_right = 26.4875
+offset_bottom = 33.600006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_constants/paragraph_separation = -3
+bbcode_enabled = true
+text = "[shake][color=cyan]SPEED
+FIRE"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="BoxContainer/speed fire"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 22.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="BoxContainer/speed fire/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_right = 44.395836
+offset_bottom = 21.000002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="fire variant" type="TextureRect" parent="BoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_l0f7w")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="BoxContainer/fire variant"]
+modulate = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/fire variant/texture modulate"]
+libraries = {
+&"": SubResource("AnimationLibrary_m11qq")
+}
+autoplay = "new_animation"
+speed_scale = 0.5
+
+[node name="Texture" type="Sprite2D" parent="BoxContainer/fire variant/texture modulate"]
+position = Vector2(12, 13)
+texture = ExtResource("2_yxrnu")
+hframes = 4
+vframes = 2
+
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/fire variant"]
+modulate = Color(1, 1, 1, 0.84313726)
+layout_mode = 0
+offset_left = -36.012497
+offset_top = 3.600006
+offset_right = 26.4875
+offset_bottom = 33.600006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_constants/paragraph_separation = -3
+bbcode_enabled = true
+text = "[color=orange]FIRE
+VARIANT"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="BoxContainer/fire variant"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 22.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="BoxContainer/fire variant/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_right = 44.395836
+offset_bottom = 21.000002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="explosive fire" type="TextureRect" parent="BoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_l0f7w")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="BoxContainer/explosive fire"]
+modulate = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/explosive fire/texture modulate"]
+libraries = {
+&"": SubResource("AnimationLibrary_m11qq")
+}
+autoplay = "new_animation"
+speed_scale = 0.5
+
+[node name="Texture" type="Sprite2D" parent="BoxContainer/explosive fire/texture modulate"]
+position = Vector2(12, 13)
+texture = ExtResource("9_g0lsb")
+hframes = 4
+vframes = 2
+
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/explosive fire"]
+modulate = Color(1, 1, 1, 0.84313726)
+layout_mode = 0
+offset_left = -36.012497
+offset_top = 3.600006
+offset_right = 26.4875
+offset_bottom = 33.600006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_constants/paragraph_separation = -3
+bbcode_enabled = true
+text = "[wave][color=RED]TNT[/color][/wave]
+[color=orange]FIRE"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="BoxContainer/explosive fire"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 22.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="BoxContainer/explosive fire/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_right = 44.395836
+offset_bottom = 21.000002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="slow fire" type="TextureRect" parent="BoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_l0f7w")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="BoxContainer/slow fire"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/slow fire/texture modulate"]
+libraries = {
+&"": SubResource("AnimationLibrary_m11qq")
+}
+autoplay = "new_animation"
+speed_scale = 0.5
+
+[node name="Texture" type="Sprite2D" parent="BoxContainer/slow fire/texture modulate"]
+position = Vector2(12, 13)
+texture = ExtResource("10_7e5r2")
+hframes = 4
+vframes = 2
+
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/slow fire"]
+modulate = Color(1, 1, 1, 0.84313726)
+layout_mode = 0
+offset_left = -36.012497
+offset_top = 3.600006
+offset_right = 26.4875
+offset_bottom = 33.600006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_constants/paragraph_separation = -3
+bbcode_enabled = true
+text = "[shake][color=skyblue]SLOW
+FIRE"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="BoxContainer/slow fire"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 22.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="BoxContainer/slow fire/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_right = 44.395836
+offset_bottom = 21.000002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="doppelcat" type="TextureRect" parent="BoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_l0f7w")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="BoxContainer/doppelcat"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/doppelcat/texture modulate"]
+libraries = {
+&"": SubResource("AnimationLibrary_m11qq")
+}
+autoplay = "new_animation"
+speed_scale = 0.5
+
+[node name="Texture" type="Sprite2D" parent="BoxContainer/doppelcat/texture modulate"]
+position = Vector2(12, 13)
+texture = ExtResource("11_mqnox")
+hframes = 4
+vframes = 2
+
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/doppelcat"]
+modulate = Color(1, 1, 1, 0.84313726)
+layout_mode = 0
+offset_left = -36.012497
+offset_top = 3.600006
+offset_right = 26.4875
+offset_bottom = 33.600006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_constants/paragraph_separation = -3
+bbcode_enabled = true
+text = "[wave][shake][pulse][color=purple]DOPPEL
+CAT"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="BoxContainer/doppelcat"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 22.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="BoxContainer/doppelcat/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_right = 44.395836
+offset_bottom = 21.000002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="orange cat" type="TextureRect" parent="BoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_l0f7w")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="BoxContainer/orange cat"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="Texture" type="Sprite2D" parent="BoxContainer/orange cat/texture modulate"]
+modulate = Color(1, 0.4117647, 0.7058824, 1)
+position = Vector2(12.5, 13.5)
+rotation = -1.5707964
+texture = ExtResource("3_yxrnu")
+hframes = 6
+vframes = 6
+frame = 13
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/orange cat/texture modulate"]
+libraries = {
+&"": SubResource("AnimationLibrary_o1jwh")
+}
+autoplay = "new_animation"
+
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/orange cat"]
+layout_mode = 0
+offset_left = -36.012497
+offset_top = 3.600006
+offset_right = 26.4875
+offset_bottom = 33.600006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_constants/paragraph_separation = -3
+bbcode_enabled = true
+text = "[color=hotpink]THE PINK
+PANTHER"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="BoxContainer/orange cat"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 22.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="BoxContainer/orange cat/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_right = 44.395836
+offset_bottom = 21.000002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="green cat" type="TextureRect" parent="BoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_l0f7w")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="BoxContainer/green cat"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="Texture" type="Sprite2D" parent="BoxContainer/green cat/texture modulate"]
+modulate = Color(0, 0.63529414, 0, 1)
+position = Vector2(12.5, 13.5)
+rotation = -1.5707964
+texture = ExtResource("3_yxrnu")
+hframes = 6
+vframes = 6
+frame = 13
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/green cat/texture modulate"]
+libraries = {
+&"": SubResource("AnimationLibrary_o1jwh")
+}
+autoplay = "new_animation"
+
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/green cat"]
+modulate = Color(1, 1, 1, 0.84313726)
+layout_mode = 0
+offset_left = -36.76248
+offset_top = 3.600006
+offset_right = 25.737514
+offset_bottom = 33.600006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_constants/paragraph_separation = -3
+bbcode_enabled = true
+text = "[color=green] LUIMEAW"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="BoxContainer/green cat"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 22.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="BoxContainer/green cat/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_right = 44.395836
+offset_bottom = 21.000002
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cat" type="TextureRect" parent="BoxContainer"]
+self_modulate = Color(1, 1, 0, 1)
+layout_mode = 2
+texture = ExtResource("1_l0f7w")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="BoxContainer/cat"]
+modulate = Color(0, 0, 0, 1)
+
+[node name="Texture" type="Sprite2D" parent="BoxContainer/cat/texture modulate"]
+position = Vector2(12.5, 13.5)
+rotation = -1.5707964
+texture = ExtResource("3_yxrnu")
+hframes = 6
+vframes = 6
+frame = 13
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/cat/texture modulate"]
+libraries = {
+&"": SubResource("AnimationLibrary_a1k5k")
+}
+autoplay = "new_animation"
+
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/cat"]
+modulate = Color(1, 1, 1, 0.84313726)
+layout_mode = 0
+offset_left = -36.012497
+offset_top = 3.600006
+offset_right = 26.4875
+offset_bottom = 33.600006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_constants/paragraph_separation = -3
+bbcode_enabled = true
+text = "[rainbow]CAT"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="RichTextLabel" parent="BoxContainer/cat/TextPerfect"]
+layout_mode = 0
+offset_left = 44.083252
+offset_top = 11.0
+offset_right = 147.08325
+offset_bottom = 127.0
+scale = Vector2(0.1, 0.1)
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[rainbow]🙀"
+fit_content = true
+scroll_active = false
+
+[node name="incognito" type="ColorRect" parent="BoxContainer/cat"]
+self_modulate = Color(1, 1, 0, 1)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 22.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/cat/incognito"]
+modulate = Color(1, 1, 1, 0.84313726)
+layout_mode = 0
+offset_left = -39.137497
+offset_top = -22.275002
+offset_right = 24.195831
+offset_bottom = 7.308342
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_constants/paragraph_separation = -3
+bbcode_enabled = true
+text = "[rainbow]???"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="go to menu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 133.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_afnne")
+theme_override_font_sizes/font_size = 64
+text = "Go to Codex"

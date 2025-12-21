@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://cin45vo1fyg0r"]
+
+[ext_resource type="Script" uid="uid://c013wkave6x51" path="res://Power-ups/right/right.gd" id="1_84v0w"]
+[ext_resource type="Texture2D" uid="uid://fgol05f6kf88" path="res://Power-ups/right/right.png" id="2_pdpm1"]
+
+[sub_resource type="Animation" id="Animation_dwaef"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+
+[sub_resource type="Animation" id="Animation_0i3lm"]
+resource_name = "new_animation"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m11qq"]
+_data = {
+&"RESET": SubResource("Animation_dwaef"),
+&"new_animation": SubResource("Animation_0i3lm")
+}
+
+[node name="Object" type="Node2D"]
+script = ExtResource("1_84v0w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-12.000003, -1.1920929e-06)
+scale = Vector2(8, 8)
+texture = ExtResource("2_pdpm1")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m11qq")
+}
+autoplay = "new_animation"

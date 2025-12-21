@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://bglylbx0w7op1"]
+
+[ext_resource type="Script" uid="uid://gf5abetf38f0" path="res://Enemys/cat/green cat.gd" id="1_0x4ab"]
+[ext_resource type="Texture2D" uid="uid://buormympehkhe" path="res://Enemys/cat/cat.png" id="2_qntxh"]
+[ext_resource type="PackedScene" uid="uid://bhxrw0sfk8ehy" path="res://Enemys/Commons utilitys/Dead.tscn" id="3_5w8sw"]
+
+[sub_resource type="Animation" id="Animation_dwaef"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+
+[sub_resource type="Animation" id="Animation_0i3lm"]
+resource_name = "new_animation"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [13, 14]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m11qq"]
+_data = {
+&"RESET": SubResource("Animation_dwaef"),
+&"new_animation": SubResource("Animation_0i3lm")
+}
+
+[node name="Object" type="Node2D" node_paths=PackedStringArray("texture", "dead_node")]
+script = ExtResource("1_0x4ab")
+texture = NodePath("Sprite2D")
+dead_node = NodePath("Dead")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.63529414, 0, 1)
+position = Vector2(-12.000003, -1.1920929e-06)
+rotation = -1.5707964
+scale = Vector2(8, 8)
+texture = ExtResource("2_qntxh")
+hframes = 6
+vframes = 6
+frame = 13
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m11qq")
+}
+autoplay = "new_animation"
+
+[node name="Dead" parent="." instance=ExtResource("3_5w8sw")]

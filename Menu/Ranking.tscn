@@ -1,0 +1,505 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1q76y11chq1v"]
+
+[ext_resource type="Script" uid="uid://cu2i8j3yoiyor" path="res://Menu/ranking.gd" id="1_lquyc"]
+[ext_resource type="FontFile" uid="uid://bl4te3axdalui" path="res://FSEX302.ttf" id="6_4v0l7"]
+
+[node name="Ranking" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lquyc")
+
+[node name="go to menu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 133.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_4v0l7")
+theme_override_font_sizes/font_size = 64
+text = "Go to menu"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 195.0
+offset_right = 720.0
+offset_bottom = 1561.0
+theme_override_constants/separation = 71
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(720, 120)
+layout_mode = 2
+
+[node name="Backgound" type="Control" parent="VBoxContainer/Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Control/Backgound"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 120.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/Control/Backgound"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 20.0
+
+[node name="ColorRect3" type="ColorRect" parent="VBoxContainer/Control/Backgound"]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 720.0
+offset_bottom = 120.0
+
+[node name="ColorRect4" type="ColorRect" parent="VBoxContainer/Control/Backgound"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 19.0
+offset_right = 281.0
+offset_bottom = 102.0
+
+[node name="ColorRect6" type="ColorRect" parent="VBoxContainer/Control/Backgound"]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 19.0
+offset_right = 720.0
+offset_bottom = 102.0
+
+[node name="ColorRect5" type="ColorRect" parent="VBoxContainer/Control/Backgound"]
+layout_mode = 0
+offset_top = 19.0
+offset_right = 20.0
+offset_bottom = 102.0
+
+[node name="Name" type="RichTextLabel" parent="VBoxContainer/Control"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 20.0
+offset_right = 261.0
+offset_bottom = 100.0
+theme_override_constants/line_separation = -12
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "NAME"
+fit_content = true
+scroll_active = false
+autowrap_mode = 1
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Puntuation" type="Label" parent="VBoxContainer/Control"]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 20.0
+offset_right = 700.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Control2" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(720, 120)
+layout_mode = 2
+
+[node name="Backgound" type="Control" parent="VBoxContainer/Control2"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Control2/Backgound"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 120.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/Control2/Backgound"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 20.0
+
+[node name="ColorRect3" type="ColorRect" parent="VBoxContainer/Control2/Backgound"]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 720.0
+offset_bottom = 120.0
+
+[node name="ColorRect4" type="ColorRect" parent="VBoxContainer/Control2/Backgound"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 19.0
+offset_right = 281.0
+offset_bottom = 102.0
+
+[node name="ColorRect6" type="ColorRect" parent="VBoxContainer/Control2/Backgound"]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 19.0
+offset_right = 720.0
+offset_bottom = 102.0
+
+[node name="ColorRect5" type="ColorRect" parent="VBoxContainer/Control2/Backgound"]
+layout_mode = 0
+offset_top = 19.0
+offset_right = 20.0
+offset_bottom = 102.0
+
+[node name="Name" type="RichTextLabel" parent="VBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 20.0
+offset_right = 261.0
+offset_bottom = 100.0
+theme_override_constants/line_separation = -12
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "NAME"
+fit_content = true
+scroll_active = false
+autowrap_mode = 1
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Puntuation" type="Label" parent="VBoxContainer/Control2"]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 20.0
+offset_right = 700.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(720, 120)
+layout_mode = 2
+
+[node name="Backgound" type="Control" parent="VBoxContainer/Control3"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Control3/Backgound"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 120.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/Control3/Backgound"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 20.0
+
+[node name="ColorRect3" type="ColorRect" parent="VBoxContainer/Control3/Backgound"]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 720.0
+offset_bottom = 120.0
+
+[node name="ColorRect4" type="ColorRect" parent="VBoxContainer/Control3/Backgound"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 19.0
+offset_right = 281.0
+offset_bottom = 102.0
+
+[node name="ColorRect6" type="ColorRect" parent="VBoxContainer/Control3/Backgound"]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 19.0
+offset_right = 720.0
+offset_bottom = 102.0
+
+[node name="ColorRect5" type="ColorRect" parent="VBoxContainer/Control3/Backgound"]
+layout_mode = 0
+offset_top = 19.0
+offset_right = 20.0
+offset_bottom = 102.0
+
+[node name="Name" type="RichTextLabel" parent="VBoxContainer/Control3"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 20.0
+offset_right = 261.0
+offset_bottom = 100.0
+theme_override_constants/line_separation = -12
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "NAME"
+fit_content = true
+scroll_active = false
+autowrap_mode = 1
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Puntuation" type="Label" parent="VBoxContainer/Control3"]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 20.0
+offset_right = 700.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control4" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(720, 120)
+layout_mode = 2
+
+[node name="Backgound" type="Control" parent="VBoxContainer/Control4"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Control4/Backgound"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 120.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/Control4/Backgound"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 20.0
+
+[node name="ColorRect3" type="ColorRect" parent="VBoxContainer/Control4/Backgound"]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 720.0
+offset_bottom = 120.0
+
+[node name="ColorRect4" type="ColorRect" parent="VBoxContainer/Control4/Backgound"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 19.0
+offset_right = 281.0
+offset_bottom = 102.0
+
+[node name="ColorRect6" type="ColorRect" parent="VBoxContainer/Control4/Backgound"]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 19.0
+offset_right = 720.0
+offset_bottom = 102.0
+
+[node name="ColorRect5" type="ColorRect" parent="VBoxContainer/Control4/Backgound"]
+layout_mode = 0
+offset_top = 19.0
+offset_right = 20.0
+offset_bottom = 102.0
+
+[node name="Name" type="RichTextLabel" parent="VBoxContainer/Control4"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 20.0
+offset_right = 261.0
+offset_bottom = 100.0
+theme_override_constants/line_separation = -12
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "NAME"
+fit_content = true
+scroll_active = false
+autowrap_mode = 1
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Puntuation" type="Label" parent="VBoxContainer/Control4"]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 20.0
+offset_right = 700.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control5" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(720, 120)
+layout_mode = 2
+
+[node name="Backgound" type="Control" parent="VBoxContainer/Control5"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Control5/Backgound"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 120.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/Control5/Backgound"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 20.0
+
+[node name="ColorRect3" type="ColorRect" parent="VBoxContainer/Control5/Backgound"]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 720.0
+offset_bottom = 120.0
+
+[node name="ColorRect4" type="ColorRect" parent="VBoxContainer/Control5/Backgound"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 19.0
+offset_right = 281.0
+offset_bottom = 102.0
+
+[node name="ColorRect6" type="ColorRect" parent="VBoxContainer/Control5/Backgound"]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 19.0
+offset_right = 720.0
+offset_bottom = 102.0
+
+[node name="ColorRect5" type="ColorRect" parent="VBoxContainer/Control5/Backgound"]
+layout_mode = 0
+offset_top = 19.0
+offset_right = 20.0
+offset_bottom = 102.0
+
+[node name="Name" type="RichTextLabel" parent="VBoxContainer/Control5"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 20.0
+offset_right = 261.0
+offset_bottom = 100.0
+theme_override_constants/line_separation = -12
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "NAME"
+fit_content = true
+scroll_active = false
+autowrap_mode = 1
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Puntuation" type="Label" parent="VBoxContainer/Control5"]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 20.0
+offset_right = 700.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control6" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(720, 120)
+layout_mode = 2
+
+[node name="Backgound" type="Control" parent="VBoxContainer/Control6"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Control6/Backgound"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 120.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/Control6/Backgound"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 20.0
+
+[node name="ColorRect3" type="ColorRect" parent="VBoxContainer/Control6/Backgound"]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 720.0
+offset_bottom = 120.0
+
+[node name="ColorRect4" type="ColorRect" parent="VBoxContainer/Control6/Backgound"]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 19.0
+offset_right = 281.0
+offset_bottom = 102.0
+
+[node name="ColorRect6" type="ColorRect" parent="VBoxContainer/Control6/Backgound"]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 19.0
+offset_right = 720.0
+offset_bottom = 102.0
+
+[node name="ColorRect5" type="ColorRect" parent="VBoxContainer/Control6/Backgound"]
+layout_mode = 0
+offset_top = 19.0
+offset_right = 20.0
+offset_bottom = 102.0
+
+[node name="Name" type="RichTextLabel" parent="VBoxContainer/Control6"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 20.0
+offset_right = 261.0
+offset_bottom = 100.0
+theme_override_constants/line_separation = -12
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "NAME"
+fit_content = true
+scroll_active = false
+autowrap_mode = 1
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Puntuation" type="Label" parent="VBoxContainer/Control6"]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 20.0
+offset_right = 700.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Easy" type="Button" parent="."]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_4v0l7")
+theme_override_font_sizes/font_size = 64
+text = "Normal"
+
+[node name="Hard" type="Button" parent="."]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_4v0l7")
+theme_override_font_sizes/font_size = 64
+text = "Hard"
+
+[connection signal="pressed" from="Easy" to="." method="change_dificult"]
+[connection signal="pressed" from="Hard" to="." method="change_dificult"]

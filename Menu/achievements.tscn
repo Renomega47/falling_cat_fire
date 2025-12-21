@@ -1,0 +1,817 @@
+[gd_scene load_steps=12 format=3 uid="uid://bu4argmyi8bqb"]
+
+[ext_resource type="Script" uid="uid://dpesnmxucsi76" path="res://Menu/achievements.gd" id="1_nhebs"]
+[ext_resource type="Texture2D" uid="uid://bk2mk6s6c42wc" path="res://Menu/Frame expand.png" id="4_mr43c"]
+[ext_resource type="Texture2D" uid="uid://boymr5l624c4s" path="res://achievements/Archaeologist Cat.png" id="5_aovoy"]
+[ext_resource type="Texture2D" uid="uid://d3bbskwgyjjfr" path="res://achievements/Archaeologist Cat III.png" id="6_mr43c"]
+[ext_resource type="Texture2D" uid="uid://4g1dalhu2s1c" path="res://achievements/Archaeologist Cat II.png" id="7_3eb55"]
+[ext_resource type="Texture2D" uid="uid://c5l18hvyb5xb0" path="res://achievements/Sans cat.png" id="8_mr43c"]
+[ext_resource type="Texture2D" uid="uid://cy7t1b204xskm" path="res://achievements/Master cat.png" id="9_3eb55"]
+[ext_resource type="Texture2D" uid="uid://d0uh53r3r0gly" path="res://achievements/Super Saiyan Cat (better than spaghetti god!!!).png" id="10_fdbxw"]
+[ext_resource type="Texture2D" uid="uid://df47ylpfjkww7" path="res://achievements/Patient Cat.png" id="11_ya3wk"]
+[ext_resource type="Texture2D" uid="uid://bi5e78qhytbvq" path="res://achievements/Creeper Cat.png" id="12_bh47w"]
+[ext_resource type="FontFile" uid="uid://bl4te3axdalui" path="res://FSEX302.ttf" id="13_mxcf3"]
+
+[node name="achievements" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nhebs")
+
+[node name="go to menu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 133.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("13_mxcf3")
+theme_override_font_sizes/font_size = 64
+text = "Go to Codex"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+offset_left = 21.0
+offset_top = 161.0
+offset_right = 105.0
+offset_bottom = 325.0
+scale = Vector2(8, 8)
+columns = 2
+
+[node name="Archaeologist 1" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_mr43c")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="GridContainer/Archaeologist 1"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="Texture" type="Sprite2D" parent="GridContainer/Archaeologist 1/texture modulate"]
+position = Vector2(12.5, 14)
+texture = ExtResource("5_aovoy")
+
+[node name="TextPerfect" type="RichTextLabel" parent="GridContainer/Archaeologist 1"]
+layout_mode = 0
+offset_left = -36.012497
+offset_top = 3.5999985
+offset_right = 77.112495
+offset_bottom = 33.6
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[color=orange]ARCHAEOLOGIST"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextPerfect2" type="RichTextLabel" parent="GridContainer/Archaeologist 1"]
+layout_mode = 0
+offset_left = -14.074998
+offset_top = -19.275003
+offset_right = 25.508339
+offset_bottom = 56.975
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[color=orange]1"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="GridContainer/Archaeologist 1"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 37.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="GridContainer/Archaeologist 1/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0625
+offset_top = -0.625
+offset_right = 79.1875
+offset_bottom = 22.375
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 32
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito2" type="ColorRect" parent="GridContainer/Archaeologist 1/incognito"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = -22.982
+offset_right = 34.0
+offset_bottom = -0.12499809
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="GridContainer/Archaeologist 1/incognito/incognito2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_top = -0.017997026
+offset_right = 27.854172
+offset_bottom = 64.20831
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 32
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Archaeologist 2" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_mr43c")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="GridContainer/Archaeologist 2"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="Texture" type="Sprite2D" parent="GridContainer/Archaeologist 2/texture modulate"]
+position = Vector2(12.5, 14)
+texture = ExtResource("7_3eb55")
+
+[node name="TextPerfect" type="RichTextLabel" parent="GridContainer/Archaeologist 2"]
+layout_mode = 0
+offset_left = -36.012497
+offset_top = 3.5999985
+offset_right = 77.112495
+offset_bottom = 33.6
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[color=orange]ARCHAEOLOGIST"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextPerfect2" type="RichTextLabel" parent="GridContainer/Archaeologist 2"]
+layout_mode = 0
+offset_left = -14.074998
+offset_top = -19.275003
+offset_right = 25.508339
+offset_bottom = 56.975
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[color=orange]2"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="GridContainer/Archaeologist 2"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 37.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="GridContainer/Archaeologist 2/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0625
+offset_top = -0.625
+offset_right = 79.1875
+offset_bottom = 22.375
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 32
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito2" type="ColorRect" parent="GridContainer/Archaeologist 2/incognito"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = -22.982
+offset_right = 34.0
+offset_bottom = -0.12499809
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="GridContainer/Archaeologist 2/incognito/incognito2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_top = -0.017997026
+offset_right = 27.854172
+offset_bottom = 64.20831
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 32
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Archaeologist 3" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_mr43c")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="GridContainer/Archaeologist 3"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="Texture" type="Sprite2D" parent="GridContainer/Archaeologist 3/texture modulate"]
+position = Vector2(12.5, 14)
+texture = ExtResource("6_mr43c")
+
+[node name="TextPerfect" type="RichTextLabel" parent="GridContainer/Archaeologist 3"]
+layout_mode = 0
+offset_left = -36.012497
+offset_top = 3.5999985
+offset_right = 77.112495
+offset_bottom = 33.6
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[color=orange]ARCHAEOLOGIST"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextPerfect2" type="RichTextLabel" parent="GridContainer/Archaeologist 3"]
+layout_mode = 0
+offset_left = -14.074998
+offset_top = -19.275003
+offset_right = 25.508339
+offset_bottom = 56.975
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[color=orange]3"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="GridContainer/Archaeologist 3"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 37.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="GridContainer/Archaeologist 3/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0625
+offset_top = -0.625
+offset_right = 79.1875
+offset_bottom = 22.375
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 32
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito2" type="ColorRect" parent="GridContainer/Archaeologist 3/incognito"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = -22.982
+offset_right = 34.0
+offset_bottom = -0.12499809
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="GridContainer/Archaeologist 3/incognito/incognito2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_top = -0.017997026
+offset_right = 27.854172
+offset_bottom = 64.20831
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 32
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Perfect Dodge Master" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_mr43c")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="GridContainer/Perfect Dodge Master"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="Texture" type="Sprite2D" parent="GridContainer/Perfect Dodge Master/texture modulate"]
+position = Vector2(12.5, 14)
+texture = ExtResource("8_mr43c")
+
+[node name="TextPerfect" type="RichTextLabel" parent="GridContainer/Perfect Dodge Master"]
+layout_mode = 0
+offset_left = -35.637497
+offset_top = 3.600006
+offset_right = 77.487495
+offset_bottom = 35.600006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[color=cyan]PERFECT DODGE 
+MASTER"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextPerfect2" type="RichTextLabel" parent="GridContainer/Perfect Dodge Master"]
+layout_mode = 0
+offset_left = -14.074998
+offset_top = -19.275003
+offset_right = 25.508339
+offset_bottom = 56.975
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[color=cyan]HEHE"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="GridContainer/Perfect Dodge Master"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 37.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="GridContainer/Perfect Dodge Master/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0625
+offset_top = -0.625
+offset_right = 79.1875
+offset_bottom = 22.375
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 32
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito2" type="ColorRect" parent="GridContainer/Perfect Dodge Master/incognito"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = -22.982
+offset_right = 34.0
+offset_bottom = -0.12499809
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="GridContainer/Perfect Dodge Master/incognito/incognito2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_top = -0.017997026
+offset_right = 27.854172
+offset_bottom = 64.20831
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 32
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Better Than the Devs" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_mr43c")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="GridContainer/Better Than the Devs"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="Texture" type="Sprite2D" parent="GridContainer/Better Than the Devs/texture modulate"]
+position = Vector2(12.5, 14)
+texture = ExtResource("9_3eb55")
+
+[node name="TextPerfect" type="RichTextLabel" parent="GridContainer/Better Than the Devs"]
+layout_mode = 0
+offset_left = -35.637497
+offset_top = 3.600006
+offset_right = 77.487495
+offset_bottom = 35.600006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[wave][color=orange]BETTER THAN
+THE DEVS"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextPerfect2" type="RichTextLabel" parent="GridContainer/Better Than the Devs"]
+layout_mode = 0
+offset_left = -14.074998
+offset_top = -19.275003
+offset_right = 25.508339
+offset_bottom = 56.975
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[wave][color=orange]:()"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="GridContainer/Better Than the Devs"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 37.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="GridContainer/Better Than the Devs/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0625
+offset_top = -0.625
+offset_right = 79.1875
+offset_bottom = 22.375
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 32
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito2" type="ColorRect" parent="GridContainer/Better Than the Devs/incognito"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = -22.982
+offset_right = 34.0
+offset_bottom = -0.12499809
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="GridContainer/Better Than the Devs/incognito/incognito2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_top = -0.017997026
+offset_right = 27.854172
+offset_bottom = 64.20831
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 32
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Noodle Nemesis" type="TextureRect" parent="GridContainer"]
+self_modulate = Color(1, 1, 0, 1)
+layout_mode = 2
+texture = ExtResource("4_mr43c")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="GridContainer/Noodle Nemesis"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="Texture" type="Sprite2D" parent="GridContainer/Noodle Nemesis/texture modulate"]
+position = Vector2(12.5, 14)
+texture = ExtResource("10_fdbxw")
+
+[node name="TextPerfect" type="RichTextLabel" parent="GridContainer/Noodle Nemesis"]
+layout_mode = 0
+offset_left = -35.637497
+offset_top = 3.100006
+offset_right = 77.487495
+offset_bottom = 35.100006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[wave][rainbow]NOODLE
+NEMESIS"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextPerfect2" type="RichTextLabel" parent="GridContainer/Noodle Nemesis"]
+layout_mode = 0
+offset_left = -14.074998
+offset_top = -19.275003
+offset_right = 25.508339
+offset_bottom = 56.975
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[wave][rainbow]:()"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="GridContainer/Noodle Nemesis"]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 37.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="GridContainer/Noodle Nemesis/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0625
+offset_top = -0.625
+offset_right = 79.1875
+offset_bottom = 22.375
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 32
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito2" type="ColorRect" parent="GridContainer/Noodle Nemesis/incognito"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = -22.982
+offset_right = 34.0
+offset_bottom = -0.12499809
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="GridContainer/Noodle Nemesis/incognito/incognito2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_top = -0.017997026
+offset_right = 27.854172
+offset_bottom = 64.20831
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 32
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="The Waiting Game" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_mr43c")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="GridContainer/The Waiting Game"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="Texture" type="Sprite2D" parent="GridContainer/The Waiting Game/texture modulate"]
+position = Vector2(12.5, 14)
+texture = ExtResource("11_ya3wk")
+
+[node name="TextPerfect" type="RichTextLabel" parent="GridContainer/The Waiting Game"]
+layout_mode = 0
+offset_left = -35.637497
+offset_top = 3.600006
+offset_right = 77.487495
+offset_bottom = 35.600006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[pulse]THE WAITING
+GAME"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextPerfect2" type="RichTextLabel" parent="GridContainer/The Waiting Game"]
+layout_mode = 0
+offset_left = -14.074998
+offset_top = -19.275003
+offset_right = 25.508339
+offset_bottom = 56.975
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "NO
+RUSH"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="GridContainer/The Waiting Game"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 37.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="GridContainer/The Waiting Game/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0625
+offset_top = -0.625
+offset_right = 79.1875
+offset_bottom = 22.375
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 32
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito2" type="ColorRect" parent="GridContainer/The Waiting Game/incognito"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = -22.982
+offset_right = 34.0
+offset_bottom = -0.12499809
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="GridContainer/The Waiting Game/incognito/incognito2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_top = -0.017997026
+offset_right = 27.854172
+offset_bottom = 64.20831
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 32
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="I\'m Cree Bumm" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_mr43c")
+stretch_mode = 4
+
+[node name="texture modulate" type="Node2D" parent="GridContainer/I\'m Cree Bumm"]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="Texture" type="Sprite2D" parent="GridContainer/I\'m Cree Bumm/texture modulate"]
+position = Vector2(12.5, 14)
+texture = ExtResource("12_bh47w")
+
+[node name="TextPerfect" type="RichTextLabel" parent="GridContainer/I\'m Cree Bumm"]
+layout_mode = 0
+offset_left = -35.887497
+offset_top = 3.600006
+offset_right = 77.237495
+offset_bottom = 35.600006
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[color=green]I'M CREE...
+ BUMM"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextPerfect2" type="RichTextLabel" parent="GridContainer/I\'m Cree Bumm"]
+layout_mode = 0
+offset_left = -14.074998
+offset_top = -19.275003
+offset_right = 25.508339
+offset_bottom = 56.975
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(56, 32)
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[color=green]SSS"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito" type="ColorRect" parent="GridContainer/I\'m Cree Bumm"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 37.0
+offset_bottom = 35.0
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="GridContainer/I\'m Cree Bumm/incognito"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0625
+offset_top = -0.625
+offset_right = 79.1875
+offset_bottom = 22.375
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 32
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="incognito2" type="ColorRect" parent="GridContainer/I\'m Cree Bumm/incognito"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = -22.982
+offset_right = 34.0
+offset_bottom = -0.12499809
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+
+[node name="Label" type="Label" parent="GridContainer/I\'m Cree Bumm/incognito/incognito2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.06250048
+offset_top = -0.017997026
+offset_right = 27.854172
+offset_bottom = 64.20831
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 32
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
