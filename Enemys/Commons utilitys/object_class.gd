@@ -19,9 +19,9 @@ func efect_dead_active() -> void:
 	dead_node.visible_change.connect(change_visibility)
 
 
-func check_dead() -> void:
+func check_dead(forced:bool=false) -> void:
 	if dead_node == null: return
-	if current_cell == 4: 
+	if current_cell == 4 or forced: 
 		dead_node.play_animation()
 		texture.position.y = 19
 

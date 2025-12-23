@@ -34,7 +34,7 @@ func frame_next() -> void:
 
 const Minimum_interval_between_events:int = 10
 func event_times_revision()-> void:
-	var cooldawn_camera_event:int = 100 - ($"..".frame_number % 100) 
+	var cooldawn_camera_event:int = event_camare_cooldawn
 	var cooldawn_laser_event:int = laser_frame_cooldawn
 
 	if abs(cooldawn_camera_event - cooldawn_laser_event) < Minimum_interval_between_events:
@@ -43,7 +43,13 @@ func event_times_revision()-> void:
 func clear_enemys(except:int=-1) -> void:
 	for children in get_children():
 		if children.get_cell_x() == except: continue
-		children.queue_free()
+		if not children.has_method("check_dead"):
+			children.queue_free()
+			continue
+		if children.dead_node == null: 
+			children.queue_free()
+			continue
+		children.check_dead(true)
 
 
 
@@ -73,14 +79,19 @@ func update_laser() -> void:
 var _camera_event_active:bool = false
 func get_camera_event_state() -> bool:
 	return _camera_event_active
+
+
+var event_camare_cooldawn:int = randi_range(100, 120)
 func camera_event() -> void:
-	if $"..".frame_number % 100 == 0:
+	event_camare_cooldawn -= 1
+	if event_camare_cooldawn == 0:
 		$"../Camera2D/AnimationPlayer".play("camera_event_start")
 		_camera_event_active = true
 		laser_frame_cooldawn += 25
-	elif $"..".frame_number % 125 == 0:
+	elif event_camare_cooldawn <= -35:
 		$"../Camera2D/AnimationPlayer".play("camera_event_end")
 		_camera_event_active = false
+		event_camare_cooldawn = randi_range(120, 180)
 	else: return
 	clear_enemys()
 
@@ -111,7 +122,6 @@ load("res://Enemys/cat/orange cat.tscn"),
 load("res://Enemys/cat/cat.tscn")]
 
 var enemies_weights:Array[int] =[1000,500,225,550,550,175,    20,30,30    ,100, 100, 15, 5, 5, 1]
-
 
 func get_random_enemy_key() -> int: #weights sistem
 

@@ -22,6 +22,14 @@ func _ready() -> void:
 	Game.updateFrame.connect(frame_next)
 	frame_next()
 
+var _pending_input:int = 0
+func _get_pending_input(axis:int) -> int:
+	if axis != 0: 
+		_pending_input = 0
+		return axis
+	var return_input:int = _pending_input
+	_pending_input = 0
+	return return_input
 func _process(delta: float) -> void:
 	var true_position_X:float = current_cell * size_cell
 	position.x = lerp(position.x, true_position_X, 12*delta)
@@ -31,7 +39,11 @@ func _process(delta: float) -> void:
 
 	if Game.play == false:return
 	_evaluate_hability()
-	move_cell(get_axis())
+	
+	var temp_axis:int = get_axis()
+	if move_cooldawn <= 0 and temp_axis != 0:
+		move_cell(_get_pending_input(temp_axis))
+	else: _pending_input = temp_axis
 	move_cooldawn-=delta
 	cooldawn_update_previous_cell-=delta
 	if cooldawn_update_previous_cell <= 0:
@@ -78,11 +90,8 @@ func frame_next() -> void:
 var move_cooldawn:float = 0
 var move_cooldawn_max:float = 0.2
 
+
 func move_cell(axis:int) -> void:
-	if not move_cooldawn <= 0: return
-
-
-
 	var cell_temp:int = current_cell
 	current_cell += axis
 

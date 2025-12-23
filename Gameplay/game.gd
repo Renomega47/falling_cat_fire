@@ -6,8 +6,6 @@ signal finalFrame
 var cooldawn:float
 var cooldawn_max:float = 0.4
 
-var frame_number:int = 40
-
 var play:bool = false
 
 var inmortality_cooldawn:int = 0
@@ -53,7 +51,6 @@ func temporizer(delta:float) -> void:
 		cooldawn = cooldawn_max
 		updateFrame.emit()
 		finalFrame.emit()
-		frame_number += 1
 	cooldawn -= delta
 
 #endregion
@@ -81,7 +78,16 @@ func text_bonus_spawn() -> void:
 
 func get_bonus() -> bool:
 	for enemy in spawn_enemy.get_children():
-		if $Player.previous_cell == enemy.get_cell_x() and enemy.current_cell == 3:
+		if not $Player.previous_cell == enemy.get_cell_x(): continue
+
+		if enemy.name_key == "speed fire":
+			if enemy.current_cell == 2: return true
+			else:continue
+		elif enemy.name_key == "slow fire":
+			if enemy.cooldawn == 0 and enemy.current_cell == 3: return true
+			else:continue
+
+		if enemy.current_cell == 3:
 			return true
 	return false
 #endregion
@@ -198,6 +204,7 @@ func achivement_notification(text:String) -> void:
 
 
 func _dead() -> void:
+	await get_tree().create_timer(0.09).timeout
 	if check_defeat() == true:
 		save_puntuation()
 		check_achievements()

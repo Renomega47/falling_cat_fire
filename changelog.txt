@@ -1,0 +1,14 @@
+## [Released 1.1]
+
+### Added
+- Enemies now explode when the laser is fired instead of simply disappearing.
+
+### Changed
+- Enemy death animations now render above the player.
+- Increased the time window between the enemy animation start and the moment the player can dodge.
+- Minor adjustments to the camera animation during gameplay.
+- Improved overall input system responsiveness.
+
+### Fixed
+- Fixed an issue where the score bonus system did not work correctly when dodging certain enemy types.
+- Fixed a bug in the camera event cooldown system.
