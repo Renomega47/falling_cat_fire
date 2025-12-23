@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="uid://b3hybbnw8ibe3"
+config/icon="uid://cx7bpe74uvmq3"
 
 [audio]
 
