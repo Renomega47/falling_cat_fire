@@ -7,6 +7,7 @@ var current_cell:int = 0
 @onready var Game:Node2D = $".."
 
 @onready var spawn_enemy:Node2D = $"../Spawn enemy"
+@onready var especials_events:Node2D = $"../Especials Events"
 
 var current_cell_y:int = 4
 
@@ -52,7 +53,7 @@ func _process(delta: float) -> void:
 
 func get_axis() -> int:
 	var input:int = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
-	if spawn_enemy.get_camera_event_state():
+	if especials_events.get_camera_event_state():
 		return -input 
 	return input
 
@@ -73,7 +74,7 @@ var frame_cooldawn_max:int = 2
 
 func frame_next() -> void:
 	#region jump
-	if get_jump_axis() and frame_cooldawn <= 0 and $"../Spawn enemy".laser_frame_cooldawn <= 2:
+	if get_jump_axis() and frame_cooldawn <= 0 and especials_events.active_duration >= 1:
 		jumping = true
 		frame_cooldawn = frame_cooldawn_max
 		move_cooldawn = frame_cooldawn_max
@@ -114,6 +115,7 @@ func move_cell(axis:int) -> void:
 
 func _evaluate_hability() -> void:
 	if not move_cooldawn <= 0: return
+	$Habilitys.check_instant_hability()
 	if get_hability_axis() and $Habilitys.activatable():
 		$Habilitys.active_hability()
 		player_update.emit()

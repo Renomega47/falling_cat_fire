@@ -6,7 +6,7 @@ Falling Cat Fire is a fast-paced and easy-to-play casual game. Face different en
 ## Features
 - 12 different enemies
 - 3 unique power-ups
-- 2 special in-game events
+- 4 special in-game events
 - 8 achievements to unlock
 
 ## Engine

@@ -29,3 +29,21 @@ func change_visibility() -> void:
 	texture.visible = false
 func change_danger() -> void:
 	danger = false
+
+
+
+func setup() -> void:
+	true_position_x = position.x
+
+var true_position_x:float
+func update_position(delta:float, y_speed=15, x_speed=15 ) -> void:
+	var true_position:float = 120+(current_cell*240)
+
+	position.y = lerp(position.y, true_position, y_speed*delta)
+	position.x = lerp(position.x, true_position_x, x_speed*delta)
+
+func get_cell_x() -> int:
+	return int((true_position_x-60)/120)
+
+func set_cell_x(cell:int) -> void:
+	true_position_x = 60+(cell*120)

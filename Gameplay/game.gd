@@ -11,7 +11,7 @@ var play:bool = false
 var inmortality_cooldawn:int = 0
 
 @onready var spawn_enemy:Node2D = $"Spawn enemy"
-
+@onready var especials_events:Node2D = $"Especials Events"
 
 var perfect_dodges_counting:int = 0
 
@@ -138,7 +138,7 @@ func check_defeat() -> bool:
 		return false
 
 #condition 1
-	if $Player.jumping == false and $"Spawn enemy".laser_activated == true:return true
+	if especials_events.died_from_event(): return true
 
 #condition 2
 	for i in $"Spawn enemy".get_children():

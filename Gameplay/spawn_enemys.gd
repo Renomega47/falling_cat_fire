@@ -21,9 +21,6 @@ func spawn(force_key:int=-1) -> void:
 	add_child(object_instance)
 
 func frame_next() -> void:
-	event_times_revision()
-	camera_event()
-	update_laser()
 	if randi_range(0, 10) > spawn_probability: return
 	if randi_range(0, 100) == 1:
 		return
@@ -32,13 +29,6 @@ func frame_next() -> void:
 		if i.current_cell == 5:
 			i.queue_free()
 
-const Minimum_interval_between_events:int = 10
-func event_times_revision()-> void:
-	var cooldawn_camera_event:int = event_camare_cooldawn
-	var cooldawn_laser_event:int = laser_frame_cooldawn
-
-	if abs(cooldawn_camera_event - cooldawn_laser_event) < Minimum_interval_between_events:
-		laser_frame_cooldawn += 25
 
 func clear_enemys(except:int=-1) -> void:
 	for children in get_children():
@@ -50,50 +40,6 @@ func clear_enemys(except:int=-1) -> void:
 			children.queue_free()
 			continue
 		children.check_dead(true)
-
-
-
-
-var laser_frame_cooldawn:int = 30
-
-var laser_activated:bool = false
-func update_laser() -> void:
-	laser_frame_cooldawn -= 1
-	
-	if laser_frame_cooldawn == 2 or laser_frame_cooldawn == 1:
-		$"../Laser/AnimationPlayer".play("Laser")
-		clear_enemys()
-		active = false
-
-	elif laser_frame_cooldawn == 3:tree.inmortality_cooldawn += 2
-
-	elif laser_frame_cooldawn == 0:
-		$"../Laser/Laser/AnimationPlayer".play("laser")
-		laser_activated = true
-
-	elif laser_frame_cooldawn == -1:
-		laser_activated = false
-		active = true
-		laser_frame_cooldawn = randi_range(20, 50)
-
-var _camera_event_active:bool = false
-func get_camera_event_state() -> bool:
-	return _camera_event_active
-
-
-var event_camare_cooldawn:int = randi_range(100, 120)
-func camera_event() -> void:
-	event_camare_cooldawn -= 1
-	if event_camare_cooldawn == 0:
-		$"../Camera2D/AnimationPlayer".play("camera_event_start")
-		_camera_event_active = true
-		laser_frame_cooldawn += 25
-	elif event_camare_cooldawn <= -35:
-		$"../Camera2D/AnimationPlayer".play("camera_event_end")
-		_camera_event_active = false
-		event_camare_cooldawn = randi_range(120, 180)
-	else: return
-	clear_enemys()
 
 
 func add_to_bestiary(monster:Node2D) -> void:
@@ -121,7 +67,8 @@ load("res://Enemys/cat/green cat.tscn"),
 load("res://Enemys/cat/orange cat.tscn"),
 load("res://Enemys/cat/cat.tscn")]
 
-var enemies_weights:Array[int] =[1000,500,225,550,550,175,    20,30,30    ,100, 100, 15, 5, 5, 1]
+var enemies_weights:Array[int] =[1000,250,225,675,675,175,    20,30,30    ,100, 100, 15, 5, 5, 1]
+#var enemies_weights:Array[int] =[0,0,0,0,0,0,    1,0,0    ,0, 0, 0, 0, 0, 0]
 
 func get_random_enemy_key() -> int: #weights sistem
 
