@@ -12,7 +12,7 @@ var inmortality_cooldawn:int = 0
 
 @onready var spawn_enemy:Node2D = $"Spawn enemy"
 @onready var especials_events:Node2D = $"Especials Events"
-
+@onready var player:Node2D = $Player
 var perfect_dodges_counting:int = 0
 
 

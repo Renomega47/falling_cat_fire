@@ -23,6 +23,9 @@ func _ready() -> void:
 	Game.updateFrame.connect(frame_next)
 	frame_next()
 
+func debug() -> void:
+	print(5)
+
 var _pending_input:int = 0
 func _get_pending_input(axis:int) -> int:
 	if axis != 0: 
@@ -73,19 +76,25 @@ var frame_cooldawn_max:int = 2
 #endregion
 
 func frame_next() -> void:
-	#region jump
+	check_jump_for_laser_event()
+
+
+func check_jump_for_laser_event() -> void:
+	if especials_events.next_event != 0 or especials_events.next_event != 4: return
 	if get_jump_axis() and frame_cooldawn <= 0 and especials_events.active_duration >= 1:
 		jumping = true
 		frame_cooldawn = frame_cooldawn_max
 		move_cooldawn = frame_cooldawn_max
-		$Sprites/AnimationPlayer2.play("moveUp")
+		$Sprites/AnimationPlayer2.play()#"moveUp"
+	elif get_hability_axis() and jumping and especials_events.active_duration >= 5:
+		$Sprites/AnimationPlayer2.play("moveDownInstant")
+		jumping = false
 	elif frame_cooldawn <= 0:
 		jumping = false
 
 	elif jumping == true:
 		frame_cooldawn -= 1
 		move_cooldawn = move_cooldawn_max
-	#endregion
 
 
 var move_cooldawn:float = 0
@@ -95,7 +104,6 @@ var move_cooldawn_max:float = 0.2
 func move_cell(axis:int) -> void:
 	var cell_temp:int = current_cell
 	current_cell += axis
-
 	if cell_temp != current_cell: 
 		previous_cell = cell_temp
 		cooldawn_update_previous_cell = cooldawn_update_previous_cell_max

@@ -1,13 +1,18 @@
 extends Node2D
 
+var active:bool = false
 
 const events:Array[Array] = [
-	["laser", 40, 70],
-	["flip_camera", 40, 70],
-	["fog_event", 30, 40],
-	["blizzard", 40, 50]
+	["laserV1", 40, 70, 6],
+	["flip_camera", 50, 90, 3],
+	["fog_event", 40, 50, 1],
+	["blizzard", 40, 50, 5],
+	["laserV2", 40, 80, 6]
 ]
-var next_event:int = 3
+
+var next_event:int = 2
+var last_event:int = -1
+
 
 var cooldawn_event:int = 10
 var active_duration:int
@@ -27,22 +32,49 @@ func frame_next() -> void:
 		update_events()
 
 func update_events() -> void:
+	if active == false:return
 	call(events[next_event][0])
 
 func finish_event() -> void:
-	next_event = randi_range(0, events.size()-1)
+	var temp_next_event:int = get_random_event_key()
+	while temp_next_event == last_event and events.size() > 1:
+		temp_next_event = get_random_event_key()
+	next_event = temp_next_event
+
+	last_event = next_event
 	cooldawn_event = randi_range(events[next_event][1], events[next_event][2]-1)
+
+
+func get_random_event_key() -> int: #weights sistem
+	var total_weight:int = 0
+	
+	for temp_event in events:
+		total_weight += temp_event[3]
+
+	var roll:int = randi() % total_weight
+	var cumulative:int = 0
+
+	for i in range(events.size()):
+		cumulative += events[i][3]
+		if roll < cumulative:
+			return i
+
+	return 0
 
 func died_from_event() -> bool:
 	#laser dead
-	if player.jumping == false and laser_activated == true:return true
-	
+	if player.jumping == false and laser_activatedV1 == true:return true
+	elif player.jumping == false and laser_down_activated: return true
+	elif player.jumping and laser_up_activated: return true
 	
 	return false
 
+
+
+
 #region event laser
-var laser_activated:bool = false
-func laser() -> void:
+var laser_activatedV1:bool = false
+func laserV1() -> void:
 
 	if active_duration == 1:tree.inmortality_cooldawn += 2
 
@@ -53,10 +85,37 @@ func laser() -> void:
 
 	elif active_duration == 4:
 		$"../Laser/Laser/Fire".play("laser")
-		laser_activated = true
+		laser_activatedV1 = true
 
 	elif active_duration == 5:
-		laser_activated = false
+		laser_activatedV1 = false
+		spawn_enemy.active = true
+		finish_event()
+#endregion
+
+#region event laserV2
+var laser_down_activated:bool = false
+var laser_up_activated:bool = false
+func laserV2() -> void:
+
+	if active_duration == 1:tree.inmortality_cooldawn += 2
+
+	elif active_duration == 2 or active_duration == 3:
+		$"../Laser/preparation".play("Laser")
+		spawn_enemy.clear_enemys()
+		spawn_enemy.active = false
+
+	elif active_duration == 4:
+		$"../Laser/Laser/Fire".play("laser")
+		laser_down_activated = true
+	elif active_duration == 5:
+		laser_down_activated = false
+	elif active_duration == 6:
+		
+		laser_up_activated = true
+		
+	elif active_duration == 7:
+		
 		spawn_enemy.active = true
 		finish_event()
 #endregion
@@ -79,12 +138,15 @@ func get_camera_event_state() -> bool:
 	return _camera_event_active
 #endregion
 
+#region event fog
 func fog_event() -> void:
 	if active_duration == 1:$"../Torment/fog".play("Active")
 	elif active_duration >= 25:
 		$"../Torment/fog".play("Disable")
 		finish_event()
+#endregion
 
+#region blizzard
 @onready var blizzard_particles = [$"../blizzard/CPUParticles2D", $"../blizzard/CPUParticles2D2"]
 func blizzard() -> void:
 	var _direction_blizzard:int = -1 if active_duration < 15 else 1
@@ -104,3 +166,4 @@ func blizzard() -> void:
 func _blizard_particles_control(particles0:bool, particles1:bool) -> void:
 	blizzard_particles[0].emitting = particles0
 	blizzard_particles[1].emitting = particles1
+#endregion
