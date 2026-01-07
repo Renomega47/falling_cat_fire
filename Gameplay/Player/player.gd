@@ -11,20 +11,13 @@ var current_cell:int = 0
 
 var current_cell_y:int = 4
 
-var jumping:bool = false
+
 
 signal player_update
 signal player_update_last_comprobations
 
 var cooldawn_update_previous_cell:float
 const cooldawn_update_previous_cell_max:float = 0.03
-
-func _ready() -> void:
-	Game.updateFrame.connect(frame_next)
-	frame_next()
-
-func debug() -> void:
-	print(5)
 
 var _pending_input:int = 0
 func _get_pending_input(axis:int) -> int:
@@ -67,35 +60,6 @@ func get_jump_axis() -> bool:
 
 func get_hability_axis() -> bool:
 	return Input.is_action_pressed("hability")
-
-
-
-#region jump var
-var frame_cooldawn:int 
-var frame_cooldawn_max:int = 2
-#endregion
-
-func frame_next() -> void:
-	check_jump_for_laser_event()
-
-
-func check_jump_for_laser_event() -> void:
-	if especials_events.next_event != 0 or especials_events.next_event != 4: return
-	if get_jump_axis() and frame_cooldawn <= 0 and especials_events.active_duration >= 1:
-		jumping = true
-		frame_cooldawn = frame_cooldawn_max
-		move_cooldawn = frame_cooldawn_max
-		$Sprites/AnimationPlayer2.play()#"moveUp"
-	elif get_hability_axis() and jumping and especials_events.active_duration >= 5:
-		$Sprites/AnimationPlayer2.play("moveDownInstant")
-		jumping = false
-	elif frame_cooldawn <= 0:
-		jumping = false
-
-	elif jumping == true:
-		frame_cooldawn -= 1
-		move_cooldawn = move_cooldawn_max
-
 
 var move_cooldawn:float = 0
 var move_cooldawn_max:float = 0.2

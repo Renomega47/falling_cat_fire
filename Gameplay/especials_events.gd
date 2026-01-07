@@ -1,30 +1,34 @@
 extends Node2D
 
-var active:bool = false
+var active:bool = true
 
 const events:Array[Array] = [
-	["laserV1", 40, 70, 6],
-	["flip_camera", 50, 90, 3],
-	["fog_event", 40, 50, 1],
-	["blizzard", 40, 50, 5],
-	["laserV2", 40, 80, 6]
+	["laserV1", 30, 60, 6],
+	["flip_camera", 40, 60, 3],
+	["fog_event", 40, 60, 2],
+	["blizzard", 30, 60, 5],
+	["laserV2", 20, 60, 1]
 ]
 
-var next_event:int = 2
+var next_event:int = 0
 var last_event:int = -1
 
 
-var cooldawn_event:int = 10
+var cooldawn_event:int = 40
 var active_duration:int
 
 @onready var tree:Node2D = $".."
 @onready var spawn_enemy:Node2D = $"../Spawn enemy"
 @onready var player = $"../Player"
+
+
 func _ready() -> void:
+	next_event = get_random_event_key()
 	tree.updateFrame.connect(frame_next)
 
 func frame_next() -> void:
 	if cooldawn_event > 0: 
+		if active == false:return
 		cooldawn_event -= 1
 		active_duration = 0
 	else: 
@@ -32,7 +36,6 @@ func frame_next() -> void:
 		update_events()
 
 func update_events() -> void:
-	if active == false:return
 	call(events[next_event][0])
 
 func finish_event() -> void:
@@ -63,19 +66,31 @@ func get_random_event_key() -> int: #weights sistem
 
 func died_from_event() -> bool:
 	#laser dead
-	if player.jumping == false and laser_activatedV1 == true:return true
-	elif player.jumping == false and laser_down_activated: return true
-	elif player.jumping and laser_up_activated: return true
+	if jumping == false and laser_activatedV1 == true:return true
+	elif jumping == false and laser_down_activated: return true
+	elif jumping and laser_up_activated: return true
 	
 	return false
 
 
+var jumping:bool = false
+func check_jump_for_laser_event() -> void:
+	if player.get_jump_axis() and active_duration >= 1:
+		jumping = true
+		player.get_node("Sprites/AnimationPlayer2").\
+		play("moveUp" if next_event == 0  else "moveJustUp")
+	elif player.get_hability_axis() and jumping and active_duration >= 5 and next_event == 4:
+		player.get_node("Sprites/AnimationPlayer2").play("moveDownInstant")
+		jumping = false
+
+	if jumping == true:
+		player.move_cooldawn = player.move_cooldawn_max
 
 
 #region event laser
 var laser_activatedV1:bool = false
 func laserV1() -> void:
-
+	check_jump_for_laser_event()
 	if active_duration == 1:tree.inmortality_cooldawn += 2
 
 	elif active_duration == 2 or active_duration == 3:
@@ -97,7 +112,7 @@ func laserV1() -> void:
 var laser_down_activated:bool = false
 var laser_up_activated:bool = false
 func laserV2() -> void:
-
+	check_jump_for_laser_event()
 	if active_duration == 1:tree.inmortality_cooldawn += 2
 
 	elif active_duration == 2 or active_duration == 3:
@@ -109,13 +124,15 @@ func laserV2() -> void:
 		$"../Laser/Laser/Fire".play("laser")
 		laser_down_activated = true
 	elif active_duration == 5:
+		$"../Laser2/preparation".play("Laser")
 		laser_down_activated = false
 	elif active_duration == 6:
-		
+		$"../Laser2/Laser/Fire".play("Laser")
 		laser_up_activated = true
 		
 	elif active_duration == 7:
-		
+		laser_up_activated = false
+		laser_down_activated = false
 		spawn_enemy.active = true
 		finish_event()
 #endregion
