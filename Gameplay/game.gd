@@ -56,7 +56,7 @@ func temporizer(delta:float) -> void:
 #endregion
 
 #region puntuation controller
-var puntuation:int
+var puntuation:int= 0
 
 func next_frame() -> void:
 	if inmortality_cooldawn > 0: inmortality_cooldawn -= 1
@@ -95,7 +95,9 @@ func get_bonus() -> bool:
 func save_puntuation() -> void:
 	var key:Array[String] = ["max_puntuation_normal" ,"max_puntuation_hard"]
 	if Global.save [key[int(Global.dificult_max)]] < puntuation:
+		$CanvasLayer/Dead.new_record = true
 		Global.save[key[int(Global.dificult_max)]] = puntuation
+		
 		Global.save_game()
 
 	$Label.text = str(puntuation)

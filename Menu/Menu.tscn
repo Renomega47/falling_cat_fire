@@ -541,6 +541,26 @@ scroll_active = false
 autowrap_mode = 0
 vertical_alignment = 1
 
+[node name="Record" type="RichTextLabel" parent="."]
+modulate = Color(0.73300546, 0.7330054, 0.7330054, 0.34509805)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -88.0
+offset_right = 518.405
+offset_bottom = 104.00391
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 96
+bbcode_enabled = true
+text = "[rainbow]v1.2"
+fit_content = true
+horizontal_alignment = 1
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_u03px")
 autoplay = true
@@ -598,7 +618,6 @@ stretch_mode = 5
 visible = false
 
 [node name="Tutorial" parent="." instance=ExtResource("9_e4kd3")]
-visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-120, -103)
@@ -857,6 +876,7 @@ flip_v = true
 metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ScreenPresentation" parent="CanvasLayer" instance=ExtResource("11_8iu1u")]
 
