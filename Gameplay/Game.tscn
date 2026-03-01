@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://bkk4n04w211rg"]
+[gd_scene format=3 uid="uid://bkk4n04w211rg"]
 
 [ext_resource type="Script" uid="uid://csyyy6hwhygbl" path="res://Gameplay/game.gd" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://bmuqncdxdlo3e" path="res://Gameplay/Player/player.gd" id="1_wtcfe"]
@@ -1729,10 +1729,10 @@ _data = {
 &"RESET": SubResource("Animation_h4mo1")
 }
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" unique_id=531794408]
 script = ExtResource("1_0hol4")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=733369975]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1744,7 +1744,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=75218957]
 top_level = true
 z_index = 2
 anchors_preset = 15
@@ -1758,7 +1758,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.11612659, 0.11612659, 0.11612659, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="."]
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=2140232860]
 top_level = true
 z_index = 2
 anchors_preset = 15
@@ -1771,7 +1771,7 @@ offset_bottom = -140.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect4" type="ColorRect" parent="."]
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=846579163]
 top_level = true
 z_index = 2
 anchors_preset = 15
@@ -1784,7 +1784,7 @@ offset_bottom = -140.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=2119507013]
 self_modulate = Color(1, 1, 1, 0.78431374)
 position = Vector2(361, 750)
 amount = 20
@@ -1800,17 +1800,17 @@ scale_amount_max = 18.0
 scale_amount_curve = SubResource("Curve_ucfu1")
 color_ramp = SubResource("Gradient_bpeby")
 
-[node name="Sprite0002" type="Sprite2D" parent="."]
+[node name="Sprite0002" type="Sprite2D" parent="." unique_id=1749288539]
 top_level = true
 z_index = 2
 position = Vector2(360, 1350)
 scale = Vector2(10, 10)
 texture = ExtResource("9_4d7sh")
 
-[node name="power_up" type="Sprite2D" parent="Sprite0002"]
+[node name="power_up" type="Sprite2D" parent="Sprite0002" unique_id=233036760]
 position = Vector2(0, 9)
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=20535128]
 top_level = true
 z_index = 2
 offset_left = 250.0
@@ -1823,57 +1823,57 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Line" type="Node2D" parent="."]
+[node name="Line" type="Node2D" parent="." unique_id=930727276]
 modulate = Color(0.20579587, 0.20579587, 0.20579587, 1)
 position = Vector2(6, 0)
 
-[node name="Line2D" type="Line2D" parent="Line"]
+[node name="Line2D" type="Line2D" parent="Line" unique_id=1047338694]
 points = PackedVector2Array(30, 0, 0, 0, 0, 120, 50, 120, 0, 120, 0, 240, 30, 240)
 default_color = Color(0, 1, 0, 1)
 
-[node name="Line2D2" type="Line2D" parent="Line"]
+[node name="Line2D2" type="Line2D" parent="Line" unique_id=628164948]
 position = Vector2(0, 240)
 points = PackedVector2Array(30, 0, 0, 0, 0, 120, 50, 120, 0, 120, 0, 240, 30, 240)
 default_color = Color(0, 1, 0, 1)
 
-[node name="Line2D3" type="Line2D" parent="Line"]
+[node name="Line2D3" type="Line2D" parent="Line" unique_id=475466803]
 position = Vector2(0, 480)
 points = PackedVector2Array(30, 0, 0, 0, 0, 120, 50, 120, 0, 120, 0, 240, 30, 240)
 default_color = Color(1, 1, 0, 1)
 
-[node name="Line2D5" type="Line2D" parent="Line"]
+[node name="Line2D5" type="Line2D" parent="Line" unique_id=215619400]
 position = Vector2(0, 600)
 points = PackedVector2Array(0, 120, 0, 240, 30, 240)
 default_color = Color(1, 1, 0, 1)
 
-[node name="Line2D4" type="Line2D" parent="Line"]
+[node name="Line2D4" type="Line2D" parent="Line" unique_id=1921847217]
 position = Vector2(0, 720)
 points = PackedVector2Array(0, 72, 0, 120, 50, 120, 0, 120)
 default_color = Color(1, 0, 0, 1)
 
-[node name="Spawn enemy" type="Node2D" parent="."]
+[node name="Spawn enemy" type="Node2D" parent="." unique_id=1545070659]
 z_index = 1
 script = ExtResource("2_0e48y")
 
-[node name="Especials Events" type="Node2D" parent="."]
+[node name="Especials Events" type="Node2D" parent="." unique_id=1955463290]
 script = ExtResource("5_bpeby")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1709456821]
 layer = 2
 
-[node name="Container" type="Container" parent="CanvasLayer" node_paths=PackedStringArray("lineSwipe")]
+[node name="Container" type="Container" parent="CanvasLayer" unique_id=1328001405 node_paths=PackedStringArray("lineSwipe")]
 offset_right = 720.0
 offset_bottom = 1500.0
 script = ExtResource("5_q6r6c")
 lineSwipe = NodePath("../LineSwipe")
 
-[node name="LineSwipe" type="Line2D" parent="CanvasLayer"]
+[node name="LineSwipe" type="Line2D" parent="CanvasLayer" unique_id=2105968132]
 script = ExtResource("6_kdubu")
 
-[node name="Dead" type="Node" parent="CanvasLayer"]
+[node name="Dead" type="Node" parent="CanvasLayer" unique_id=1270586182]
 script = ExtResource("8_ffud4")
 
-[node name="Retry" type="Button" parent="CanvasLayer/Dead"]
+[node name="Retry" type="Button" parent="CanvasLayer/Dead" unique_id=1353514723]
 visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = 196.0
@@ -1886,7 +1886,7 @@ theme_override_font_sizes/font_size = 64
 disabled = true
 text = "Retry"
 
-[node name="Go to menu" type="Button" parent="CanvasLayer/Dead"]
+[node name="Go to menu" type="Button" parent="CanvasLayer/Dead" unique_id=1850557891]
 visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = 160.0
@@ -1899,7 +1899,7 @@ theme_override_font_sizes/font_size = 64
 disabled = true
 text = "Go to menu"
 
-[node name="Label2" type="RichTextLabel" parent="CanvasLayer/Dead"]
+[node name="Label2" type="RichTextLabel" parent="CanvasLayer/Dead" unique_id=1400040735]
 clip_contents = false
 anchors_preset = 5
 anchor_left = 0.5
@@ -1927,12 +1927,10 @@ visible_characters = 0
 visible_ratio = 0.0
 metadata/_edit_use_anchors_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Dead"]
-libraries = {
-&"": SubResource("AnimationLibrary_k73cj")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Dead" unique_id=115944974]
+libraries/ = SubResource("AnimationLibrary_k73cj")
 
-[node name="Record Text" type="RichTextLabel" parent="CanvasLayer/Dead"]
+[node name="Record Text" type="RichTextLabel" parent="CanvasLayer/Dead" unique_id=2058753683]
 visible = false
 clip_contents = false
 offset_left = 239.00002
@@ -1946,7 +1944,7 @@ text = "[rainbow]NEW RECORD"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer/Dead/Record Text"]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer/Dead/Record Text" unique_id=1450698249]
 position = Vector2(268.00006, 156)
 emitting = false
 amount = 50
@@ -1963,7 +1961,7 @@ scale_amount_curve = SubResource("Curve_whrbp")
 color_ramp = SubResource("Gradient_mqywf")
 color_initial_ramp = SubResource("Gradient_ffud4")
 
-[node name="Record" type="RichTextLabel" parent="CanvasLayer/Dead/Record Text"]
+[node name="Record" type="RichTextLabel" parent="CanvasLayer/Dead/Record Text" unique_id=1661502282]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1982,32 +1980,30 @@ text = "[rainbow]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Dead/Record Text"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Dead/Record Text" unique_id=1490810476]
 stream = ExtResource("9_h4mo1")
 
-[node name="Recarga2" type="AudioStreamPlayer" parent="CanvasLayer/Dead/Record Text"]
+[node name="Recarga2" type="AudioStreamPlayer" parent="CanvasLayer/Dead/Record Text" unique_id=739262968]
 stream = ExtResource("10_whrbp")
 bus = &"New Bus"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Dead/Record Text"]
-libraries = {
-&"": SubResource("AnimationLibrary_pdgpy")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Dead/Record Text" unique_id=1189512459]
+libraries/ = SubResource("AnimationLibrary_pdgpy")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1851106905]
 visible = false
 offset_right = 719.0
 offset_bottom = 631.0
 mouse_filter = 2
 color = Color(1, 0, 0, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1144544759]
 visible = false
 position = Vector2(360, 313.0001)
 scale = Vector2(10, 10)
 texture = ExtResource("11_hqns4")
 
-[node name="options button" type="TextureButton" parent="CanvasLayer"]
+[node name="options button" type="TextureButton" parent="CanvasLayer" unique_id=772993657]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -2018,67 +2014,63 @@ texture_normal = ExtResource("8_vcvmn")
 texture_pressed = ExtResource("9_ucfu1")
 stretch_mode = 5
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1710637703]
 position = Vector2(360, 750)
 ignore_rotation = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
-libraries = {
-&"": SubResource("AnimationLibrary_e8dv2")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D" unique_id=1175423143]
+libraries/ = SubResource("AnimationLibrary_e8dv2")
 
-[node name="AnimCameraRithm" type="AnimationPlayer" parent="Camera2D"]
-libraries = {
-&"": SubResource("AnimationLibrary_bjha6")
-}
-autoplay = "Loop"
+[node name="AnimCameraRithm" type="AnimationPlayer" parent="Camera2D" unique_id=1179465043]
+libraries/ = SubResource("AnimationLibrary_bjha6")
+autoplay = &"Loop"
 
-[node name="lightDown" type="Sprite2D" parent="Camera2D"]
+[node name="lightDown" type="Sprite2D" parent="Camera2D" unique_id=1858818910]
 z_index = 2
 position = Vector2(-7.1525574e-07, 705)
 texture = SubResource("GradientTexture2D_ucfu1")
 metadata/_edit_lock_ = true
 
-[node name="lightUp" type="Sprite2D" parent="Camera2D"]
+[node name="lightUp" type="Sprite2D" parent="Camera2D" unique_id=857229554]
 z_index = 2
 position = Vector2(0, -705)
 texture = SubResource("GradientTexture2D_ucfu1")
 flip_v = true
 metadata/_edit_lock_ = true
 
-[node name="Music control" type="Node2D" parent="."]
+[node name="Music control" type="Node2D" parent="." unique_id=1168572501]
 script = ExtResource("12_0h7mo")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Music control"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Music control" unique_id=841161571]
 stream = ExtResource("9_ta5nu")
 
-[node name="Player" type="Node2D" parent="."]
+[node name="Player" type="Node2D" parent="." unique_id=396349757]
 top_level = true
 position = Vector2(0, 1080)
 script = ExtResource("1_wtcfe")
 metadata/_edit_group_ = true
 
-[node name="Sprites" type="Node2D" parent="Player"]
+[node name="Sprites" type="Node2D" parent="Player" unique_id=1708776295]
 position = Vector2(12, 24)
 scale = Vector2(0.8, 0.8)
 
-[node name="Player sprite" type="Node2D" parent="Player/Sprites"]
+[node name="Player sprite" type="Node2D" parent="Player/Sprites" unique_id=1811463182]
 position = Vector2(60, 52)
 
-[node name="player_sprite" type="Sprite2D" parent="Player/Sprites/Player sprite"]
+[node name="player_sprite" type="Sprite2D" parent="Player/Sprites/Player sprite" unique_id=253843628]
 scale = Vector2(8, 8)
 texture = ExtResource("17_mqywf")
 hframes = 4
 vframes = 4
 
-[node name="Lighta" type="Sprite2D" parent="Player/Sprites"]
+[node name="Lighta" type="Sprite2D" parent="Player/Sprites" unique_id=1507241236]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(60, 52)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("18_xjpl6")
 metadata/_edit_lock_ = true
 
-[node name="Plin" type="Sprite2D" parent="Player/Sprites"]
+[node name="Plin" type="Sprite2D" parent="Player/Sprites" unique_id=1337900976]
 position = Vector2(60, 50)
 scale = Vector2(7, 7)
 texture = ExtResource("19_hjaha")
@@ -2086,39 +2078,33 @@ hframes = 3
 vframes = 2
 frame = 5
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Player/Sprites"]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Player/Sprites" unique_id=433285551]
 reset_on_save = false
 root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_0h7mo")
-}
+libraries/ = SubResource("AnimationLibrary_0h7mo")
 speed_scale = 1.6
 
-[node name="Mensajes" type="Node2D" parent="Player"]
+[node name="Mensajes" type="Node2D" parent="Player" unique_id=11922479]
 position = Vector2(96, -106)
 scale = Vector2(2, 2)
 
-[node name="Habilitys" type="Node" parent="Player"]
+[node name="Habilitys" type="Node" parent="Player" unique_id=1761853771]
 script = ExtResource("13_d2bti")
 
-[node name="Habilitys_anim" type="AnimationPlayer" parent="Player/Habilitys"]
-libraries = {
-&"": SubResource("AnimationLibrary_1fr6y")
-}
+[node name="Habilitys_anim" type="AnimationPlayer" parent="Player/Habilitys" unique_id=28065937]
+libraries/ = SubResource("AnimationLibrary_1fr6y")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Player/Habilitys"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Player/Habilitys" unique_id=1649155249]
 stream = ExtResource("15_crqma")
 volume_db = 18.0
 
-[node name="Laser" type="Node2D" parent="."]
+[node name="Laser" type="Node2D" parent="." unique_id=28061033]
 top_level = true
 
-[node name="preparation" type="AnimationPlayer" parent="Laser"]
-libraries = {
-&"": SubResource("AnimationLibrary_ta5nu")
-}
+[node name="preparation" type="AnimationPlayer" parent="Laser" unique_id=1113928954]
+libraries/ = SubResource("AnimationLibrary_ta5nu")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Laser"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Laser" unique_id=1380685872]
 offset_left = -111.0
 offset_top = 1146.0
 offset_right = 840.0
@@ -2126,7 +2112,7 @@ offset_bottom = 1197.0
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Laser" type="Sprite2D" parent="Laser"]
+[node name="Laser" type="Sprite2D" parent="Laser" unique_id=1975010689]
 visible = false
 top_level = true
 position = Vector2(697, 1080)
@@ -2138,12 +2124,10 @@ offset = Vector2(0, -12)
 hframes = 3
 vframes = 3
 
-[node name="Fire" type="AnimationPlayer" parent="Laser/Laser"]
-libraries = {
-&"": SubResource("AnimationLibrary_d2bti")
-}
+[node name="Fire" type="AnimationPlayer" parent="Laser/Laser" unique_id=599832587]
+libraries/ = SubResource("AnimationLibrary_d2bti")
 
-[node name="Rayo" type="Sprite2D" parent="Laser"]
+[node name="Rayo" type="Sprite2D" parent="Laser" unique_id=593970533]
 top_level = true
 position = Vector2(860, 1108)
 scale = Vector2(8, 8)
@@ -2153,15 +2137,13 @@ hframes = 4
 vframes = 3
 frame = 3
 
-[node name="Laser2" type="Node2D" parent="."]
+[node name="Laser2" type="Node2D" parent="." unique_id=835177405]
 top_level = true
 
-[node name="preparation" type="AnimationPlayer" parent="Laser2"]
-libraries = {
-&"": SubResource("AnimationLibrary_hjaha")
-}
+[node name="preparation" type="AnimationPlayer" parent="Laser2" unique_id=2019942221]
+libraries/ = SubResource("AnimationLibrary_hjaha")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Laser2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Laser2" unique_id=705566343]
 offset_left = -111.0
 offset_top = 1146.0
 offset_right = 840.0
@@ -2169,7 +2151,7 @@ offset_bottom = 1197.0
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Laser" type="Sprite2D" parent="Laser2"]
+[node name="Laser" type="Sprite2D" parent="Laser2" unique_id=1152905617]
 visible = false
 top_level = true
 position = Vector2(697, 697)
@@ -2181,12 +2163,10 @@ offset = Vector2(0, -12)
 hframes = 3
 vframes = 3
 
-[node name="Fire" type="AnimationPlayer" parent="Laser2/Laser"]
-libraries = {
-&"": SubResource("AnimationLibrary_178se")
-}
+[node name="Fire" type="AnimationPlayer" parent="Laser2/Laser" unique_id=1503943515]
+libraries/ = SubResource("AnimationLibrary_178se")
 
-[node name="Rayo" type="Sprite2D" parent="Laser2"]
+[node name="Rayo" type="Sprite2D" parent="Laser2" unique_id=708915063]
 top_level = true
 position = Vector2(860, 1108)
 scale = Vector2(8, 8)
@@ -2196,75 +2176,75 @@ hframes = 4
 vframes = 3
 frame = 3
 
-[node name="Achievements" type="Node" parent="."]
+[node name="Achievements" type="Node" parent="." unique_id=1836786399]
 
-[node name="Pause" parent="." instance=ExtResource("20_ucfu1")]
+[node name="Pause" parent="." unique_id=737401039 instance=ExtResource("20_ucfu1")]
 layer = 4
 visible = false
 
-[node name="lines debug" type="Node2D" parent="."]
+[node name="lines debug" type="Node2D" parent="." unique_id=387518314]
 visible = false
 
-[node name="Line2D" type="Line2D" parent="lines debug"]
+[node name="Line2D" type="Line2D" parent="lines debug" unique_id=869608709]
 points = PackedVector2Array(0, 0, 0, 1300)
 
-[node name="Line2D2" type="Line2D" parent="lines debug"]
+[node name="Line2D2" type="Line2D" parent="lines debug" unique_id=50559254]
 position = Vector2(120, 0)
 points = PackedVector2Array(0, 0, 0, 1300)
 
-[node name="Line2D3" type="Line2D" parent="lines debug"]
+[node name="Line2D3" type="Line2D" parent="lines debug" unique_id=1417223213]
 position = Vector2(240, 0)
 points = PackedVector2Array(0, 0, 0, 1300)
 
-[node name="Line2D4" type="Line2D" parent="lines debug"]
+[node name="Line2D4" type="Line2D" parent="lines debug" unique_id=1899276042]
 position = Vector2(360, 0)
 points = PackedVector2Array(0, 0, 0, 1300)
 
-[node name="Line2D5" type="Line2D" parent="lines debug"]
+[node name="Line2D5" type="Line2D" parent="lines debug" unique_id=86911816]
 position = Vector2(480, 0)
 points = PackedVector2Array(0, 0, 0, 1300)
 
-[node name="Line2D6" type="Line2D" parent="lines debug"]
+[node name="Line2D6" type="Line2D" parent="lines debug" unique_id=1465243252]
 position = Vector2(600, 0)
 points = PackedVector2Array(0, 0, 0, 1300)
 
-[node name="lines debug2" type="Node2D" parent="."]
+[node name="lines debug2" type="Node2D" parent="." unique_id=779947307]
 visible = false
 position = Vector2(-60, 0)
 
-[node name="Line2D" type="Line2D" parent="lines debug2"]
+[node name="Line2D" type="Line2D" parent="lines debug2" unique_id=1766991554]
 points = PackedVector2Array(0, 0, 0, 1300)
 width = 6.0
 
-[node name="Line2D2" type="Line2D" parent="lines debug2"]
+[node name="Line2D2" type="Line2D" parent="lines debug2" unique_id=2080291409]
 position = Vector2(120, 0)
 points = PackedVector2Array(0, 0, 0, 1300)
 width = 6.0
 
-[node name="Line2D3" type="Line2D" parent="lines debug2"]
+[node name="Line2D3" type="Line2D" parent="lines debug2" unique_id=717492025]
 position = Vector2(240, 0)
 points = PackedVector2Array(0, 0, 0, 1300)
 width = 6.0
 
-[node name="Line2D4" type="Line2D" parent="lines debug2"]
+[node name="Line2D4" type="Line2D" parent="lines debug2" unique_id=1635341943]
 position = Vector2(360, 0)
 points = PackedVector2Array(0, 0, 0, 1300)
 width = 6.0
 
-[node name="Line2D5" type="Line2D" parent="lines debug2"]
+[node name="Line2D5" type="Line2D" parent="lines debug2" unique_id=1576350830]
 position = Vector2(480, 0)
 points = PackedVector2Array(0, 0, 0, 1300)
 width = 6.0
 
-[node name="Line2D6" type="Line2D" parent="lines debug2"]
+[node name="Line2D6" type="Line2D" parent="lines debug2" unique_id=1030431795]
 position = Vector2(600, 0)
 points = PackedVector2Array(0, 0, 0, 1300)
 width = 6.0
 
-[node name="Torment" type="Node2D" parent="."]
+[node name="Torment" type="Node2D" parent="." unique_id=1507247435]
 z_index = 2
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Torment"]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Torment" unique_id=2060729082]
 material = SubResource("CanvasItemMaterial_ffud4")
 position = Vector2(761, 390)
 emitting = false
@@ -2284,7 +2264,7 @@ color = Color(1, 1, 1, 0.8352941)
 color_ramp = SubResource("Gradient_7gkgv")
 anim_offset_max = 1.0
 
-[node name="CPUParticles2D3" type="CPUParticles2D" parent="Torment"]
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="Torment" unique_id=1994159026]
 material = SubResource("CanvasItemMaterial_ffud4")
 position = Vector2(761, 390)
 emitting = false
@@ -2304,7 +2284,7 @@ color = Color(1, 1, 1, 0.8352941)
 color_ramp = SubResource("Gradient_whrbp")
 anim_offset_max = 1.0
 
-[node name="CPUParticles2D2" type="CPUParticles2D" parent="Torment"]
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="Torment" unique_id=684832500]
 material = SubResource("CanvasItemMaterial_ffud4")
 position = Vector2(-71, 390)
 scale = Vector2(-1, 1)
@@ -2325,7 +2305,7 @@ color = Color(1, 1, 1, 0.8352941)
 color_ramp = SubResource("Gradient_7gkgv")
 anim_offset_max = 1.0
 
-[node name="CPUParticles2D4" type="CPUParticles2D" parent="Torment"]
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="Torment" unique_id=2144341715]
 material = SubResource("CanvasItemMaterial_ffud4")
 position = Vector2(-71, 390)
 scale = Vector2(-1, 1)
@@ -2346,15 +2326,13 @@ color = Color(1, 1, 1, 0.8352941)
 color_ramp = SubResource("Gradient_whrbp")
 anim_offset_max = 1.0
 
-[node name="fog" type="AnimationPlayer" parent="Torment"]
-libraries = {
-&"": SubResource("AnimationLibrary_whrbp")
-}
+[node name="fog" type="AnimationPlayer" parent="Torment" unique_id=649205795]
+libraries/ = SubResource("AnimationLibrary_whrbp")
 
-[node name="blizzard" type="Node2D" parent="."]
+[node name="blizzard" type="Node2D" parent="." unique_id=1727996096]
 z_index = 2
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="blizzard"]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="blizzard" unique_id=732508688]
 position = Vector2(720, 419)
 emitting = false
 amount = 4
@@ -2370,7 +2348,7 @@ initial_velocity_max = 600.0
 scale_amount_min = 8.0
 scale_amount_max = 8.0
 
-[node name="CPUParticles2D2" type="CPUParticles2D" parent="blizzard"]
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="blizzard" unique_id=1526165939]
 position = Vector2(0, 419)
 scale = Vector2(-1, 1)
 emitting = false

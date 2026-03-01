@@ -13,6 +13,7 @@ var swipe_finished: bool = false
 
 
 func _process(delta: float) -> void:
+	_not_tactiles_inputs()
 	if not lineSwipeActive:
 		return
 
@@ -60,11 +61,13 @@ func _end_touch(start: Vector2, end: Vector2) -> void:
 	_check_swipe_direction(start, end)
 
 
-func _check_swipe_direction(start: Vector2, end: Vector2) -> void:
+func _check_swipe_direction(start: Vector2, end: Vector2, force_value:Vector2 = Vector2.ZERO) -> void:
 	var delta := end - start
-
-	if delta.length() < SWIPE_THRESHOLD:
+	
+	if delta.length() < SWIPE_THRESHOLD and force_value == Vector2.ZERO:
 		return
+	if force_value != Vector2.ZERO:
+		delta = force_value
 	release_inputs()
 
 
@@ -96,3 +99,14 @@ func release_mov_inputs() -> void:
 func release_specials_inputs() -> void:
 	Input.action_release("jump")
 	Input.action_release("hability")
+
+
+func _not_tactiles_inputs() -> void:
+	if Input.is_action_just_pressed("right_emulated"):
+		_check_swipe_direction(Vector2.ZERO, Vector2.ZERO, Vector2.RIGHT)
+	if Input.is_action_just_pressed("left_emulated"):
+		_check_swipe_direction(Vector2.ZERO, Vector2.ZERO, Vector2.LEFT)
+	if Input.is_action_just_pressed("jump_emulated"):
+		_check_swipe_direction(Vector2.ZERO, Vector2.ZERO, Vector2.UP)
+	if Input.is_action_just_pressed("hability_emulated"):
+		_check_swipe_direction(Vector2.ZERO, Vector2.ZERO, Vector2.DOWN)
