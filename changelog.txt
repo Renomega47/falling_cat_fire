@@ -1,3 +1,20 @@
+## [Released 1.3]
+
+### Added
+- Chaotic Mode
+- Time Stop object
+- Surprise achievement
+
+### Changed
+- Events no longer repeat from the last three occurrences (previously only prevented repeating the last one)
+- Hard Mode renamed to Classic Mode
+- Updated Laser Notice texture
+- Recalibrated ranking system
+
+### Removed
+- Easy Mode
+
+
 ## [Released 1.2]
 
 ### Added

@@ -39,7 +39,7 @@ func _on_hard_pressed() -> void:
 	get_tree().change_scene_to_file("res://Gameplay/Game.tscn")
 
 func await_button() -> void:
-	for i in [$VBoxContainer/Hard, $VBoxContainer/Easy, $VBoxContainer/Quit, $Credits, $VBoxContainer/Codex, $VBoxContainer/Ranking]:
+	for i in [$VBoxContainer/Chaotic, $VBoxContainer/Classic, $VBoxContainer/Quit, $Credits, $VBoxContainer/Codex, $VBoxContainer/Ranking]:
 		i.disabled = true
 		$"Button pressed".play("button pressed")
 

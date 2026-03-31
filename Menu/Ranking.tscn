@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1q76y11chq1v"]
+[gd_scene format=3 uid="uid://c1q76y11chq1v"]
 
 [ext_resource type="Script" uid="uid://cu2i8j3yoiyor" path="res://Menu/ranking.gd" id="1_lquyc"]
 [ext_resource type="FontFile" uid="uid://bl4te3axdalui" path="res://FSEX302.ttf" id="6_4v0l7"]
 
-[node name="Ranking" type="Control"]
+[node name="Ranking" type="Control" unique_id=1764208244]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lquyc")
 
-[node name="go to menu" type="Button" parent="."]
+[node name="go to menu" type="Button" parent="." unique_id=684206803]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -22,60 +22,60 @@ theme_override_fonts/font = ExtResource("6_4v0l7")
 theme_override_font_sizes/font_size = 64
 text = "Go to menu"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Container Ranking" type="VBoxContainer" parent="." unique_id=47780979]
 layout_mode = 0
 offset_top = 195.0
 offset_right = 720.0
 offset_bottom = 1561.0
 theme_override_constants/separation = 71
 
-[node name="Control" type="Control" parent="VBoxContainer"]
+[node name="Control" type="Control" parent="Container Ranking" unique_id=159364453]
 custom_minimum_size = Vector2(720, 120)
 layout_mode = 2
 
-[node name="Backgound" type="Control" parent="VBoxContainer/Control"]
+[node name="Backgound" type="Control" parent="Container Ranking/Control" unique_id=1337473099]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Control/Backgound"]
+[node name="ColorRect" type="ColorRect" parent="Container Ranking/Control/Backgound" unique_id=1596781189]
 layout_mode = 0
 offset_right = 720.0
 offset_bottom = 120.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/Control/Backgound"]
+[node name="ColorRect2" type="ColorRect" parent="Container Ranking/Control/Backgound" unique_id=1063627622]
 layout_mode = 0
 offset_right = 720.0
 offset_bottom = 20.0
 
-[node name="ColorRect3" type="ColorRect" parent="VBoxContainer/Control/Backgound"]
+[node name="ColorRect3" type="ColorRect" parent="Container Ranking/Control/Backgound" unique_id=908452887]
 layout_mode = 0
 offset_top = 100.0
 offset_right = 720.0
 offset_bottom = 120.0
 
-[node name="ColorRect4" type="ColorRect" parent="VBoxContainer/Control/Backgound"]
+[node name="ColorRect4" type="ColorRect" parent="Container Ranking/Control/Backgound" unique_id=1684358574]
 layout_mode = 0
 offset_left = 261.0
 offset_top = 19.0
 offset_right = 281.0
 offset_bottom = 102.0
 
-[node name="ColorRect6" type="ColorRect" parent="VBoxContainer/Control/Backgound"]
+[node name="ColorRect6" type="ColorRect" parent="Container Ranking/Control/Backgound" unique_id=1274120065]
 layout_mode = 0
 offset_left = 700.0
 offset_top = 19.0
 offset_right = 720.0
 offset_bottom = 102.0
 
-[node name="ColorRect5" type="ColorRect" parent="VBoxContainer/Control/Backgound"]
+[node name="ColorRect5" type="ColorRect" parent="Container Ranking/Control/Backgound" unique_id=389822389]
 layout_mode = 0
 offset_top = 19.0
 offset_right = 20.0
 offset_bottom = 102.0
 
-[node name="Name" type="RichTextLabel" parent="VBoxContainer/Control"]
+[node name="Name" type="RichTextLabel" parent="Container Ranking/Control" unique_id=1632254979]
 layout_mode = 0
 offset_left = 21.0
 offset_top = 20.0
@@ -91,7 +91,7 @@ autowrap_mode = 1
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Puntuation" type="Label" parent="VBoxContainer/Control"]
+[node name="Puntuation" type="Label" parent="Container Ranking/Control" unique_id=1671346337]
 layout_mode = 0
 offset_left = 281.0
 offset_top = 20.0
@@ -102,53 +102,53 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[node name="Control2" type="Control" parent="VBoxContainer"]
+[node name="Control2" type="Control" parent="Container Ranking" unique_id=1875589965]
 custom_minimum_size = Vector2(720, 120)
 layout_mode = 2
 
-[node name="Backgound" type="Control" parent="VBoxContainer/Control2"]
+[node name="Backgound" type="Control" parent="Container Ranking/Control2" unique_id=1668151109]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Control2/Backgound"]
+[node name="ColorRect" type="ColorRect" parent="Container Ranking/Control2/Backgound" unique_id=48697930]
 layout_mode = 0
 offset_right = 720.0
 offset_bottom = 120.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/Control2/Backgound"]
+[node name="ColorRect2" type="ColorRect" parent="Container Ranking/Control2/Backgound" unique_id=975509045]
 layout_mode = 0
 offset_right = 720.0
 offset_bottom = 20.0
 
-[node name="ColorRect3" type="ColorRect" parent="VBoxContainer/Control2/Backgound"]
+[node name="ColorRect3" type="ColorRect" parent="Container Ranking/Control2/Backgound" unique_id=904645583]
 layout_mode = 0
 offset_top = 100.0
 offset_right = 720.0
 offset_bottom = 120.0
 
-[node name="ColorRect4" type="ColorRect" parent="VBoxContainer/Control2/Backgound"]
+[node name="ColorRect4" type="ColorRect" parent="Container Ranking/Control2/Backgound" unique_id=98361915]
 layout_mode = 0
 offset_left = 261.0
 offset_top = 19.0
 offset_right = 281.0
 offset_bottom = 102.0
 
-[node name="ColorRect6" type="ColorRect" parent="VBoxContainer/Control2/Backgound"]
+[node name="ColorRect6" type="ColorRect" parent="Container Ranking/Control2/Backgound" unique_id=636903061]
 layout_mode = 0
 offset_left = 700.0
 offset_top = 19.0
 offset_right = 720.0
 offset_bottom = 102.0
 
-[node name="ColorRect5" type="ColorRect" parent="VBoxContainer/Control2/Backgound"]
+[node name="ColorRect5" type="ColorRect" parent="Container Ranking/Control2/Backgound" unique_id=1410709526]
 layout_mode = 0
 offset_top = 19.0
 offset_right = 20.0
 offset_bottom = 102.0
 
-[node name="Name" type="RichTextLabel" parent="VBoxContainer/Control2"]
+[node name="Name" type="RichTextLabel" parent="Container Ranking/Control2" unique_id=157068981]
 layout_mode = 0
 offset_left = 21.0
 offset_top = 20.0
@@ -164,80 +164,7 @@ autowrap_mode = 1
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Puntuation" type="Label" parent="VBoxContainer/Control2"]
-layout_mode = 0
-offset_left = 281.0
-offset_top = 20.0
-offset_right = 700.0
-offset_bottom = 100.0
-theme_override_font_sizes/font_size = 48
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Control3" type="Control" parent="VBoxContainer"]
-custom_minimum_size = Vector2(720, 120)
-layout_mode = 2
-
-[node name="Backgound" type="Control" parent="VBoxContainer/Control3"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Control3/Backgound"]
-layout_mode = 0
-offset_right = 720.0
-offset_bottom = 120.0
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/Control3/Backgound"]
-layout_mode = 0
-offset_right = 720.0
-offset_bottom = 20.0
-
-[node name="ColorRect3" type="ColorRect" parent="VBoxContainer/Control3/Backgound"]
-layout_mode = 0
-offset_top = 100.0
-offset_right = 720.0
-offset_bottom = 120.0
-
-[node name="ColorRect4" type="ColorRect" parent="VBoxContainer/Control3/Backgound"]
-layout_mode = 0
-offset_left = 261.0
-offset_top = 19.0
-offset_right = 281.0
-offset_bottom = 102.0
-
-[node name="ColorRect6" type="ColorRect" parent="VBoxContainer/Control3/Backgound"]
-layout_mode = 0
-offset_left = 700.0
-offset_top = 19.0
-offset_right = 720.0
-offset_bottom = 102.0
-
-[node name="ColorRect5" type="ColorRect" parent="VBoxContainer/Control3/Backgound"]
-layout_mode = 0
-offset_top = 19.0
-offset_right = 20.0
-offset_bottom = 102.0
-
-[node name="Name" type="RichTextLabel" parent="VBoxContainer/Control3"]
-layout_mode = 0
-offset_left = 21.0
-offset_top = 20.0
-offset_right = 261.0
-offset_bottom = 100.0
-theme_override_constants/line_separation = -12
-theme_override_font_sizes/normal_font_size = 48
-bbcode_enabled = true
-text = "NAME"
-fit_content = true
-scroll_active = false
-autowrap_mode = 1
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Puntuation" type="Label" parent="VBoxContainer/Control3"]
+[node name="Puntuation" type="Label" parent="Container Ranking/Control2" unique_id=379975357]
 layout_mode = 0
 offset_left = 281.0
 offset_top = 20.0
@@ -248,53 +175,53 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control4" type="Control" parent="VBoxContainer"]
+[node name="Control3" type="Control" parent="Container Ranking" unique_id=1143028570]
 custom_minimum_size = Vector2(720, 120)
 layout_mode = 2
 
-[node name="Backgound" type="Control" parent="VBoxContainer/Control4"]
+[node name="Backgound" type="Control" parent="Container Ranking/Control3" unique_id=888278603]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Control4/Backgound"]
+[node name="ColorRect" type="ColorRect" parent="Container Ranking/Control3/Backgound" unique_id=1391501756]
 layout_mode = 0
 offset_right = 720.0
 offset_bottom = 120.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/Control4/Backgound"]
+[node name="ColorRect2" type="ColorRect" parent="Container Ranking/Control3/Backgound" unique_id=1075895439]
 layout_mode = 0
 offset_right = 720.0
 offset_bottom = 20.0
 
-[node name="ColorRect3" type="ColorRect" parent="VBoxContainer/Control4/Backgound"]
+[node name="ColorRect3" type="ColorRect" parent="Container Ranking/Control3/Backgound" unique_id=239080116]
 layout_mode = 0
 offset_top = 100.0
 offset_right = 720.0
 offset_bottom = 120.0
 
-[node name="ColorRect4" type="ColorRect" parent="VBoxContainer/Control4/Backgound"]
+[node name="ColorRect4" type="ColorRect" parent="Container Ranking/Control3/Backgound" unique_id=1467901268]
 layout_mode = 0
 offset_left = 261.0
 offset_top = 19.0
 offset_right = 281.0
 offset_bottom = 102.0
 
-[node name="ColorRect6" type="ColorRect" parent="VBoxContainer/Control4/Backgound"]
+[node name="ColorRect6" type="ColorRect" parent="Container Ranking/Control3/Backgound" unique_id=540115995]
 layout_mode = 0
 offset_left = 700.0
 offset_top = 19.0
 offset_right = 720.0
 offset_bottom = 102.0
 
-[node name="ColorRect5" type="ColorRect" parent="VBoxContainer/Control4/Backgound"]
+[node name="ColorRect5" type="ColorRect" parent="Container Ranking/Control3/Backgound" unique_id=1637345230]
 layout_mode = 0
 offset_top = 19.0
 offset_right = 20.0
 offset_bottom = 102.0
 
-[node name="Name" type="RichTextLabel" parent="VBoxContainer/Control4"]
+[node name="Name" type="RichTextLabel" parent="Container Ranking/Control3" unique_id=1552919955]
 layout_mode = 0
 offset_left = 21.0
 offset_top = 20.0
@@ -310,7 +237,7 @@ autowrap_mode = 1
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Puntuation" type="Label" parent="VBoxContainer/Control4"]
+[node name="Puntuation" type="Label" parent="Container Ranking/Control3" unique_id=262647989]
 layout_mode = 0
 offset_left = 281.0
 offset_top = 20.0
@@ -321,53 +248,53 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control5" type="Control" parent="VBoxContainer"]
+[node name="Control4" type="Control" parent="Container Ranking" unique_id=1463862062]
 custom_minimum_size = Vector2(720, 120)
 layout_mode = 2
 
-[node name="Backgound" type="Control" parent="VBoxContainer/Control5"]
+[node name="Backgound" type="Control" parent="Container Ranking/Control4" unique_id=193001263]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Control5/Backgound"]
+[node name="ColorRect" type="ColorRect" parent="Container Ranking/Control4/Backgound" unique_id=40071103]
 layout_mode = 0
 offset_right = 720.0
 offset_bottom = 120.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/Control5/Backgound"]
+[node name="ColorRect2" type="ColorRect" parent="Container Ranking/Control4/Backgound" unique_id=524205514]
 layout_mode = 0
 offset_right = 720.0
 offset_bottom = 20.0
 
-[node name="ColorRect3" type="ColorRect" parent="VBoxContainer/Control5/Backgound"]
+[node name="ColorRect3" type="ColorRect" parent="Container Ranking/Control4/Backgound" unique_id=162426531]
 layout_mode = 0
 offset_top = 100.0
 offset_right = 720.0
 offset_bottom = 120.0
 
-[node name="ColorRect4" type="ColorRect" parent="VBoxContainer/Control5/Backgound"]
+[node name="ColorRect4" type="ColorRect" parent="Container Ranking/Control4/Backgound" unique_id=1092736806]
 layout_mode = 0
 offset_left = 261.0
 offset_top = 19.0
 offset_right = 281.0
 offset_bottom = 102.0
 
-[node name="ColorRect6" type="ColorRect" parent="VBoxContainer/Control5/Backgound"]
+[node name="ColorRect6" type="ColorRect" parent="Container Ranking/Control4/Backgound" unique_id=978140492]
 layout_mode = 0
 offset_left = 700.0
 offset_top = 19.0
 offset_right = 720.0
 offset_bottom = 102.0
 
-[node name="ColorRect5" type="ColorRect" parent="VBoxContainer/Control5/Backgound"]
+[node name="ColorRect5" type="ColorRect" parent="Container Ranking/Control4/Backgound" unique_id=406590831]
 layout_mode = 0
 offset_top = 19.0
 offset_right = 20.0
 offset_bottom = 102.0
 
-[node name="Name" type="RichTextLabel" parent="VBoxContainer/Control5"]
+[node name="Name" type="RichTextLabel" parent="Container Ranking/Control4" unique_id=1282831296]
 layout_mode = 0
 offset_left = 21.0
 offset_top = 20.0
@@ -383,7 +310,7 @@ autowrap_mode = 1
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Puntuation" type="Label" parent="VBoxContainer/Control5"]
+[node name="Puntuation" type="Label" parent="Container Ranking/Control4" unique_id=1601316096]
 layout_mode = 0
 offset_left = 281.0
 offset_top = 20.0
@@ -394,53 +321,53 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control6" type="Control" parent="VBoxContainer"]
+[node name="Control5" type="Control" parent="Container Ranking" unique_id=2073841588]
 custom_minimum_size = Vector2(720, 120)
 layout_mode = 2
 
-[node name="Backgound" type="Control" parent="VBoxContainer/Control6"]
+[node name="Backgound" type="Control" parent="Container Ranking/Control5" unique_id=228272091]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Control6/Backgound"]
+[node name="ColorRect" type="ColorRect" parent="Container Ranking/Control5/Backgound" unique_id=654493858]
 layout_mode = 0
 offset_right = 720.0
 offset_bottom = 120.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/Control6/Backgound"]
+[node name="ColorRect2" type="ColorRect" parent="Container Ranking/Control5/Backgound" unique_id=209965047]
 layout_mode = 0
 offset_right = 720.0
 offset_bottom = 20.0
 
-[node name="ColorRect3" type="ColorRect" parent="VBoxContainer/Control6/Backgound"]
+[node name="ColorRect3" type="ColorRect" parent="Container Ranking/Control5/Backgound" unique_id=1072710986]
 layout_mode = 0
 offset_top = 100.0
 offset_right = 720.0
 offset_bottom = 120.0
 
-[node name="ColorRect4" type="ColorRect" parent="VBoxContainer/Control6/Backgound"]
+[node name="ColorRect4" type="ColorRect" parent="Container Ranking/Control5/Backgound" unique_id=78974563]
 layout_mode = 0
 offset_left = 261.0
 offset_top = 19.0
 offset_right = 281.0
 offset_bottom = 102.0
 
-[node name="ColorRect6" type="ColorRect" parent="VBoxContainer/Control6/Backgound"]
+[node name="ColorRect6" type="ColorRect" parent="Container Ranking/Control5/Backgound" unique_id=2014716295]
 layout_mode = 0
 offset_left = 700.0
 offset_top = 19.0
 offset_right = 720.0
 offset_bottom = 102.0
 
-[node name="ColorRect5" type="ColorRect" parent="VBoxContainer/Control6/Backgound"]
+[node name="ColorRect5" type="ColorRect" parent="Container Ranking/Control5/Backgound" unique_id=804550784]
 layout_mode = 0
 offset_top = 19.0
 offset_right = 20.0
 offset_bottom = 102.0
 
-[node name="Name" type="RichTextLabel" parent="VBoxContainer/Control6"]
+[node name="Name" type="RichTextLabel" parent="Container Ranking/Control5" unique_id=1451792604]
 layout_mode = 0
 offset_left = 21.0
 offset_top = 20.0
@@ -456,7 +383,7 @@ autowrap_mode = 1
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Puntuation" type="Label" parent="VBoxContainer/Control6"]
+[node name="Puntuation" type="Label" parent="Container Ranking/Control5" unique_id=1394668086]
 layout_mode = 0
 offset_left = 281.0
 offset_top = 20.0
@@ -467,7 +394,80 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Easy" type="Button" parent="."]
+[node name="Control6" type="Control" parent="Container Ranking" unique_id=1178584994]
+custom_minimum_size = Vector2(720, 120)
+layout_mode = 2
+
+[node name="Backgound" type="Control" parent="Container Ranking/Control6" unique_id=888506641]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Container Ranking/Control6/Backgound" unique_id=568326922]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 120.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Container Ranking/Control6/Backgound" unique_id=1901094594]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 20.0
+
+[node name="ColorRect3" type="ColorRect" parent="Container Ranking/Control6/Backgound" unique_id=1508116394]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 720.0
+offset_bottom = 120.0
+
+[node name="ColorRect4" type="ColorRect" parent="Container Ranking/Control6/Backgound" unique_id=1597320460]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 19.0
+offset_right = 281.0
+offset_bottom = 102.0
+
+[node name="ColorRect6" type="ColorRect" parent="Container Ranking/Control6/Backgound" unique_id=263133631]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 19.0
+offset_right = 720.0
+offset_bottom = 102.0
+
+[node name="ColorRect5" type="ColorRect" parent="Container Ranking/Control6/Backgound" unique_id=5182401]
+layout_mode = 0
+offset_top = 19.0
+offset_right = 20.0
+offset_bottom = 102.0
+
+[node name="Name" type="RichTextLabel" parent="Container Ranking/Control6" unique_id=23923499]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 20.0
+offset_right = 261.0
+offset_bottom = 100.0
+theme_override_constants/line_separation = -12
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "NAME"
+fit_content = true
+scroll_active = false
+autowrap_mode = 1
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Puntuation" type="Label" parent="Container Ranking/Control6" unique_id=539882573]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 20.0
+offset_right = 700.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Easy" type="Button" parent="." unique_id=63528862]
 modulate = Color(0, 1, 0, 1)
 layout_mode = 1
 anchors_preset = 7
@@ -482,9 +482,9 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("6_4v0l7")
 theme_override_font_sizes/font_size = 64
-text = "Normal"
+text = "Classic"
 
-[node name="Hard" type="Button" parent="."]
+[node name="Hard" type="Button" parent="." unique_id=555015475]
 modulate = Color(1, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 7
@@ -499,7 +499,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("6_4v0l7")
 theme_override_font_sizes/font_size = 64
-text = "Hard"
+text = "Chaotic"
 
 [connection signal="pressed" from="Easy" to="." method="change_dificult"]
 [connection signal="pressed" from="Hard" to="." method="change_dificult"]

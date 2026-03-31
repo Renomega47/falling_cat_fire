@@ -10,6 +10,8 @@ var play:bool = false
 
 var inmortality_cooldawn:int = 0
 
+var enemys_stop_time:int = 0
+
 @onready var spawn_enemy:Node2D = $"Spawn enemy"
 @onready var especials_events:Node2D = $"Especials Events"
 @onready var player:Node2D = $Player
@@ -19,10 +21,9 @@ var perfect_dodges_counting:int = 0
 func _ready() -> void:
 	Global.load_option()
 	update_player_size_increment()
-	if Global.dificult_max: 
-		cooldawn_max = 0.4
-	else: 
-		cooldawn_max = 0.6
+ 
+	cooldawn_max = 0.4
+
 	play = true
 	resset_temporizer()
 	updateFrame.connect(next_frame)
@@ -33,6 +34,35 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	temporizer(delta)
+
+
+func _imortality_cooldawn() -> void:
+	if inmortality_cooldawn > 0: inmortality_cooldawn -= 1
+	if inmortality_cooldawn == 0: 
+		inmortality_cooldawn = -1
+		$Player/Habilitys/Habilitys_anim.play("RESET")
+
+#region stop time object
+var _animation_stop_time:Tween
+func anim_stop_time(play_anim:bool) -> void:
+	var foreground_blue:TextureRect = $"Time stop power up/ColorRect"
+	_animation_stop_time = create_tween()
+	foreground_blue.visible = true
+	foreground_blue.modulate.a = int(!play_anim)
+	_animation_stop_time.tween_property(foreground_blue, "modulate:a", int(play_anim), 1.0)
+	if play_anim == false: _animation_stop_time.tween_callback(func(): foreground_blue.visible = false)
+
+func _stop_time_manager() -> void:
+	if enemys_stop_time > 0:
+		enemys_stop_time -= 1
+		if enemys_stop_time == 1: anim_stop_time(false)
+
+func set_stop_time(time:int) -> void:
+	enemys_stop_time = time
+	anim_stop_time(true)
+#endregion
+
+
 
 
 func lines_debug() -> void:
@@ -59,11 +89,8 @@ func temporizer(delta:float) -> void:
 var puntuation:int= 0
 
 func next_frame() -> void:
-	if inmortality_cooldawn > 0: inmortality_cooldawn -= 1
-	if inmortality_cooldawn == 0: 
-		inmortality_cooldawn = -1
-		$Player/Habilitys/Habilitys_anim.play("RESET")
-
+	_imortality_cooldawn()
+	_stop_time_manager()
 	_evaluate_perfect_dodge()
 	puntuation += 1
 	idle_time += 1
@@ -77,6 +104,7 @@ func text_bonus_spawn() -> void:
 	$Player/Mensajes.add_child(instance)
 
 func get_bonus() -> bool:
+	if enemys_stop_time > 0: return false
 	for enemy in spawn_enemy.get_children():
 		if not $Player.previous_cell == enemy.get_cell_x(): continue
 
@@ -115,9 +143,9 @@ func check_achievements() -> void:
 	if count_matching_elements(Global.save["codex"], objects) >= 12: Global.add_to_achievements("Archaeologist 2")
 	if count_matching_elements(Global.save["codex"], objects) >= 15: Global.add_to_achievements("Archaeologist 3")
 
-	if Global.save["max_puntuation_normal"] >= 2690 or Global.save["max_puntuation_hard"] >= 1924:
+	if Global.save["max_puntuation_normal"] >= 2690 or Global.save["max_puntuation_hard"] >= 1560:
 		Global.add_to_achievements("Better Than the Devs")
-	if Global.save["max_puntuation_normal"] >= 9554 or Global.save["max_puntuation_hard"] >= 6323:
+	if Global.save["max_puntuation_hard"] >= 4040:
 		Global.add_to_achievements("Noodle Nemesis")
 
 	if perfect_dodges_counting > 50: Global.add_to_achievements("Perfect Dodge Master")
@@ -140,7 +168,9 @@ func check_defeat() -> bool:
 		return false
 
 #condition 1
-	if especials_events.died_from_event(): return true
+	if especials_events.died_from_event(): 
+		if enemys_stop_time > 0: Global.add_to_achievements("Surprise")
+		return true
 
 #condition 2
 	for i in $"Spawn enemy".get_children():
@@ -173,7 +203,7 @@ func _on_retry_pressed() -> void:
 func _on_go_to_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://Menu/Menu.tscn")
 
-var texture:Array[Texture2D] = [load("res://Power-ups/right/right icon.png"),load("res://Power-ups/left/left icon.png"),load("res://Power-ups/heart/healt.png")]
+var texture:Array[Texture2D] = [load("res://Power-ups/right/right icon.png"),load("res://Power-ups/left/left icon.png"),load("res://Power-ups/heart/healt.png"), load("res://Power-ups/time stop/time-1.png")]
 func update_power_up() -> void:
 	if $Player/Habilitys.hability_key == 0:
 		$Sprite0002/power_up.texture = null

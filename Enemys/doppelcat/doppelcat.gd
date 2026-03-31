@@ -22,6 +22,7 @@ func _ready() -> void:
 
 
 func next_frame() -> void:
+	if is_stop():return
 	if current_cell == 1:
 		change = true
 	current_cell += 1

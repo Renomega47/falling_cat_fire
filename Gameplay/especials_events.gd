@@ -2,19 +2,20 @@ extends Node2D
 
 var active:bool = true
 
-const events:Array[Array] = [
-	["laserV1", 30, 60, 6],
-	["flip_camera", 40, 60, 3],
-	["fog_event", 40, 60, 2],
-	["blizzard", 30, 60, 5],
-	["laserV2", 20, 60, 1]
+#[Event name, min cooldawn, max cooldawn, Spawn Probability]
+const events:Array[Array] = [ 
+	["laserV1", 30, 60, 3],
+	["flip_camera", 40, 60, 2],
+	["fog_event", 40, 60, 3],
+	["blizzard", 30, 60, 3],
+	["laserV2", 20, 60, 3]
 ]
 
 var next_event:int = 0
-var last_event:int = -1
+var last_events:Array[int] = [-1, -1, -1]
 
 
-var cooldawn_event:int = 40
+var cooldawn_event:int = 10#40
 var active_duration:int
 
 @onready var tree:Node2D = $".."
@@ -23,7 +24,7 @@ var active_duration:int
 
 
 func _ready() -> void:
-	next_event = get_random_event_key()
+	next_event = get_ramdom_event_key()
 	tree.updateFrame.connect(frame_next)
 
 func frame_next() -> void:
@@ -35,30 +36,41 @@ func frame_next() -> void:
 		active_duration += 1
 		update_events()
 
+
 func update_events() -> void:
 	call(events[next_event][0])
 
 func finish_event() -> void:
-	var temp_next_event:int = get_random_event_key()
-	while temp_next_event == last_event and events.size() > 1:
-		temp_next_event = get_random_event_key()
+	var temp_next_event:int = get_ramdom_event_key(last_events)
+
 	next_event = temp_next_event
 
-	last_event = next_event
-	cooldawn_event = randi_range(events[next_event][1], events[next_event][2]-1)
+	last_events[0] = last_events[1]
+	last_events[1] = last_events[2]
+	last_events[2] = next_event
+
+	print(last_events)
+	if Global.dificult_max: cooldawn_event = 3
+	else: cooldawn_event = randi_range(events[next_event][1], events[next_event][2]-1)
 
 
-func get_random_event_key() -> int: #weights sistem
+func get_ramdom_event_key(exceptions:Array=[]) -> int: #weights sistem
+#exceptions controller
+	var event_modified:Array[int] = []
+	for i in events: event_modified.append(i[3])
+	for i in exceptions: event_modified[i] = 0
+#----------------------
+
 	var total_weight:int = 0
-	
-	for temp_event in events:
-		total_weight += temp_event[3]
+
+	for temp_event in event_modified:
+		total_weight += temp_event
 
 	var roll:int = randi() % total_weight
 	var cumulative:int = 0
 
-	for i in range(events.size()):
-		cumulative += events[i][3]
+	for i in range(event_modified.size()):
+		cumulative += event_modified[i]
 		if roll < cumulative:
 			return i
 
@@ -184,3 +196,5 @@ func _blizard_particles_control(particles0:bool, particles1:bool) -> void:
 	blizzard_particles[0].emitting = particles0
 	blizzard_particles[1].emitting = particles1
 #endregion
+
+#Time stop

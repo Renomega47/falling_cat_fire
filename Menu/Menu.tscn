@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dtcodwfj60k78"]
+[gd_scene format=3 uid="uid://dtcodwfj60k78"]
 
 [ext_resource type="Script" uid="uid://qpyeykycviy8" path="res://Menu/menu.gd" id="1_e56cd"]
 [ext_resource type="FontFile" uid="uid://bl4te3axdalui" path="res://FSEX302.ttf" id="1_jf1j2"]
@@ -357,7 +357,7 @@ width = 720
 height = 90
 fill_from = Vector2(1, 1)
 
-[node name="Menu" type="Control"]
+[node name="Menu" type="Control" unique_id=783011004]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -366,7 +366,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e56cd")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=599853251]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -379,14 +379,14 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Lighta" type="Sprite2D" parent="."]
+[node name="Lighta" type="Sprite2D" parent="." unique_id=1735828760]
 visible = false
 modulate = Color(1, 0, 0.18039216, 1)
 position = Vector2(367, 732)
 scale = Vector2(4, 4)
 texture = ExtResource("2_m87qx")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=210200800]
 modulate = Color(0.098728366, 0.09872835, 0.09872835, 1)
 position = Vector2(601, 162.99997)
 scale = Vector2(8, 8)
@@ -396,7 +396,7 @@ hframes = 6
 vframes = 6
 frame = 30
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1477281582]
 modulate = Color(0.098728366, 0.09872835, 0.09872835, 1)
 position = Vector2(267, 1468)
 scale = Vector2(8, 8)
@@ -406,7 +406,7 @@ hframes = 6
 vframes = 6
 frame = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1336826833]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -416,31 +416,31 @@ grow_vertical = 2
 alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Hard" type="Button" parent="VBoxContainer"]
+[node name="Chaotic" type="Button" parent="VBoxContainer" unique_id=208570985]
 modulate = Color(1, 0, 0, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_jf1j2")
 theme_override_font_sizes/font_size = 64
-text = "Hard"
+text = "Chaotic"
 
-[node name="--------2" type="ColorRect" parent="VBoxContainer"]
+[node name="--------2" type="ColorRect" parent="VBoxContainer" unique_id=1062032000]
 custom_minimum_size = Vector2(0, 82)
 layout_mode = 2
 color = Color(0.06666667, 0, 0, 1)
 
-[node name="Easy" type="Button" parent="VBoxContainer"]
+[node name="Classic" type="Button" parent="VBoxContainer" unique_id=1192888744]
 modulate = Color(0, 1, 0, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_jf1j2")
 theme_override_font_sizes/font_size = 64
-text = "Normal"
+text = "Classic"
 
-[node name="--------4" type="ColorRect" parent="VBoxContainer"]
+[node name="--------4" type="ColorRect" parent="VBoxContainer" unique_id=854019170]
 custom_minimum_size = Vector2(0, 82)
 layout_mode = 2
 color = Color(0, 0.0627451, 0, 1)
 
-[node name="--------3" type="Button" parent="VBoxContainer"]
+[node name="--------3" type="Button" parent="VBoxContainer" unique_id=692435357]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
@@ -449,21 +449,21 @@ theme_override_font_sizes/font_size = 64
 disabled = true
 text = "-"
 
-[node name="Codex" type="Button" parent="VBoxContainer"]
+[node name="Codex" type="Button" parent="VBoxContainer" unique_id=1941356180]
 modulate = Color(1, 1, 0, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_jf1j2")
 theme_override_font_sizes/font_size = 64
 text = "Codex"
 
-[node name="Ranking" type="Button" parent="VBoxContainer"]
+[node name="Ranking" type="Button" parent="VBoxContainer" unique_id=1307597009]
 modulate = Color(1, 1, 0, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_jf1j2")
 theme_override_font_sizes/font_size = 64
 text = "Ranking"
 
-[node name="---------" type="Button" parent="VBoxContainer"]
+[node name="---------" type="Button" parent="VBoxContainer" unique_id=2082503719]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
@@ -472,7 +472,7 @@ theme_override_font_sizes/font_size = 64
 disabled = true
 text = "-"
 
-[node name="---------2" type="Button" parent="VBoxContainer"]
+[node name="---------2" type="Button" parent="VBoxContainer" unique_id=1848482425]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
@@ -481,18 +481,18 @@ theme_override_font_sizes/font_size = 64
 disabled = true
 text = "-"
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=2028874453]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_jf1j2")
 theme_override_font_sizes/font_size = 64
 text = "Quit"
 
-[node name="Puntuations" type="Control" parent="."]
+[node name="Puntuations" type="Control" parent="." unique_id=1435749477]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="hard puntuation" type="Label" parent="Puntuations"]
+[node name="hard puntuation" type="Label" parent="Puntuations" unique_id=1764461433]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 438.0
@@ -504,7 +504,7 @@ theme_override_font_sizes/font_size = 32
 text = "Max puntuation:"
 vertical_alignment = 1
 
-[node name="Label2" type="RichTextLabel" parent="Puntuations/hard puntuation"]
+[node name="Label2" type="RichTextLabel" parent="Puntuations/hard puntuation" unique_id=70530899]
 layout_mode = 0
 offset_left = 240.0
 offset_right = 713.0
@@ -516,7 +516,7 @@ scroll_active = false
 autowrap_mode = 0
 vertical_alignment = 1
 
-[node name="normal puntuation" type="Label" parent="Puntuations"]
+[node name="normal puntuation" type="Label" parent="Puntuations" unique_id=1620935145]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 600.0
@@ -528,7 +528,7 @@ theme_override_font_sizes/font_size = 32
 text = "Max puntuation:"
 vertical_alignment = 1
 
-[node name="Label2" type="RichTextLabel" parent="Puntuations/normal puntuation"]
+[node name="Label2" type="RichTextLabel" parent="Puntuations/normal puntuation" unique_id=1231166125]
 modulate = Color(0, 1, 0, 1)
 layout_mode = 0
 offset_left = 240.0
@@ -541,7 +541,7 @@ scroll_active = false
 autowrap_mode = 0
 vertical_alignment = 1
 
-[node name="Record" type="RichTextLabel" parent="."]
+[node name="Record" type="RichTextLabel" parent="." unique_id=345387089]
 modulate = Color(0.73300546, 0.7330054, 0.7330054, 0.34509805)
 layout_mode = 1
 anchors_preset = 7
@@ -557,28 +557,24 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 96
 bbcode_enabled = true
-text = "[rainbow]v1.2"
+text = "[rainbow]v1.3"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2045608219]
 stream = ExtResource("3_u03px")
 autoplay = true
 parameters/looping = true
 
-[node name="Button pressed" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_w32jx")
-}
+[node name="Button pressed" type="AnimationPlayer" parent="." unique_id=1749559278]
+libraries/ = SubResource("AnimationLibrary_w32jx")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_m87qx")
-}
-autoplay = "start"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1328138932]
+libraries/ = SubResource("AnimationLibrary_m87qx")
+autoplay = &"start"
 speed_scale = 0.8
 
-[node name="Credits" type="Button" parent="."]
+[node name="Credits" type="Button" parent="." unique_id=1326928156]
 modulate = Color(1, 0, 1, 1)
 layout_mode = 1
 anchors_preset = 1
@@ -596,7 +592,7 @@ Credits
 "
 alignment = 0
 
-[node name="Sprite2D5" type="Sprite2D" parent="Credits"]
+[node name="Sprite2D5" type="Sprite2D" parent="Credits" unique_id=1864152537]
 modulate = Color(1.4067125, 0, 1.4067125, 1)
 position = Vector2(119, 41)
 scale = Vector2(4, 4)
@@ -605,7 +601,7 @@ hframes = 6
 vframes = 6
 frame = 30
 
-[node name="options button" type="TextureButton" parent="."]
+[node name="options button" type="TextureButton" parent="." unique_id=1965355984]
 modulate = Color(0, 0, 0.33158895, 1)
 layout_mode = 0
 offset_right = 111.0
@@ -614,13 +610,13 @@ texture_normal = ExtResource("8_3c4i7")
 texture_pressed = ExtResource("9_fipr7")
 stretch_mode = 5
 
-[node name="Creditos" parent="." instance=ExtResource("5_w32jx")]
+[node name="Creditos" parent="." unique_id=1379069392 instance=ExtResource("5_w32jx")]
 visible = false
 
-[node name="Tutorial" parent="." instance=ExtResource("9_e4kd3")]
+[node name="Tutorial" parent="." unique_id=146594322 instance=ExtResource("9_e4kd3")]
 visible = false
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1504978919]
 position = Vector2(-120, -103)
 scale = Vector2(8, 8)
 texture = ExtResource("4_crea4")
@@ -628,7 +624,7 @@ hframes = 6
 vframes = 6
 frame = 30
 
-[node name="Sprite2D4" type="Sprite2D" parent="."]
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=807509894]
 modulate = Color(0.098728366, 0.09872835, 0.09872835, 1)
 z_index = 1
 position = Vector2(4816.0005, 1171)
@@ -640,7 +636,7 @@ hframes = 6
 vframes = 6
 frame = 30
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1409027093]
 self_modulate = Color(1, 1, 1, 0.78431374)
 position = Vector2(361, 750)
 amount = 20
@@ -657,7 +653,7 @@ scale_amount_curve = SubResource("Curve_p7c5i")
 color_ramp = SubResource("Gradient_v7enl")
 metadata/_edit_lock_ = true
 
-[node name="CPUParticles2D4" type="CPUParticles2D" parent="."]
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="." unique_id=283846015]
 self_modulate = Color(1, 1, 1, 0.78431374)
 position = Vector2(-1800, 750)
 amount = 20
@@ -674,7 +670,7 @@ scale_amount_curve = SubResource("Curve_p7c5i")
 color_ramp = SubResource("Gradient_v7enl")
 metadata/_edit_lock_ = true
 
-[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="." unique_id=824916829]
 self_modulate = Color(1, 1, 1, 0.78431374)
 position = Vector2(2880, 750)
 amount = 20
@@ -691,7 +687,7 @@ scale_amount_curve = SubResource("Curve_p7c5i")
 color_ramp = SubResource("Gradient_v7enl")
 metadata/_edit_lock_ = true
 
-[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="." unique_id=1239494076]
 self_modulate = Color(1, 1, 1, 0.78431374)
 z_index = 1
 position = Vector2(4680, 750)
@@ -709,7 +705,7 @@ scale_amount_curve = SubResource("Curve_p7c5i")
 color_ramp = SubResource("Gradient_v7enl")
 metadata/_edit_lock_ = true
 
-[node name="CPUParticles2D5" type="CPUParticles2D" parent="."]
+[node name="CPUParticles2D5" type="CPUParticles2D" parent="." unique_id=1265785127]
 self_modulate = Color(1, 1, 1, 0.78431374)
 z_index = 1
 position = Vector2(6120, 750)
@@ -727,22 +723,22 @@ scale_amount_curve = SubResource("Curve_p7c5i")
 color_ramp = SubResource("Gradient_v7enl")
 metadata/_edit_lock_ = true
 
-[node name="Bestiary" parent="." instance=ExtResource("6_0cyjp")]
+[node name="Bestiary" parent="." unique_id=2108553065 instance=ExtResource("6_0cyjp")]
 layout_mode = 1
 offset_left = 4320.0
 offset_right = 4320.0
 
-[node name="cat" parent="Bestiary/BoxContainer" index="11"]
+[node name="cat" parent="Bestiary/BoxContainer" parent_id_path=PackedInt32Array(2108553065, 610578131) index="11" unique_id=1046259865]
 z_index = 1
 
-[node name="Options" type="Control" parent="."]
+[node name="Options" type="Control" parent="." unique_id=158648364]
 anchors_preset = 0
 offset_left = -3600.0
 offset_right = -2880.0
 offset_bottom = 1500.0
 script = ExtResource("10_62dhm")
 
-[node name="Delete save" type="Button" parent="Options"]
+[node name="Delete save" type="Button" parent="Options" unique_id=188975584]
 modulate = Color(1, 0, 0, 1)
 layout_mode = 0
 offset_top = 940.0
@@ -752,7 +748,7 @@ theme_override_fonts/font = ExtResource("1_jf1j2")
 theme_override_font_sizes/font_size = 64
 text = "Delete save"
 
-[node name="Watch tutorial" type="Button" parent="Options"]
+[node name="Watch tutorial" type="Button" parent="Options" unique_id=499386751]
 modulate = Color(0, 0, 0.8862745, 1)
 layout_mode = 0
 offset_top = 480.0
@@ -762,7 +758,7 @@ theme_override_fonts/font = ExtResource("1_jf1j2")
 theme_override_font_sizes/font_size = 64
 text = "Watch tutorial"
 
-[node name="go to menu" type="Button" parent="Options"]
+[node name="go to menu" type="Button" parent="Options" unique_id=910138714]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -772,12 +768,12 @@ theme_override_fonts/font = ExtResource("1_jf1j2")
 theme_override_font_sizes/font_size = 64
 text = "Go to menu"
 
-[node name="Popup" type="Popup" parent="Options"]
+[node name="Popup" type="Popup" parent="Options" unique_id=1060745124]
 oversampling_override = 1.0
 initial_position = 1
 size = Vector2i(720, 400)
 
-[node name="ColorRect" type="ColorRect" parent="Options/Popup"]
+[node name="ColorRect" type="ColorRect" parent="Options/Popup" unique_id=9532576]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -785,7 +781,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Yes" type="Button" parent="Options/Popup"]
+[node name="Yes" type="Button" parent="Options/Popup" unique_id=50774064]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -795,7 +791,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 128
 text = "Yes"
 
-[node name="No" type="Button" parent="Options/Popup"]
+[node name="No" type="Button" parent="Options/Popup" unique_id=252462465]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -808,7 +804,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 128
 text = "NO"
 
-[node name="Label" type="Label" parent="Options/Popup"]
+[node name="Label" type="Label" parent="Options/Popup" unique_id=23348873]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 181.0
@@ -818,7 +814,7 @@ text = "Are you sure?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CheckBox" type="CheckBox" parent="Options"]
+[node name="CheckBox" type="CheckBox" parent="Options" unique_id=169467281]
 layout_mode = 1
 offset_left = 90.0
 offset_top = 270.0
@@ -840,47 +836,46 @@ text = "player size increment"
 alignment = 1
 autowrap_mode = 2
 
-[node name="Codex" parent="." instance=ExtResource("11_xc4fn")]
+[node name="Codex" parent="." unique_id=1219957264 instance=ExtResource("11_xc4fn")]
 layout_mode = 1
 offset_left = 2520.0
 offset_right = 2520.0
 
-[node name="Ranking" parent="." instance=ExtResource("12_b7iep")]
+[node name="Ranking" parent="." unique_id=1797667029 instance=ExtResource("12_b7iep")]
 layout_mode = 1
 offset_left = -2160.0
 offset_right = -2160.0
 
-[node name="achievements" parent="." instance=ExtResource("14_5t8sb")]
+[node name="achievements" parent="." unique_id=2073992812 instance=ExtResource("14_5t8sb")]
 layout_mode = 1
 offset_left = 5760.0
 offset_right = 5760.0
 
-[node name="Camera2D2" type="Camera2D" parent="."]
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=1610788550]
 position = Vector2(360, 750)
 ignore_rotation = false
 
-[node name="AnimCameraRithm" type="AnimationPlayer" parent="Camera2D2"]
-libraries = {
-&"": SubResource("AnimationLibrary_bjha6")
-}
-autoplay = "Loop"
+[node name="AnimCameraRithm" type="AnimationPlayer" parent="Camera2D2" unique_id=1952308207]
+libraries/ = SubResource("AnimationLibrary_bjha6")
+autoplay = &"Loop"
 
-[node name="lightDown" type="Sprite2D" parent="Camera2D2"]
+[node name="lightDown" type="Sprite2D" parent="Camera2D2" unique_id=671712231]
 position = Vector2(-7.1525574e-07, 705)
 texture = SubResource("GradientTexture2D_xc4fn")
 metadata/_edit_lock_ = true
 
-[node name="lightUp" type="Sprite2D" parent="Camera2D2"]
+[node name="lightUp" type="Sprite2D" parent="Camera2D2" unique_id=1195462720]
 position = Vector2(0, -705)
 texture = SubResource("GradientTexture2D_xc4fn")
 flip_v = true
 metadata/_edit_lock_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=471093748]
+visible = false
 
-[node name="ScreenPresentation" parent="CanvasLayer" instance=ExtResource("11_8iu1u")]
+[node name="ScreenPresentation" parent="CanvasLayer" unique_id=1005569755 instance=ExtResource("11_8iu1u")]
 
-[node name="Button" type="Button" parent="CanvasLayer"]
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=1633378956]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -888,8 +883,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[connection signal="pressed" from="VBoxContainer/Hard" to="." method="_on_hard_pressed"]
-[connection signal="pressed" from="VBoxContainer/Easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="VBoxContainer/Chaotic" to="." method="_on_hard_pressed"]
+[connection signal="pressed" from="VBoxContainer/Classic" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="VBoxContainer/Codex" to="." method="_on_codex_pressed"]
 [connection signal="pressed" from="VBoxContainer/Ranking" to="." method="_on_ranking_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

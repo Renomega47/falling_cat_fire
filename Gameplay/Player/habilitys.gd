@@ -1,6 +1,6 @@
 extends Node
 
-var _instant_habilitys:Array[int] = [3]
+var _instant_habilitys:Array[int] = [-1] # -1 is null hability
 func check_instant_hability() -> void:
 	for i in _instant_habilitys:
 		if hability_key == i: 
@@ -26,3 +26,6 @@ func _hability_2()-> void:
 func _hability_3()-> void:
 	$"../..".inmortality_cooldawn = 15
 	$Habilitys_anim.play("3")
+
+func _hability_4() -> void:
+	$"../..".set_stop_time(9)

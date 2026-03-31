@@ -16,7 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://c4stbqhiarr61" path="res://Freesound/791237__kontraamusic__punk-hyperpop-music.ogg" id="9_ta5nu"]
 [ext_resource type="Texture2D" uid="uid://dvinb1oyhk5ra" path="res://Gameplay/pause_button_active.tres" id="9_ucfu1"]
 [ext_resource type="AudioStream" uid="uid://bawac8o1n6grk" path="res://Sound/Recarga 2.ogg" id="10_whrbp"]
-[ext_resource type="Texture2D" uid="uid://m1q8yvolxruq" path="res://Gameplay/Laser/Danger.png" id="11_hqns4"]
+[ext_resource type="Texture2D" uid="uid://bj4lcc6u6eeho" path="res://Gameplay/Laser/Alert-1.png" id="11_mqywf"]
 [ext_resource type="Script" uid="uid://cnqy0s2trd6qp" path="res://Gameplay/music_control.gd" id="12_0h7mo"]
 [ext_resource type="Script" uid="uid://4ibajtxnbop" path="res://Gameplay/Player/habilitys.gd" id="13_d2bti"]
 [ext_resource type="AudioStream" uid="uid://b4pvvs47nj6vf" path="res://Sound/hability_on.wav" id="15_crqma"]
@@ -352,6 +352,12 @@ _data = {
 &"RESET": SubResource("Animation_rg3n4"),
 &"fisish": SubResource("Animation_178se")
 }
+
+[sub_resource type="Gradient" id="Gradient_xjpl6"]
+colors = PackedColorArray(1, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hjaha"]
+gradient = SubResource("Gradient_xjpl6")
 
 [sub_resource type="Animation" id="Animation_ei405"]
 length = 0.001
@@ -1114,62 +1120,74 @@ length = 0.35
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../CanvasLayer/ColorRect:color")
+tracks/0/path = NodePath("../CanvasLayer/Sprite2D:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.2655039, 0.33217058),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../CanvasLayer/ColorRect:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.33333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../CanvasLayer/Sprite2D:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.33333334),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [true, false, true, false]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Rayo:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rayo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.35),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(860, 1108), Vector2(693, 1108)]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../CanvasLayer/Sprite2D:flip_v")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CanvasLayer/Sprite2D:flip_v")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CanvasLayer/Laser background:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../CanvasLayer/Sprite2D:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.19567685, 0.23333335, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../CanvasLayer/Laser background:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.34833252),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_d2bti"]
@@ -1177,31 +1195,31 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../CanvasLayer/ColorRect:color")
+tracks/0/path = NodePath("../CanvasLayer/Sprite2D:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0, 0, 1)]
+"update": 1,
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CanvasLayer/ColorRect:visible")
+tracks/1/path = NodePath("Rayo:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(860, 1108)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../CanvasLayer/Sprite2D:visible")
+tracks/2/path = NodePath("../CanvasLayer/Sprite2D:flip_v")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -1213,26 +1231,38 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Rayo:position")
+tracks/3/path = NodePath("../CanvasLayer/Laser background:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(860, 1108)]
+"update": 1,
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../CanvasLayer/Sprite2D:flip_v")
+tracks/4/path = NodePath("../CanvasLayer/Sprite2D:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../CanvasLayer/Laser background:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ta5nu"]
@@ -1368,62 +1398,74 @@ length = 0.35
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../CanvasLayer/ColorRect:color")
+tracks/0/path = NodePath("../CanvasLayer/Laser background:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.2655039, 0.33217058),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(0, 0, 0, 1), Color(1, 0, 0, 1), Color(0, 0, 0, 1)]
+"values": [true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CanvasLayer/ColorRect:visible")
+tracks/1/path = NodePath("../CanvasLayer/Sprite2D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.33333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../CanvasLayer/Sprite2D:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.33333334),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [true, false, true, false]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../CanvasLayer/Sprite2D:flip_v")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CanvasLayer/Sprite2D:flip_v")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Rayo:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rayo:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.35),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(860, 725), Vector2(693, 725)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../CanvasLayer/Sprite2D:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.03333334, 0.06666667, 0.19567686, 0.23333335, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../CanvasLayer/Laser background:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_xjpl6"]
@@ -1439,6 +1481,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(860, 1108)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CanvasLayer/Laser background:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CanvasLayer/Laser background:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hjaha"]
@@ -1729,6 +1795,13 @@ _data = {
 &"RESET": SubResource("Animation_h4mo1")
 }
 
+[sub_resource type="Gradient" id="Gradient_hjaha"]
+colors = PackedColorArray(0, 0, 1, 0.10980392, 0, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5voif"]
+gradient = SubResource("Gradient_hjaha")
+fill_from = Vector2(1, 1)
+
 [node name="Game" type="Node2D" unique_id=531794408]
 script = ExtResource("1_0hol4")
 
@@ -1990,18 +2063,23 @@ bus = &"New Bus"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Dead/Record Text" unique_id=1189512459]
 libraries/ = SubResource("AnimationLibrary_pdgpy")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1851106905]
-visible = false
-offset_right = 719.0
-offset_bottom = 631.0
+[node name="Laser background" type="TextureRect" parent="CanvasLayer" unique_id=1223395047]
+modulate = Color(1, 1, 1, 0)
+offset_left = 722.94165
+offset_right = 1694.6653
+offset_bottom = 724.7023
+rotation = 1.5707964
 mouse_filter = 2
-color = Color(1, 0, 0, 1)
+texture = SubResource("GradientTexture1D_hjaha")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1144544759]
 visible = false
 position = Vector2(360, 313.0001)
 scale = Vector2(10, 10)
-texture = ExtResource("11_hqns4")
+texture = ExtResource("11_mqywf")
+hframes = 3
+vframes = 2
+frame = 1
 
 [node name="options button" type="TextureButton" parent="CanvasLayer" unique_id=772993657]
 anchors_preset = 1
@@ -2364,6 +2442,16 @@ initial_velocity_min = 600.0
 initial_velocity_max = 600.0
 scale_amount_min = 8.0
 scale_amount_max = 8.0
+
+[node name="Time stop power up" type="Node2D" parent="." unique_id=467463829]
+
+[node name="ColorRect" type="TextureRect" parent="Time stop power up" unique_id=426266616]
+modulate = Color(1, 1, 1, 0)
+top_level = true
+z_index = 1
+offset_right = 720.0
+offset_bottom = 1202.0
+texture = SubResource("GradientTexture2D_5voif")
 
 [connection signal="pressed" from="CanvasLayer/Dead/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="CanvasLayer/Dead/Go to menu" to="." method="_on_go_to_menu_pressed"]

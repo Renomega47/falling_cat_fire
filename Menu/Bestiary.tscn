@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://om3m7pq81d2l"]
+[gd_scene format=3 uid="uid://om3m7pq81d2l"]
 
 [ext_resource type="Script" uid="uid://cg1msjckxaqdi" path="res://Menu/bestiary.gd" id="1_esfda"]
 [ext_resource type="Texture2D" uid="uid://d2tvlmwthi2px" path="res://Menu/Frame.png" id="1_l0f7w"]
@@ -128,7 +128,7 @@ _data = {
 &"new_animation": SubResource("Animation_naqav")
 }
 
-[node name="Bestiary" type="Control"]
+[node name="Bestiary" type="Control" unique_id=899892561]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -137,7 +137,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_esfda")
 
-[node name="BoxContainer" type="GridContainer" parent="."]
+[node name="BoxContainer" type="GridContainer" parent="." unique_id=610578131]
 layout_mode = 1
 offset_left = 27.5
 offset_top = 158.0
@@ -147,28 +147,26 @@ scale = Vector2(8, 8)
 theme_override_constants/h_separation = 4
 columns = 3
 
-[node name="fire" type="TextureRect" parent="BoxContainer"]
+[node name="fire" type="TextureRect" parent="BoxContainer" unique_id=2017013574]
 layout_mode = 2
 texture = ExtResource("1_l0f7w")
 stretch_mode = 4
 
-[node name="texture modulate" type="Node2D" parent="BoxContainer/fire"]
+[node name="texture modulate" type="Node2D" parent="BoxContainer/fire" unique_id=826372157]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/fire/texture modulate"]
-libraries = {
-&"": SubResource("AnimationLibrary_m11qq")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/fire/texture modulate" unique_id=1733652361]
+libraries/ = SubResource("AnimationLibrary_m11qq")
+autoplay = &"new_animation"
 speed_scale = 0.5
 
-[node name="Texture" type="Sprite2D" parent="BoxContainer/fire/texture modulate"]
+[node name="Texture" type="Sprite2D" parent="BoxContainer/fire/texture modulate" unique_id=64761657]
 position = Vector2(12, 13)
 texture = ExtResource("3_vyomt")
 hframes = 4
 vframes = 2
 
-[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/fire"]
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/fire" unique_id=802645210]
 layout_mode = 0
 offset_left = -36.012497
 offset_top = 3.5999985
@@ -184,7 +182,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="incognito" type="ColorRect" parent="BoxContainer/fire"]
+[node name="incognito" type="ColorRect" parent="BoxContainer/fire" unique_id=1384520965]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 26.0
@@ -192,7 +190,7 @@ offset_right = 22.0
 offset_bottom = 35.0
 color = Color(0.5882353, 0.5882353, 0.5882353, 1)
 
-[node name="Label" type="Label" parent="BoxContainer/fire/incognito"]
+[node name="Label" type="Label" parent="BoxContainer/fire/incognito" unique_id=234085463]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -207,28 +205,26 @@ text = "???"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="pink fire" type="TextureRect" parent="BoxContainer"]
+[node name="pink fire" type="TextureRect" parent="BoxContainer" unique_id=1039472279]
 layout_mode = 2
 texture = ExtResource("1_l0f7w")
 stretch_mode = 4
 
-[node name="texture modulate" type="Node2D" parent="BoxContainer/pink fire"]
+[node name="texture modulate" type="Node2D" parent="BoxContainer/pink fire" unique_id=1606024734]
 modulate = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/pink fire/texture modulate"]
-libraries = {
-&"": SubResource("AnimationLibrary_m11qq")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/pink fire/texture modulate" unique_id=1183866593]
+libraries/ = SubResource("AnimationLibrary_m11qq")
+autoplay = &"new_animation"
 speed_scale = 0.5
 
-[node name="Texture" type="Sprite2D" parent="BoxContainer/pink fire/texture modulate"]
+[node name="Texture" type="Sprite2D" parent="BoxContainer/pink fire/texture modulate" unique_id=1467981762]
 position = Vector2(12, 13)
 texture = ExtResource("4_rgukp")
 hframes = 4
 vframes = 2
 
-[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/pink fire"]
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/pink fire" unique_id=1894342529]
 modulate = Color(1, 1, 1, 0.84313726)
 layout_mode = 0
 offset_left = -36.012497
@@ -247,7 +243,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="incognito" type="ColorRect" parent="BoxContainer/pink fire"]
+[node name="incognito" type="ColorRect" parent="BoxContainer/pink fire" unique_id=1469241213]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 26.0
@@ -255,7 +251,7 @@ offset_right = 22.0
 offset_bottom = 35.0
 color = Color(0.5882353, 0.5882353, 0.5882353, 1)
 
-[node name="Label" type="Label" parent="BoxContainer/pink fire/incognito"]
+[node name="Label" type="Label" parent="BoxContainer/pink fire/incognito" unique_id=1855902145]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -270,28 +266,26 @@ text = "???"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="green fire" type="TextureRect" parent="BoxContainer"]
+[node name="green fire" type="TextureRect" parent="BoxContainer" unique_id=403855943]
 layout_mode = 2
 texture = ExtResource("1_l0f7w")
 stretch_mode = 4
 
-[node name="texture modulate" type="Node2D" parent="BoxContainer/green fire"]
+[node name="texture modulate" type="Node2D" parent="BoxContainer/green fire" unique_id=1006923075]
 modulate = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/green fire/texture modulate"]
-libraries = {
-&"": SubResource("AnimationLibrary_m11qq")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/green fire/texture modulate" unique_id=418582143]
+libraries/ = SubResource("AnimationLibrary_m11qq")
+autoplay = &"new_animation"
 speed_scale = 0.5
 
-[node name="Texture" type="Sprite2D" parent="BoxContainer/green fire/texture modulate"]
+[node name="Texture" type="Sprite2D" parent="BoxContainer/green fire/texture modulate" unique_id=2080778701]
 position = Vector2(12, 13)
 texture = ExtResource("4_xtk70")
 hframes = 4
 vframes = 2
 
-[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/green fire"]
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/green fire" unique_id=1056095047]
 modulate = Color(1, 1, 1, 0.84313726)
 layout_mode = 0
 offset_left = -36.012497
@@ -310,7 +304,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="incognito" type="ColorRect" parent="BoxContainer/green fire"]
+[node name="incognito" type="ColorRect" parent="BoxContainer/green fire" unique_id=2019520407]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 26.0
@@ -318,7 +312,7 @@ offset_right = 22.0
 offset_bottom = 35.0
 color = Color(0.5882353, 0.5882353, 0.5882353, 1)
 
-[node name="Label" type="Label" parent="BoxContainer/green fire/incognito"]
+[node name="Label" type="Label" parent="BoxContainer/green fire/incognito" unique_id=1631604875]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -333,28 +327,26 @@ text = "???"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ghost fire" type="TextureRect" parent="BoxContainer"]
+[node name="ghost fire" type="TextureRect" parent="BoxContainer" unique_id=1373695127]
 layout_mode = 2
 texture = ExtResource("1_l0f7w")
 stretch_mode = 4
 
-[node name="texture modulate" type="Node2D" parent="BoxContainer/ghost fire"]
+[node name="texture modulate" type="Node2D" parent="BoxContainer/ghost fire" unique_id=1852544523]
 modulate = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/ghost fire/texture modulate"]
-libraries = {
-&"": SubResource("AnimationLibrary_m11qq")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/ghost fire/texture modulate" unique_id=267484721]
+libraries/ = SubResource("AnimationLibrary_m11qq")
+autoplay = &"new_animation"
 speed_scale = 0.5
 
-[node name="Texture" type="Sprite2D" parent="BoxContainer/ghost fire/texture modulate"]
+[node name="Texture" type="Sprite2D" parent="BoxContainer/ghost fire/texture modulate" unique_id=104640453]
 position = Vector2(12, 13)
 texture = ExtResource("4_o1jwh")
 hframes = 4
 vframes = 2
 
-[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/ghost fire"]
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/ghost fire" unique_id=2052951022]
 modulate = Color(1, 1, 1, 0.84313726)
 layout_mode = 0
 offset_left = -36.012497
@@ -373,7 +365,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="incognito" type="ColorRect" parent="BoxContainer/ghost fire"]
+[node name="incognito" type="ColorRect" parent="BoxContainer/ghost fire" unique_id=1279049919]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 26.0
@@ -381,7 +373,7 @@ offset_right = 22.0
 offset_bottom = 35.0
 color = Color(0.5882353, 0.5882353, 0.5882353, 1)
 
-[node name="Label" type="Label" parent="BoxContainer/ghost fire/incognito"]
+[node name="Label" type="Label" parent="BoxContainer/ghost fire/incognito" unique_id=331598472]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -396,28 +388,26 @@ text = "???"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="speed fire" type="TextureRect" parent="BoxContainer"]
+[node name="speed fire" type="TextureRect" parent="BoxContainer" unique_id=1648378459]
 layout_mode = 2
 texture = ExtResource("1_l0f7w")
 stretch_mode = 4
 
-[node name="texture modulate" type="Node2D" parent="BoxContainer/speed fire"]
+[node name="texture modulate" type="Node2D" parent="BoxContainer/speed fire" unique_id=642426416]
 modulate = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/speed fire/texture modulate"]
-libraries = {
-&"": SubResource("AnimationLibrary_m11qq")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/speed fire/texture modulate" unique_id=943419308]
+libraries/ = SubResource("AnimationLibrary_m11qq")
+autoplay = &"new_animation"
 speed_scale = 0.5
 
-[node name="Texture" type="Sprite2D" parent="BoxContainer/speed fire/texture modulate"]
+[node name="Texture" type="Sprite2D" parent="BoxContainer/speed fire/texture modulate" unique_id=1956090622]
 position = Vector2(12, 13)
 texture = ExtResource("5_xtk70")
 hframes = 4
 vframes = 2
 
-[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/speed fire"]
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/speed fire" unique_id=1661945497]
 modulate = Color(1, 1, 1, 0.84313726)
 layout_mode = 0
 offset_left = -36.012497
@@ -436,7 +426,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="incognito" type="ColorRect" parent="BoxContainer/speed fire"]
+[node name="incognito" type="ColorRect" parent="BoxContainer/speed fire" unique_id=354320493]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 26.0
@@ -444,7 +434,7 @@ offset_right = 22.0
 offset_bottom = 35.0
 color = Color(0.5882353, 0.5882353, 0.5882353, 1)
 
-[node name="Label" type="Label" parent="BoxContainer/speed fire/incognito"]
+[node name="Label" type="Label" parent="BoxContainer/speed fire/incognito" unique_id=142366397]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -459,28 +449,26 @@ text = "???"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="fire variant" type="TextureRect" parent="BoxContainer"]
+[node name="fire variant" type="TextureRect" parent="BoxContainer" unique_id=75672135]
 layout_mode = 2
 texture = ExtResource("1_l0f7w")
 stretch_mode = 4
 
-[node name="texture modulate" type="Node2D" parent="BoxContainer/fire variant"]
+[node name="texture modulate" type="Node2D" parent="BoxContainer/fire variant" unique_id=1098633302]
 modulate = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/fire variant/texture modulate"]
-libraries = {
-&"": SubResource("AnimationLibrary_m11qq")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/fire variant/texture modulate" unique_id=1292095234]
+libraries/ = SubResource("AnimationLibrary_m11qq")
+autoplay = &"new_animation"
 speed_scale = 0.5
 
-[node name="Texture" type="Sprite2D" parent="BoxContainer/fire variant/texture modulate"]
+[node name="Texture" type="Sprite2D" parent="BoxContainer/fire variant/texture modulate" unique_id=2074229155]
 position = Vector2(12, 13)
 texture = ExtResource("2_yxrnu")
 hframes = 4
 vframes = 2
 
-[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/fire variant"]
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/fire variant" unique_id=1768375236]
 modulate = Color(1, 1, 1, 0.84313726)
 layout_mode = 0
 offset_left = -36.012497
@@ -499,7 +487,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="incognito" type="ColorRect" parent="BoxContainer/fire variant"]
+[node name="incognito" type="ColorRect" parent="BoxContainer/fire variant" unique_id=1011867461]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 26.0
@@ -507,7 +495,7 @@ offset_right = 22.0
 offset_bottom = 35.0
 color = Color(0.5882353, 0.5882353, 0.5882353, 1)
 
-[node name="Label" type="Label" parent="BoxContainer/fire variant/incognito"]
+[node name="Label" type="Label" parent="BoxContainer/fire variant/incognito" unique_id=1702629027]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -522,28 +510,26 @@ text = "???"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="explosive fire" type="TextureRect" parent="BoxContainer"]
+[node name="explosive fire" type="TextureRect" parent="BoxContainer" unique_id=1923512077]
 layout_mode = 2
 texture = ExtResource("1_l0f7w")
 stretch_mode = 4
 
-[node name="texture modulate" type="Node2D" parent="BoxContainer/explosive fire"]
+[node name="texture modulate" type="Node2D" parent="BoxContainer/explosive fire" unique_id=1380503569]
 modulate = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/explosive fire/texture modulate"]
-libraries = {
-&"": SubResource("AnimationLibrary_m11qq")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/explosive fire/texture modulate" unique_id=747333857]
+libraries/ = SubResource("AnimationLibrary_m11qq")
+autoplay = &"new_animation"
 speed_scale = 0.5
 
-[node name="Texture" type="Sprite2D" parent="BoxContainer/explosive fire/texture modulate"]
+[node name="Texture" type="Sprite2D" parent="BoxContainer/explosive fire/texture modulate" unique_id=924309342]
 position = Vector2(12, 13)
 texture = ExtResource("9_g0lsb")
 hframes = 4
 vframes = 2
 
-[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/explosive fire"]
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/explosive fire" unique_id=1026880334]
 modulate = Color(1, 1, 1, 0.84313726)
 layout_mode = 0
 offset_left = -36.012497
@@ -562,7 +548,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="incognito" type="ColorRect" parent="BoxContainer/explosive fire"]
+[node name="incognito" type="ColorRect" parent="BoxContainer/explosive fire" unique_id=1992941701]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 26.0
@@ -570,7 +556,7 @@ offset_right = 22.0
 offset_bottom = 35.0
 color = Color(0.5882353, 0.5882353, 0.5882353, 1)
 
-[node name="Label" type="Label" parent="BoxContainer/explosive fire/incognito"]
+[node name="Label" type="Label" parent="BoxContainer/explosive fire/incognito" unique_id=1334273986]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -585,28 +571,26 @@ text = "???"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="slow fire" type="TextureRect" parent="BoxContainer"]
+[node name="slow fire" type="TextureRect" parent="BoxContainer" unique_id=823554428]
 layout_mode = 2
 texture = ExtResource("1_l0f7w")
 stretch_mode = 4
 
-[node name="texture modulate" type="Node2D" parent="BoxContainer/slow fire"]
+[node name="texture modulate" type="Node2D" parent="BoxContainer/slow fire" unique_id=1265546262]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/slow fire/texture modulate"]
-libraries = {
-&"": SubResource("AnimationLibrary_m11qq")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/slow fire/texture modulate" unique_id=339235692]
+libraries/ = SubResource("AnimationLibrary_m11qq")
+autoplay = &"new_animation"
 speed_scale = 0.5
 
-[node name="Texture" type="Sprite2D" parent="BoxContainer/slow fire/texture modulate"]
+[node name="Texture" type="Sprite2D" parent="BoxContainer/slow fire/texture modulate" unique_id=2112671210]
 position = Vector2(12, 13)
 texture = ExtResource("10_7e5r2")
 hframes = 4
 vframes = 2
 
-[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/slow fire"]
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/slow fire" unique_id=989529266]
 modulate = Color(1, 1, 1, 0.84313726)
 layout_mode = 0
 offset_left = -36.012497
@@ -625,7 +609,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="incognito" type="ColorRect" parent="BoxContainer/slow fire"]
+[node name="incognito" type="ColorRect" parent="BoxContainer/slow fire" unique_id=601047994]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 26.0
@@ -633,7 +617,7 @@ offset_right = 22.0
 offset_bottom = 35.0
 color = Color(0.5882353, 0.5882353, 0.5882353, 1)
 
-[node name="Label" type="Label" parent="BoxContainer/slow fire/incognito"]
+[node name="Label" type="Label" parent="BoxContainer/slow fire/incognito" unique_id=795653927]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -648,28 +632,26 @@ text = "???"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="doppelcat" type="TextureRect" parent="BoxContainer"]
+[node name="doppelcat" type="TextureRect" parent="BoxContainer" unique_id=798994949]
 layout_mode = 2
 texture = ExtResource("1_l0f7w")
 stretch_mode = 4
 
-[node name="texture modulate" type="Node2D" parent="BoxContainer/doppelcat"]
+[node name="texture modulate" type="Node2D" parent="BoxContainer/doppelcat" unique_id=1587070426]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/doppelcat/texture modulate"]
-libraries = {
-&"": SubResource("AnimationLibrary_m11qq")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/doppelcat/texture modulate" unique_id=1996394172]
+libraries/ = SubResource("AnimationLibrary_m11qq")
+autoplay = &"new_animation"
 speed_scale = 0.5
 
-[node name="Texture" type="Sprite2D" parent="BoxContainer/doppelcat/texture modulate"]
+[node name="Texture" type="Sprite2D" parent="BoxContainer/doppelcat/texture modulate" unique_id=2126930633]
 position = Vector2(12, 13)
 texture = ExtResource("11_mqnox")
 hframes = 4
 vframes = 2
 
-[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/doppelcat"]
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/doppelcat" unique_id=1676211820]
 modulate = Color(1, 1, 1, 0.84313726)
 layout_mode = 0
 offset_left = -36.012497
@@ -688,7 +670,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="incognito" type="ColorRect" parent="BoxContainer/doppelcat"]
+[node name="incognito" type="ColorRect" parent="BoxContainer/doppelcat" unique_id=913982858]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 26.0
@@ -696,7 +678,7 @@ offset_right = 22.0
 offset_bottom = 35.0
 color = Color(0.5882353, 0.5882353, 0.5882353, 1)
 
-[node name="Label" type="Label" parent="BoxContainer/doppelcat/incognito"]
+[node name="Label" type="Label" parent="BoxContainer/doppelcat/incognito" unique_id=204692672]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -711,15 +693,15 @@ text = "???"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="orange cat" type="TextureRect" parent="BoxContainer"]
+[node name="orange cat" type="TextureRect" parent="BoxContainer" unique_id=834769196]
 layout_mode = 2
 texture = ExtResource("1_l0f7w")
 stretch_mode = 4
 
-[node name="texture modulate" type="Node2D" parent="BoxContainer/orange cat"]
+[node name="texture modulate" type="Node2D" parent="BoxContainer/orange cat" unique_id=1646691072]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 
-[node name="Texture" type="Sprite2D" parent="BoxContainer/orange cat/texture modulate"]
+[node name="Texture" type="Sprite2D" parent="BoxContainer/orange cat/texture modulate" unique_id=2030411607]
 modulate = Color(1, 0.4117647, 0.7058824, 1)
 position = Vector2(12.5, 13.5)
 rotation = -1.5707964
@@ -728,13 +710,11 @@ hframes = 6
 vframes = 6
 frame = 13
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/orange cat/texture modulate"]
-libraries = {
-&"": SubResource("AnimationLibrary_o1jwh")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/orange cat/texture modulate" unique_id=295253818]
+libraries/ = SubResource("AnimationLibrary_o1jwh")
+autoplay = &"new_animation"
 
-[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/orange cat"]
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/orange cat" unique_id=1876814723]
 layout_mode = 0
 offset_left = -36.012497
 offset_top = 3.600006
@@ -752,7 +732,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="incognito" type="ColorRect" parent="BoxContainer/orange cat"]
+[node name="incognito" type="ColorRect" parent="BoxContainer/orange cat" unique_id=1123915951]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 26.0
@@ -760,7 +740,7 @@ offset_right = 22.0
 offset_bottom = 35.0
 color = Color(0.5882353, 0.5882353, 0.5882353, 1)
 
-[node name="Label" type="Label" parent="BoxContainer/orange cat/incognito"]
+[node name="Label" type="Label" parent="BoxContainer/orange cat/incognito" unique_id=1337152051]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -775,15 +755,15 @@ text = "???"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="green cat" type="TextureRect" parent="BoxContainer"]
+[node name="green cat" type="TextureRect" parent="BoxContainer" unique_id=1549013706]
 layout_mode = 2
 texture = ExtResource("1_l0f7w")
 stretch_mode = 4
 
-[node name="texture modulate" type="Node2D" parent="BoxContainer/green cat"]
+[node name="texture modulate" type="Node2D" parent="BoxContainer/green cat" unique_id=1434628748]
 modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 
-[node name="Texture" type="Sprite2D" parent="BoxContainer/green cat/texture modulate"]
+[node name="Texture" type="Sprite2D" parent="BoxContainer/green cat/texture modulate" unique_id=1022248714]
 modulate = Color(0, 0.63529414, 0, 1)
 position = Vector2(12.5, 13.5)
 rotation = -1.5707964
@@ -792,13 +772,11 @@ hframes = 6
 vframes = 6
 frame = 13
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/green cat/texture modulate"]
-libraries = {
-&"": SubResource("AnimationLibrary_o1jwh")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/green cat/texture modulate" unique_id=1931944841]
+libraries/ = SubResource("AnimationLibrary_o1jwh")
+autoplay = &"new_animation"
 
-[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/green cat"]
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/green cat" unique_id=145632919]
 modulate = Color(1, 1, 1, 0.84313726)
 layout_mode = 0
 offset_left = -36.76248
@@ -816,7 +794,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="incognito" type="ColorRect" parent="BoxContainer/green cat"]
+[node name="incognito" type="ColorRect" parent="BoxContainer/green cat" unique_id=11578815]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 26.0
@@ -824,7 +802,7 @@ offset_right = 22.0
 offset_bottom = 35.0
 color = Color(0.5882353, 0.5882353, 0.5882353, 1)
 
-[node name="Label" type="Label" parent="BoxContainer/green cat/incognito"]
+[node name="Label" type="Label" parent="BoxContainer/green cat/incognito" unique_id=184909935]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -839,16 +817,16 @@ text = "???"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="cat" type="TextureRect" parent="BoxContainer"]
+[node name="cat" type="TextureRect" parent="BoxContainer" unique_id=1046259865]
 self_modulate = Color(1, 1, 0, 1)
 layout_mode = 2
 texture = ExtResource("1_l0f7w")
 stretch_mode = 4
 
-[node name="texture modulate" type="Node2D" parent="BoxContainer/cat"]
+[node name="texture modulate" type="Node2D" parent="BoxContainer/cat" unique_id=1144317005]
 modulate = Color(0, 0, 0, 1)
 
-[node name="Texture" type="Sprite2D" parent="BoxContainer/cat/texture modulate"]
+[node name="Texture" type="Sprite2D" parent="BoxContainer/cat/texture modulate" unique_id=145264950]
 position = Vector2(12.5, 13.5)
 rotation = -1.5707964
 texture = ExtResource("3_yxrnu")
@@ -856,13 +834,11 @@ hframes = 6
 vframes = 6
 frame = 13
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/cat/texture modulate"]
-libraries = {
-&"": SubResource("AnimationLibrary_a1k5k")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BoxContainer/cat/texture modulate" unique_id=1957797578]
+libraries/ = SubResource("AnimationLibrary_a1k5k")
+autoplay = &"new_animation"
 
-[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/cat"]
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/cat" unique_id=1044278589]
 modulate = Color(1, 1, 1, 0.84313726)
 layout_mode = 0
 offset_left = -36.012497
@@ -880,7 +856,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="RichTextLabel" parent="BoxContainer/cat/TextPerfect"]
+[node name="Label" type="RichTextLabel" parent="BoxContainer/cat/TextPerfect" unique_id=1586495206]
 layout_mode = 0
 offset_left = 44.083252
 offset_top = 11.0
@@ -893,7 +869,7 @@ text = "[rainbow]🙀"
 fit_content = true
 scroll_active = false
 
-[node name="incognito" type="ColorRect" parent="BoxContainer/cat"]
+[node name="incognito" type="ColorRect" parent="BoxContainer/cat" unique_id=1488775507]
 self_modulate = Color(1, 1, 0, 1)
 layout_mode = 0
 offset_left = 3.0
@@ -902,7 +878,7 @@ offset_right = 22.0
 offset_bottom = 35.0
 color = Color(0.5882353, 0.5882353, 0.5882353, 1)
 
-[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/cat/incognito"]
+[node name="TextPerfect" type="RichTextLabel" parent="BoxContainer/cat/incognito" unique_id=1248652888]
 modulate = Color(1, 1, 1, 0.84313726)
 layout_mode = 0
 offset_left = -39.137497
@@ -920,7 +896,7 @@ autowrap_mode = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="go to menu" type="Button" parent="."]
+[node name="go to menu" type="Button" parent="." unique_id=1725534062]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0

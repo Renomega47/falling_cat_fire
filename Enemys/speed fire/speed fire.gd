@@ -12,6 +12,7 @@ func _ready() -> void:
 	tree.updateFrame.connect(next_frame)
 
 func next_frame() -> void:
+	if is_stop():return
 	current_cell += 2
 	current_cell = clampi(current_cell, 0, 5)
 	check_dead()

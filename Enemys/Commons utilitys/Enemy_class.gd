@@ -30,7 +30,8 @@ func change_visibility() -> void:
 func change_danger() -> void:
 	danger = false
 
-
+func is_stop() -> bool:
+	return get_parent().tree.enemys_stop_time > 0
 
 func setup() -> void:
 	true_position_x = position.x

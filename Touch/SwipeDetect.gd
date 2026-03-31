@@ -86,10 +86,8 @@ func _check_swipe_direction(start: Vector2, end: Vector2, force_value:Vector2 = 
 
 
 func release_inputs() -> void:
-	Input.action_release("right")
-	Input.action_release("left")
-	Input.action_release("jump")
-	Input.action_release("hability")
+	release_mov_inputs()
+	release_specials_inputs()
 
 func release_mov_inputs() -> void:
 	Input.action_release("right")
@@ -103,10 +101,13 @@ func release_specials_inputs() -> void:
 
 func _not_tactiles_inputs() -> void:
 	if Input.is_action_just_pressed("right_emulated"):
-		_check_swipe_direction(Vector2.ZERO, Vector2.ZERO, Vector2.RIGHT)
+		_simplificate_check_swite_direction(Vector2.RIGHT)
 	if Input.is_action_just_pressed("left_emulated"):
-		_check_swipe_direction(Vector2.ZERO, Vector2.ZERO, Vector2.LEFT)
+		_simplificate_check_swite_direction(Vector2.LEFT)
 	if Input.is_action_just_pressed("jump_emulated"):
-		_check_swipe_direction(Vector2.ZERO, Vector2.ZERO, Vector2.UP)
+		_simplificate_check_swite_direction(Vector2.UP)
 	if Input.is_action_just_pressed("hability_emulated"):
-		_check_swipe_direction(Vector2.ZERO, Vector2.ZERO, Vector2.DOWN)
+		_simplificate_check_swite_direction(Vector2.DOWN)
+
+func _simplificate_check_swite_direction(force_value:Vector2) -> void:
+	_check_swipe_direction(Vector2.ZERO, Vector2.ZERO, force_value)

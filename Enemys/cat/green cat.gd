@@ -14,6 +14,7 @@ func _ready() -> void:
 	tree.updateFrame.connect(next_frame)
 
 func next_frame() -> void:
+	if is_stop():return
 	current_cell += 1
 	if current_cell == 3:
 		var next_cell:int = clampi(get_cell_x()-1,0,5)

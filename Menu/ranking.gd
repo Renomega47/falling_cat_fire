@@ -3,18 +3,18 @@ extends Control
 var hard:bool = false
 
 const CALIFICATIONS_HARD: Array = [
-	["[rainbow][wave]FLYING    SPAGHETTI[/wave][font_size=32]   Monster[/font_size][/rainbow]", 9999],
-	["[wave][rainbow]SPAGHETTI CAT", 6323],
-	["[color=purple][wave]RENOMEGA47", 474],
+	["[rainbow][wave]FLYING    SPAGHETTI[/wave][font_size=32]   Monster[/font_size][/rainbow]", 4040],
+	["[wave][rainbow]SPAGHETTI CAT", 3850],
+	["[color=purple][wave]RENOMEGA47", 1560],
 	["[color=blue][wave]ZETAR", 876],
-	["[wave][color=green]CRISTIAN  10", 4153]
+	["[wave][color=green]CRISTIAN  10", 2450]
 ]
 const CALIFICATIONS_EASY: Array = [
-	["[wave][rainbow]SPAGHETTI CAT", 9554],
-	["[color=purple][wave]RENOMEGA47", 1924],
+	["[wave][rainbow]SPAGHETTI CAT", 3000],
+	["[color=purple][wave]RENOMEGA47", 2000],
 	["[color=blue][wave]ZETAR", 2690],
 	["[color=green][wave]LUIGGI", 937],
-	["[wave][color=green]CRISTIAN  10", 5540]
+	["[wave][color=green]CRISTIAN  10", 1560]
 ]
 
 
@@ -38,8 +38,8 @@ func update_puntuation() -> void:
 	
 	var children_key:int = 0
 	for i in order_array:
-		$VBoxContainer.get_children()[children_key].get_children()[1].text = temp_array[i][0]
-		$VBoxContainer.get_children()[children_key].get_children()[2].text = str(temp_array[i][1])
+		$"Container Ranking".get_children()[children_key].get_children()[1].text = temp_array[i][0]
+		$"Container Ranking".get_children()[children_key].get_children()[2].text = str(temp_array[i][1])
 		children_key += 1
 
 func separated(array:Array) -> Array:

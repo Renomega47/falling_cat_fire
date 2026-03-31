@@ -16,6 +16,7 @@ func _ready() -> void:
 	modulate.a = 0
 
 func next_frame() -> void:
+	if is_stop():return
 	current_cell += 1
 	current_cell = clampi(current_cell, 0, 5)
 	modulate_objetive = clampf(current_cell, 0, 4) / 4.0

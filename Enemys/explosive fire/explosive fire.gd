@@ -12,12 +12,13 @@ func _ready() -> void:
 	tree.updateFrame.connect(next_frame)
 
 func next_frame() -> void:
+	if is_stop():return
 	current_cell += 1
 	if current_cell == 2:
 		$"..".clear_enemys(get_cell_x())
 		for i in [clamp(get_cell_x()-1, 0, 5), get_cell_x(),clamp(get_cell_x()+1, 0, 5)]:
 			var object_instance:Node2D
-			object_instance = $"..".enemies[10].instantiate()
+			object_instance = $"..".enemies[11].instantiate()
 			object_instance.global_position = Vector2(60+(i*120), -200)
 			object_instance.current_cell = 3
 			object_instance.anim_boom_play()

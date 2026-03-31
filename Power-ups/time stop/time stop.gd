@@ -1,26 +1,18 @@
 extends Enemy_class
 
-var name_key:String = "slow fire"
+var name_key:String = "time stop"
 
 
-var cooldawn:int
-const max_cooldawn:int = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	update_position(delta)
-
 func _ready() -> void:
-	efect_dead_active()
-	setup()
 	tree.updateFrame.connect(next_frame)
-
+	danger = false
+	setup()
 func next_frame() -> void:
-	if is_stop():return
-	if cooldawn > 0:
-		cooldawn -= 1
-		return
-	cooldawn = max_cooldawn
 	current_cell += 1
 	current_cell = clampi(current_cell, 0, 5)
-	check_dead()
+
+func get_bonifier() -> int: return 4

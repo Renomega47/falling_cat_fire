@@ -8,8 +8,12 @@ var active:bool = true
 func _ready() -> void:
 	tree.updateFrame.connect(frame_next)
 
+
+
+
+#region spawn
 func spawn(force_key:int=-1) -> void:
-	if active == false:return
+	if active == false or tree.enemys_stop_time > 0:return
 	var point_key:int = randi_range(0, 5)
 	var object_instance:Node2D 
 	if force_key == -1:
@@ -56,18 +60,22 @@ load("res://Enemys/green fire/green fire.tscn"),
 load("res://Enemys/pink fire/pink fire.tscn"),
 load("res://Enemys/slow fire/slow fire.tscn"),#5
 
-load("res://Power-ups/heart/heart.tscn"),
-load("res://Power-ups/left/left.tscn"),
-load("res://Power-ups/right/right.tscn"),#8
+load("res://Power-ups/heart/heart.tscn"),   #bonifier
+load("res://Power-ups/left/left.tscn"),     #bonifier
+load("res://Power-ups/right/right.tscn"),   #bonifier
+load("res://Power-ups/time stop/time stop.tscn"), #9
 
-load("res://Enemys/doppelcat/doppelcat.tscn"),#9
+load("res://Enemys/doppelcat/doppelcat.tscn"),#10
 load("res://Enemys/explosive fire/explosive fire.tscn"), #explosive cat
 load("res://Enemys/fire variant/fire variant.tscn"),
 load("res://Enemys/cat/green cat.tscn"),
 load("res://Enemys/cat/orange cat.tscn"),
-load("res://Enemys/cat/cat.tscn")]
+load("res://Enemys/cat/cat.tscn"),
 
-var enemies_weights:Array[int] =[1000,250,225,675,675,175,    20,30,30    ,100, 100, 15, 5, 5, 1]
+]
+
+
+var enemies_weights:Array[int] =[1000,250,225,675,675,175,    20,30,30,10    ,100, 100, 15, 5, 5, 1]
 #var enemies_weights:Array[int] =[0,0,0,0,0,0,    1,0,0    ,0, 0, 0, 0, 0, 0]
 
 func get_random_enemy_key() -> int: #weights sistem
@@ -87,3 +95,4 @@ func get_random_enemy_key() -> int: #weights sistem
 			return i
 
 	return 0
+#endregion
